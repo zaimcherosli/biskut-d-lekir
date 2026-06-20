@@ -1,0 +1,3634 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Meta Tags -->
+  <title>Biskut Pelanta Asli Lekir, Perak - Rangup, Sedap & Segar Dari Kilang</title>
+  <meta name="description" content="Dapatkan Biskut Pelanta asli dari Lekir, Perak yang rangup, sedap dan dibuat segar setiap minggu. Sesuai untuk kudapan harian, goodies majlis perkahwinan, dan borong ejen. Order sekarang!">
+  <meta name="keywords" content="Biskut Pelanta, Roti Biskut Dlekir, Biskut Lekir, Goodies Kahwin, Biskut Tradisional, Biskut Margarin, Biskut Perak">
+  <meta name="author" content="Roti Biskut DLekir Sdn. Bhd.">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://biskutpelanta.dlekir.com.my/">
+  <meta property="og:title" content="Biskut Pelanta Asli Lekir, Perak - Rangup & Sedap">
+  <meta property="og:description" content="Nikmati kelazatan Biskut Pelanta premium buatan tempatan yang dibakar sempurna. Rangup luar biasa, sesuai cicah kopi O panas!">
+  <meta property="og:image" content="assets/hero-closeup.jpg">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:title" content="Biskut Pelanta Asli Lekir, Perak">
+  <meta property="twitter:description" content="Biskut Pelanta premium rangup dari Lekir, Perak. Sesuai untuk goodies majlis dan kudapan seisi keluarga.">
+  <meta property="twitter:image" content="assets/hero-closeup.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/brand-logo.svg">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    /* -------------------------------------------------------------
+       DESIGN SYSTEM & CSS VARIABLES
+       ------------------------------------------------------------- */
+    :root {
+      /* Colors */
+      --primary: #F59E0B;       /* Amber/Pelanta Yellow */
+      --primary-hover: #D97706;
+      --primary-light: #FFFBEB;
+      --secondary: #78350F;     /* Rich Coffee Brown */
+      --secondary-dark: #451A03;
+      --accent: #EA580C;        /* Orange Accent */
+      --accent-hover: #C2410C;
+      --text-dark: #1E293B;     /* Slate 800 */
+      --text-muted: #64748B;    /* Slate 500 */
+      --bg-light: #FAFAF9;      /* Stone 50 */
+      --bg-cream: #FAF7F0;      /* Soft Warm Cream */
+      --white: #FFFFFF;
+      --border-color: #E7E5E4;  /* Stone 200 */
+      --success: #10B981;       /* Emerald 500 */
+
+      /* Typography */
+      --font-heading: 'Outfit', 'Inter', sans-serif;
+      --font-body: 'Inter', sans-serif;
+
+      /* Layout */
+      --max-width: 1200px;
+      --header-height: 80px;
+
+      /* Effects */
+      --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(120, 53, 15, 0.08), 0 2px 4px -1px rgba(120, 53, 15, 0.03);
+      --shadow-lg: 0 10px 15px -3px rgba(120, 53, 15, 0.1), 0 4px 6px -2px rgba(120, 53, 15, 0.05);
+      --shadow-premium: 0 20px 25px -5px rgba(120, 53, 15, 0.12), 0 10px 10px -5px rgba(120, 53, 15, 0.04);
+      --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* Reset */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background-color: var(--bg-light);
+      color: var(--text-dark);
+      line-height: 1.6;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body.modal-open {
+      overflow: hidden; /* Scroll lock when modal is open */
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      line-height: 1.25;
+      color: var(--secondary-dark);
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    button, input, select, textarea {
+      font-family: inherit;
+      font-size: inherit;
+      border: none;
+      outline: none;
+      background: none;
+    }
+
+    /* Utilities */
+    .container {
+      width: 100%;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    .section-padding {
+      padding: 5rem 0;
+    }
+
+    @media (max-width: 768px) {
+      .section-padding {
+        padding: 3.5rem 0;
+      }
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    .badge-primary {
+      display: inline-flex;
+      align-items: center;
+      background-color: var(--primary-light);
+      color: var(--secondary);
+      border: 1px solid rgba(245, 158, 11, 0.4);
+      padding: 0.35rem 1rem;
+      border-radius: 9999px;
+      font-size: 0.875rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.85rem 2rem;
+      border-radius: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: var(--transition-smooth);
+      gap: 0.5rem;
+      text-align: center;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary), #F59E0B);
+      color: var(--secondary-dark);
+      box-shadow: 0 4px 14px rgba(245, 158, 11, 0.4);
+      border: 1px solid rgba(251, 191, 36, 0.5);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(245, 158, 11, 0.5);
+      background: linear-gradient(135deg, #FBBF24, var(--primary));
+    }
+
+    .btn-secondary {
+      background-color: var(--secondary);
+      color: var(--white);
+      box-shadow: 0 4px 14px rgba(120, 53, 15, 0.2);
+    }
+
+    .btn-secondary:hover {
+      transform: translateY(-2px);
+      background-color: var(--secondary-dark);
+      box-shadow: 0 6px 20px rgba(120, 53, 15, 0.3);
+    }
+
+    .btn-outline {
+      border: 2px solid var(--secondary);
+      color: var(--secondary);
+      background-color: transparent;
+    }
+
+    .btn-outline:hover {
+      background-color: var(--secondary);
+      color: var(--white);
+      transform: translateY(-2px);
+    }
+
+    /* -------------------------------------------------------------
+       1. URGENCY TOP BAR & STICKY HEADER
+       ------------------------------------------------------------- */
+    .urgency-bar {
+      background: linear-gradient(90deg, var(--accent), #F97316);
+      color: var(--white);
+      font-size: 0.875rem;
+      font-weight: 700;
+      padding: 0.5rem 1rem;
+      text-align: center;
+      overflow: hidden;
+      white-space: nowrap;
+      position: relative;
+      z-index: 100;
+    }
+
+    .urgency-bar span {
+      display: inline-block;
+      animation: marquee 25s linear infinite;
+    }
+
+    @keyframes marquee {
+      0% { transform: translate3d(100%, 0, 0); }
+      100% { transform: translate3d(-100%, 0, 0); }
+    }
+
+    header {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-color);
+      position: sticky;
+      top: 0;
+      z-index: 90;
+      height: var(--header-height);
+      transition: var(--transition-smooth);
+    }
+
+    header.scrolled {
+      box-shadow: var(--shadow-md);
+      background: rgba(255, 255, 255, 0.95);
+    }
+
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 100%;
+    }
+
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .logo-img {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      border: 2px solid var(--primary);
+    }
+
+    .logo-text h2 {
+      font-size: 1.25rem;
+      font-weight: 900;
+      letter-spacing: -0.5px;
+      color: var(--secondary-dark);
+    }
+
+    .logo-text p {
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: var(--text-dark);
+      transition: var(--transition-smooth);
+    }
+
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 6px;
+      cursor: pointer;
+    }
+
+    .menu-toggle span {
+      width: 25px;
+      height: 3px;
+      background-color: var(--secondary);
+      border-radius: 2px;
+      transition: var(--transition-smooth);
+    }
+
+    @media (max-width: 992px) {
+      .nav-links {
+        display: none;
+      }
+      .menu-toggle {
+        display: flex;
+      }
+      .header-btn {
+        display: none;
+      }
+    }
+
+    /* Mobile Navigation Drawer */
+    .mobile-nav {
+      position: fixed;
+      top: calc(var(--header-height) + 30px);
+      left: -100%;
+      width: 80%;
+      max-width: 300px;
+      height: calc(100vh - var(--header-height));
+      background-color: var(--white);
+      box-shadow: var(--shadow-lg);
+      z-index: 80;
+      transition: var(--transition-smooth);
+      padding: 2rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      border-right: 1px solid var(--border-color);
+    }
+
+    .mobile-nav.open {
+      left: 0;
+    }
+
+    .mobile-nav-links {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      list-style: none;
+    }
+
+    .mobile-nav-links a {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--secondary-dark);
+    }
+
+    /* Overlay */
+    .nav-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0,0,0,0.4);
+      z-index: 75;
+      display: none;
+    }
+
+    .nav-overlay.show {
+      display: block;
+    }
+
+    /* -------------------------------------------------------------
+       2. HERO SECTION
+       ------------------------------------------------------------- */
+    .hero {
+      background: radial-gradient(circle at 10% 20%, rgba(254, 243, 199, 0.4) 0%, rgba(255, 255, 255, 0.9) 90%), url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M54 48c-2 0-3 1-4 2v4c0 1-1 2-2 2H4c-1 0-2-1-2-2v-4c0-1-1-2-4-2v-4c3 0 4-1 4-2v-4c0-1 1-2 2-2h44c1 0 2 1 2 2v4c0 1 1 2 4 2v4zM30 20c-2 0-3 1-4 2v4c0 1-1 2-2 2H4c-1 0-2-1-2-2v-4c0-1-1-2-4-2v-4c3 0 4-1 4-2v-4c0-1 1-2 2-2h20c1 0 2 1 2 2v4c0 1 1 2 4 2v4z' fill='%23fef3c7' fill-opacity='0.25' fill-rule='evenodd'/%3E%3C/svg%3E");
+      position: relative;
+      overflow: hidden;
+      padding: 4rem 0 5rem 0;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    @media (max-width: 992px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+    }
+
+    .hero-content {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .hero-content h1 {
+      font-size: 3.25rem;
+      font-weight: 900;
+      color: var(--secondary-dark);
+      margin-bottom: 1.25rem;
+      letter-spacing: -1px;
+    }
+
+    .hero-content .highlight {
+      color: var(--accent);
+      background: linear-gradient(120deg, rgba(245, 158, 11, 0.15) 0%, rgba(234, 88, 12, 0.15) 100%);
+      padding: 0 0.5rem;
+      border-radius: 4px;
+    }
+
+    .hero-content p.lead {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+      line-height: 1.7;
+    }
+
+    .hero-badges {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      width: 100%;
+      margin-bottom: 2.5rem;
+    }
+
+    .hero-badge-item {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      background: var(--white);
+      padding: 0.75rem 1rem;
+      border-radius: 12px;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border-color);
+      font-weight: 700;
+      color: var(--secondary-dark);
+      font-size: 0.9rem;
+    }
+
+    .hero-badge-item svg {
+      color: var(--success);
+      flex-shrink: 0;
+    }
+
+    .hero-ctas {
+      display: flex;
+      gap: 1.25rem;
+      width: 100%;
+    }
+
+    @media (max-width: 576px) {
+      .hero-content h1 {
+        font-size: 2.25rem;
+      }
+      .hero-badges {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+      }
+      .hero-ctas {
+        flex-direction: column;
+      }
+    }
+
+    /* Hero Image container with bounce effect */
+    .hero-image-container {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .hero-img-wrapper {
+      position: relative;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: var(--shadow-premium);
+      border: 4px solid var(--white);
+      transform: rotate(1deg);
+      transition: var(--transition-smooth);
+    }
+
+    .hero-img-wrapper:hover {
+      transform: rotate(0deg) scale(1.02);
+    }
+
+    .hero-img-wrapper img {
+      width: 100%;
+      object-fit: cover;
+      max-height: 480px;
+    }
+
+    .hero-badge-floating {
+      position: absolute;
+      bottom: -15px;
+      left: -15px;
+      background: linear-gradient(135deg, var(--accent), #C2410C);
+      color: var(--white);
+      padding: 0.75rem 1.5rem;
+      border-radius: 50px;
+      font-weight: 800;
+      box-shadow: var(--shadow-lg);
+      transform: rotate(-5deg);
+      font-size: 0.85rem;
+      animation: float-badge 3s ease-in-out infinite alternate;
+      border: 2px solid var(--white);
+    }
+
+    @keyframes float-badge {
+      0% { transform: translateY(0) rotate(-5deg); }
+      100% { transform: translateY(-8px) rotate(-3deg); }
+    }
+
+    /* Live counter bar directly under Hero */
+    .live-counter-strip {
+      background-color: var(--secondary-dark);
+      color: var(--white);
+      padding: 0.75rem 0;
+      border-bottom: 2px solid var(--primary);
+    }
+
+    .live-counter-flex {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1.5rem;
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+
+    @media (max-width: 576px) {
+      .live-counter-flex {
+        flex-direction: column;
+        gap: 0.25rem;
+        font-size: 0.85rem;
+      }
+    }
+
+    .live-dot {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      background-color: var(--success);
+      border-radius: 50%;
+      animation: pulse-dot 1.5s infinite;
+    }
+
+    @keyframes pulse-dot {
+      0% { transform: scale(0.9); opacity: 0.4; }
+      50% { transform: scale(1.2); opacity: 1; }
+      100% { transform: scale(0.9); opacity: 0.4; }
+    }
+
+    /* -------------------------------------------------------------
+       3. BENEFITS SECTION ("Kenapa Ramai Pilih")
+       ------------------------------------------------------------- */
+    .section-title {
+      max-width: 700px;
+      margin: 0 auto 3.5rem auto;
+    }
+
+    .section-title h2 {
+      font-size: 2.25rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      position: relative;
+    }
+
+    .section-title h2::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 4px;
+      background-color: var(--primary);
+      margin: 0.75rem auto 0 auto;
+      border-radius: 2px;
+    }
+
+    .section-title p {
+      color: var(--text-muted);
+    }
+
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+
+    @media (max-width: 992px) {
+      .benefits-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .benefits-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .benefit-card {
+      background-color: var(--white);
+      padding: 2.5rem 2rem;
+      border-radius: 20px;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border-color);
+      transition: var(--transition-smooth);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .benefit-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-lg);
+      border-color: rgba(245, 158, 11, 0.3);
+    }
+
+    .benefit-icon {
+      width: 56px;
+      height: 56px;
+      background-color: var(--primary-light);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--primary-hover);
+      margin-bottom: 1.5rem;
+      transition: var(--transition-smooth);
+    }
+
+    .benefit-card:hover .benefit-icon {
+      background-color: var(--primary);
+      color: var(--secondary-dark);
+      transform: scale(1.05);
+    }
+
+    .benefit-card h3 {
+      font-size: 1.25rem;
+      margin-bottom: 0.75rem;
+      color: var(--secondary-dark);
+    }
+
+    .benefit-card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    /* -------------------------------------------------------------
+       4. PRODUCT SHOWCASE (Lifestyle split)
+       ------------------------------------------------------------- */
+    .showcase {
+      background-color: var(--bg-cream);
+    }
+
+    .showcase-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    @media (max-width: 992px) {
+      .showcase-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+      .showcase-image-order {
+        order: 2;
+      }
+    }
+
+    .showcase-img-container {
+      position: relative;
+    }
+
+    .showcase-img-wrapper {
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      border: 4px solid var(--white);
+    }
+
+    .showcase-img-wrapper img {
+      width: 100%;
+      height: 450px;
+      object-fit: cover;
+    }
+
+    .showcase-content h2 {
+      font-size: 2.25rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .showcase-content p {
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+      font-size: 1.05rem;
+    }
+
+    .showcase-quote {
+      background: var(--white);
+      border-left: 4px solid var(--accent);
+      padding: 1.25rem;
+      border-radius: 0 12px 12px 0;
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .showcase-quote p {
+      font-style: italic;
+      color: var(--secondary-dark);
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+    }
+
+    .showcase-quote span {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      font-weight: 700;
+    }
+
+    /* -------------------------------------------------------------
+       5. PRODUCT GALLERY (Slider & Lightbox)
+       ------------------------------------------------------------- */
+    .gallery-container {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      border-radius: 20px;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .gallery-slider {
+      display: flex;
+      transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      width: 100%;
+    }
+
+    .gallery-slide {
+      min-width: 100%;
+      position: relative;
+      cursor: zoom-in;
+    }
+
+    .gallery-slide img {
+      width: 100%;
+      height: 500px;
+      object-fit: cover;
+    }
+
+    @media (max-width: 768px) {
+      .gallery-slide img {
+        height: 320px;
+      }
+    }
+
+    .gallery-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+      color: var(--white);
+      padding: 2rem 1.5rem 1rem 1.5rem;
+      font-weight: 700;
+      font-size: 1.15rem;
+    }
+
+    .gallery-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255, 255, 255, 0.9);
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: var(--shadow-md);
+      transition: var(--transition-smooth);
+      z-index: 10;
+      color: var(--secondary-dark);
+    }
+
+    .gallery-nav:hover {
+      background: var(--primary);
+      color: var(--secondary-dark);
+    }
+
+    .gallery-prev {
+      left: 1rem;
+    }
+
+    .gallery-next {
+      right: 1rem;
+    }
+
+    .gallery-dots {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-top: 1.25rem;
+    }
+
+    .gallery-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: var(--border-color);
+      cursor: pointer;
+      transition: var(--transition-smooth);
+    }
+
+    .gallery-dot.active {
+      background-color: var(--primary);
+      width: 24px;
+      border-radius: 10px;
+    }
+
+    /* Lightbox Modal Styles */
+    .lightbox {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0,0,0,0.95);
+      z-index: 1000;
+      display: none;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .lightbox.show {
+      display: flex;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      color: var(--white);
+      font-size: 2.5rem;
+      cursor: pointer;
+      line-height: 1;
+      width: 44px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255,255,255,0.1);
+      border-radius: 50%;
+      transition: var(--transition-smooth);
+    }
+
+    .lightbox-close:hover {
+      background: var(--accent);
+    }
+
+    .lightbox-img-container {
+      max-width: 90%;
+      max-height: 80%;
+      position: relative;
+    }
+
+    .lightbox-img {
+      max-width: 100%;
+      max-height: 80vh;
+      object-fit: contain;
+      border-radius: 8px;
+    }
+
+    .lightbox-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--white);
+      font-size: 3rem;
+      cursor: pointer;
+      background: rgba(255,255,255,0.1);
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition-smooth);
+    }
+
+    .lightbox-nav:hover {
+      background: var(--primary);
+      color: var(--secondary-dark);
+    }
+
+    .lightbox-prev {
+      left: -80px;
+    }
+
+    .lightbox-next {
+      right: -80px;
+    }
+
+    @media (max-width: 992px) {
+      .lightbox-nav {
+        font-size: 2rem;
+        width: 40px;
+        height: 40px;
+      }
+      .lightbox-prev { left: 1rem; }
+      .lightbox-next { right: 1rem; }
+    }
+
+    /* -------------------------------------------------------------
+       6. AUDIENCE CARDS
+       ------------------------------------------------------------- */
+    .audience {
+      background-color: var(--white);
+    }
+
+    .audience-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+
+    @media (max-width: 992px) {
+      .audience-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .audience-card {
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border-color);
+      transition: var(--transition-smooth);
+      background-color: var(--bg-light);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .audience-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-lg);
+      border-color: rgba(245, 158, 11, 0.3);
+    }
+
+    .audience-img-wrapper {
+      height: 200px;
+      overflow: hidden;
+    }
+
+    .audience-img-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: var(--transition-smooth);
+    }
+
+    .audience-card:hover .audience-img-wrapper img {
+      transform: scale(1.05);
+    }
+
+    .audience-info {
+      padding: 1.75rem;
+      text-align: center;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .audience-info h3 {
+      font-size: 1.35rem;
+      margin-bottom: 0.5rem;
+      color: var(--secondary-dark);
+    }
+
+    .audience-info p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    /* -------------------------------------------------------------
+       7. PACKAGE SELECTION & PRICING
+       ------------------------------------------------------------- */
+    .pricing {
+      background-color: var(--bg-cream);
+    }
+
+    .urgency-badge-wrap {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 2.5rem;
+    }
+
+    .urgency-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background-color: #FEE2E2;
+      color: #EF4444;
+      border: 1px solid #FCA5A5;
+      padding: 0.5rem 1.25rem;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      animation: pulse-alert 2s infinite;
+    }
+
+    @keyframes pulse-alert {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.03); }
+      100% { transform: scale(1); }
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      align-items: stretch;
+    }
+
+    @media (max-width: 1200px) {
+      .pricing-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .pricing-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .pricing-card {
+      background-color: var(--white);
+      border-radius: 24px;
+      padding: 2.5rem 1.75rem;
+      border: 2px solid var(--border-color);
+      box-shadow: var(--shadow-sm);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      transition: var(--transition-smooth);
+    }
+
+    .pricing-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .pricing-card.popular {
+      border-color: var(--primary);
+      box-shadow: var(--shadow-premium);
+      transform: scale(1.02);
+    }
+
+    .pricing-card.popular:hover {
+      transform: translateY(-8px) scale(1.02);
+    }
+
+    .pricing-popular-tag {
+      position: absolute;
+      top: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: linear-gradient(135deg, var(--accent), #EA580C);
+      color: var(--white);
+      padding: 0.35rem 1.25rem;
+      border-radius: 50px;
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      box-shadow: var(--shadow-sm);
+      white-space: nowrap;
+    }
+
+    .pricing-header {
+      text-align: center;
+      margin-bottom: 1.5rem;
+      flex-shrink: 0;
+    }
+
+    .pricing-header h3 {
+      font-size: 1.4rem;
+      color: var(--secondary-dark);
+      margin-bottom: 0.25rem;
+    }
+
+    .pricing-header p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .pricing-price-wrap {
+      text-align: center;
+      margin-bottom: 2rem;
+      flex-shrink: 0;
+    }
+
+    .pricing-price-wrap .currency {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--secondary-dark);
+      vertical-align: super;
+    }
+
+    .pricing-price-wrap .price {
+      font-size: 3rem;
+      font-weight: 900;
+      color: var(--secondary-dark);
+      letter-spacing: -1px;
+    }
+
+    .pricing-price-wrap .per-pack {
+      display: block;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      font-weight: 600;
+      margin-top: 0.25rem;
+    }
+
+    .pricing-features {
+      list-style: none;
+      margin-bottom: 2rem;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .pricing-features li {
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--text-dark);
+    }
+
+    .pricing-features li svg {
+      color: var(--success);
+      flex-shrink: 0;
+    }
+
+    .pricing-btn {
+      width: 100%;
+      flex-shrink: 0;
+    }
+
+    /* -------------------------------------------------------------
+       8. TRUST GRID (Value badging)
+       ------------------------------------------------------------- */
+    .trust-strip {
+      background-color: var(--secondary-dark);
+      color: var(--white);
+      padding: 3.5rem 0;
+      border-top: 4px solid var(--primary);
+    }
+
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2.5rem;
+    }
+
+    @media (max-width: 768px) {
+      .trust-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+    }
+
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+    }
+
+    .trust-icon-box {
+      width: 52px;
+      height: 52px;
+      background-color: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(245, 158, 11, 0.3);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--primary);
+      flex-shrink: 0;
+    }
+
+    .trust-text h4 {
+      color: var(--white);
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 0.25rem;
+    }
+
+    .trust-text p {
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 0.875rem;
+    }
+
+    /* -------------------------------------------------------------
+       9. POPUP CHECKOUT MODAL SYSTEM
+       ------------------------------------------------------------- */
+    .checkout-modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(30, 26, 20, 0.6);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      z-index: 150;
+      display: none;
+      justify-content: center;
+      align-items: center;
+      padding: 1rem;
+    }
+
+    .checkout-modal-overlay.show {
+      display: flex;
+    }
+
+    .checkout-modal-card {
+      background-color: var(--white);
+      border-radius: 28px;
+      width: 100%;
+      max-width: 800px;
+      box-shadow: var(--shadow-premium);
+      border: 1px solid var(--border-color);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      max-height: 92vh;
+      animation: modal-enter 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+      overflow: hidden;
+    }
+
+    .checkout-modal-header {
+      padding: 1.25rem 2rem;
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: var(--bg-light);
+      flex-shrink: 0;
+    }
+
+    .checkout-modal-header h3 {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--secondary-dark);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .checkout-modal-close {
+      font-size: 2rem;
+      cursor: pointer;
+      color: var(--text-muted);
+      transition: var(--transition-smooth);
+      line-height: 1;
+    }
+
+    .checkout-modal-close:hover {
+      color: var(--accent);
+    }
+
+    .checkout-modal-body {
+      padding: 2rem;
+      overflow-y: auto;
+      flex-grow: 1;
+    }
+
+    @media (max-width: 576px) {
+      .checkout-modal-body {
+        padding: 1.25rem;
+      }
+    }
+
+    .checkout-modal-footer {
+      padding: 1.25rem 2rem;
+      border-top: 1px solid var(--border-color);
+      display: flex;
+      justify-content: space-between;
+      background-color: var(--bg-light);
+      gap: 1rem;
+      flex-shrink: 0;
+    }
+
+    @media (max-width: 576px) {
+      .checkout-modal-footer {
+        padding: 1rem 1.25rem;
+      }
+    }
+
+    /* Multi-step progress bar inside modal */
+    .checkout-step-indicator-bar {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 2rem;
+      background-color: var(--bg-light);
+      padding: 0.5rem;
+      border-radius: 14px;
+      border: 1px solid var(--border-color);
+    }
+
+    .checkout-step-tab {
+      flex: 1;
+      text-align: center;
+      font-size: 0.85rem;
+      font-weight: 800;
+      color: var(--text-muted);
+      padding: 0.6rem 0.25rem;
+      border-radius: 10px;
+      transition: var(--transition-smooth);
+    }
+
+    .checkout-step-tab.active {
+      background-color: var(--primary);
+      color: var(--secondary-dark);
+    }
+
+    .checkout-step-tab.completed {
+      color: var(--success);
+    }
+
+    /* Step content toggles */
+    .checkout-step-content {
+      display: none;
+    }
+
+    .checkout-step-content.active {
+      display: block;
+    }
+
+    /* Checkout Layout grid split inside step 2 */
+    .checkout-summary-split {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 2rem;
+    }
+
+    @media (max-width: 768px) {
+      .checkout-summary-split {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+    }
+
+    .form-group-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+      margin-bottom: 1.25rem;
+    }
+
+    @media (max-width: 576px) {
+      .form-group-row {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+      }
+    }
+
+    .form-group {
+      margin-bottom: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .form-label {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--secondary-dark);
+    }
+
+    .form-input, .form-select, .form-textarea {
+      width: 100%;
+      background-color: var(--bg-light);
+      border: 1.5px solid var(--border-color);
+      border-radius: 12px;
+      padding: 0.85rem 1rem;
+      font-size: 0.95rem;
+      color: var(--text-dark);
+      transition: var(--transition-smooth);
+    }
+
+    .form-input:focus, .form-select:focus, .form-textarea:focus {
+      border-color: var(--primary);
+      background-color: var(--white);
+      box-shadow: 0 0 0 4px rgba(245, 158, 11, 0.1);
+    }
+
+    .form-textarea {
+      resize: vertical;
+      min-height: 80px;
+    }
+
+    /* Package selector tabs inside form */
+    .form-pkg-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+
+    @media (max-width: 576px) {
+      .form-pkg-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .form-pkg-option {
+      background-color: var(--bg-light);
+      border: 2px solid var(--border-color);
+      border-radius: 14px;
+      padding: 1rem;
+      cursor: pointer;
+      text-align: center;
+      transition: var(--transition-smooth);
+      position: relative;
+    }
+
+    .form-pkg-option.selected {
+      border-color: var(--primary);
+      background-color: var(--primary-light);
+    }
+
+    .form-pkg-name {
+      font-weight: 800;
+      color: var(--secondary-dark);
+      display: block;
+      font-size: 0.9rem;
+    }
+
+    .form-pkg-price {
+      font-weight: 900;
+      color: var(--accent);
+      font-size: 1.1rem;
+      display: block;
+      margin-top: 0.25rem;
+    }
+
+    .form-pkg-qty {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      display: block;
+    }
+
+    /* Quantity adjustment row */
+    .qty-row {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      background-color: var(--bg-light);
+      padding: 0.6rem 1.1rem;
+      border-radius: 12px;
+      border: 1px solid var(--border-color);
+      width: fit-content;
+    }
+
+    .qty-btn {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background-color: var(--white);
+      color: var(--secondary-dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      cursor: pointer;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition-smooth);
+      border: 1px solid var(--border-color);
+      user-select: none;
+    }
+
+    .qty-btn:hover {
+      background-color: var(--primary);
+    }
+
+    .qty-val {
+      font-weight: 800;
+      font-size: 1.05rem;
+      color: var(--secondary-dark);
+      min-width: 20px;
+      text-align: center;
+    }
+
+    /* Payment Methods selector */
+    .pm-method-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .pm-method-card {
+      background-color: var(--bg-light);
+      border: 2px solid var(--border-color);
+      border-radius: 14px;
+      padding: 1.25rem;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      transition: var(--transition-smooth);
+    }
+
+    .pm-method-card.selected {
+      border-color: var(--primary);
+      background-color: var(--primary-light);
+    }
+
+    .pm-method-card svg {
+      width: 36px;
+      height: 36px;
+      color: var(--secondary-dark);
+    }
+
+    .pm-method-card.selected svg {
+      color: var(--accent);
+    }
+
+    .pm-method-name {
+      font-weight: 800;
+      font-size: 0.95rem;
+      color: var(--secondary-dark);
+    }
+
+    /* -------------------------------------------------------------
+       10. ORDER SUMMARY CARD
+       ------------------------------------------------------------- */
+    .summary-card {
+      background-color: var(--bg-cream);
+      border-radius: 20px;
+      padding: 1.5rem;
+      border: 2px dashed var(--primary);
+    }
+
+    .summary-title {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--secondary-dark);
+      margin-bottom: 1.25rem;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 0.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .summary-row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.75rem;
+      font-size: 0.9rem;
+      color: var(--text-dark);
+    }
+
+    .summary-row.bold {
+      font-weight: 700;
+      color: var(--secondary-dark);
+    }
+
+    .summary-divider {
+      height: 1px;
+      background-color: var(--border-color);
+      margin: 0.75rem 0;
+    }
+
+    .summary-total-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-top: 0.75rem;
+    }
+
+    .summary-total-label {
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--secondary-dark);
+    }
+
+    .summary-total-price {
+      font-size: 1.65rem;
+      font-weight: 900;
+      color: var(--accent);
+    }
+
+    .summary-badges {
+      margin-top: 1.5rem;
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+    }
+
+    .summary-badge-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.25rem;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    .summary-badge-item svg {
+      width: 20px;
+      height: 20px;
+      color: var(--primary);
+    }
+
+    /* -------------------------------------------------------------
+       11. SIMULATED PAYMENT INSIDE MODAL
+       ------------------------------------------------------------- */
+    /* QR Code Display area */
+    .qr-modal-body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.25rem;
+      text-align: center;
+    }
+
+    .qr-image-frame {
+      width: 200px;
+      height: 260px;
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 0.5rem;
+      background-color: var(--white);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .qr-image-frame img {
+      width: 100%;
+      height: 100%;
+    }
+
+    .qr-copy-btn {
+      width: 100%;
+      background-color: var(--bg-light);
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      padding: 0.75rem 1rem;
+      font-size: 0.85rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      transition: var(--transition-smooth);
+    }
+
+    .qr-copy-btn:hover {
+      background-color: var(--primary-light);
+      border-color: var(--primary);
+    }
+
+    /* FPX mock bank selector */
+    .fpx-bank-select-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      width: 100%;
+    }
+
+    /* Loading Spinner */
+    .payment-loading {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+      padding: 3rem 0;
+      text-align: center;
+    }
+
+    .spinner {
+      width: 60px;
+      height: 60px;
+      border: 6px solid var(--primary-light);
+      border-top: 6px solid var(--accent);
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    /* Payment Success screen in Modal */
+    .payment-success-screen {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      animation: success-pop 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      padding: 1rem 0;
+    }
+
+    @keyframes success-pop {
+      0% { transform: scale(0.6); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    .success-icon-wrap {
+      width: 72px;
+      height: 72px;
+      background-color: #DEF7EC;
+      color: var(--success);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 4px 10px rgba(16, 185, 129, 0.2);
+    }
+
+    .success-icon-wrap svg {
+      width: 40px;
+      height: 40px;
+    }
+
+    .payment-success-screen h3 {
+      font-size: 1.6rem;
+      color: var(--secondary-dark);
+      margin-bottom: 0.5rem;
+    }
+
+    .payment-success-screen p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 1.5rem;
+      padding: 0 1rem;
+    }
+
+    .success-summary-box {
+      width: 100%;
+      background-color: var(--bg-cream);
+      border-radius: 16px;
+      padding: 1.25rem;
+      margin-bottom: 2rem;
+      border: 1px solid rgba(120, 53, 15, 0.1);
+      text-align: left;
+    }
+
+    .success-summary-row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.5rem;
+      font-size: 0.875rem;
+    }
+
+    .success-summary-row:last-child {
+      margin-bottom: 0;
+      border-top: 1px solid var(--border-color);
+      padding-top: 0.5rem;
+      font-weight: 700;
+      color: var(--secondary-dark);
+    }
+
+    /* -------------------------------------------------------------
+       12. FAQ ACCORDION SECTION
+       ------------------------------------------------------------- */
+    .faq {
+      background-color: var(--bg-cream);
+    }
+
+    .faq-container {
+      max-width: 800px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .faq-item {
+      background-color: var(--white);
+      border-radius: 16px;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border-color);
+      overflow: hidden;
+      transition: var(--transition-smooth);
+    }
+
+    .faq-item.active {
+      border-color: var(--primary);
+      box-shadow: var(--shadow-md);
+    }
+
+    .faq-question {
+      padding: 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--secondary-dark);
+      user-select: none;
+      transition: var(--transition-smooth);
+    }
+
+    .faq-question:hover {
+      color: var(--accent);
+    }
+
+    .faq-question svg {
+      transition: var(--transition-smooth);
+      flex-shrink: 0;
+      color: var(--primary);
+    }
+
+    .faq-item.active .faq-question svg {
+      transform: rotate(180deg);
+      color: var(--accent);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s cubic-bezier(0, 1, 0, 1);
+      background-color: var(--white);
+    }
+
+    .faq-answer p {
+      padding: 0 1.5rem 1.5rem 1.5rem;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    /* -------------------------------------------------------------
+       13. CONVERSION BOOSTERS (Popups, Buttons, Skeleton)
+       ------------------------------------------------------------- */
+    /* Floating WhatsApp Button */
+    .floating-wa-btn {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background-color: #25D366;
+      color: var(--white);
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+      z-index: 99;
+      cursor: pointer;
+      transition: var(--transition-smooth);
+      animation: wa-pulse 2s infinite;
+    }
+
+    .floating-wa-btn:hover {
+      transform: scale(1.1);
+      background-color: #20BA5A;
+    }
+
+    .floating-wa-btn svg {
+      width: 32px;
+      height: 32px;
+      fill: currentColor;
+    }
+
+    @keyframes wa-pulse {
+      0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+      70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+    }
+
+    /* Back To Top Button */
+    .back-to-top {
+      position: fixed;
+      bottom: 100px;
+      right: 24px;
+      background-color: var(--secondary);
+      color: var(--white);
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: var(--shadow-md);
+      z-index: 98;
+      cursor: pointer;
+      opacity: 0;
+      visibility: hidden;
+      transition: var(--transition-smooth);
+    }
+
+    .back-to-top.show {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .back-to-top:hover {
+      background-color: var(--accent);
+      transform: translateY(-3px);
+    }
+
+    /* Sticky Mobile Bottom CTA Bar */
+    .sticky-mobile-cta {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: var(--white);
+      border-top: 1px solid var(--border-color);
+      padding: 0.75rem 1.5rem;
+      box-shadow: 0 -4px 10px rgba(0,0,0,0.06);
+      z-index: 95;
+      display: none;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .mobile-cta-info {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .mobile-cta-price {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--accent);
+    }
+
+    .mobile-cta-label {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    .mobile-cta-btn {
+      padding: 0.65rem 1.5rem;
+      font-size: 0.9rem;
+      border-radius: 8px;
+    }
+
+    @media (max-width: 768px) {
+      .sticky-mobile-cta {
+        display: flex;
+      }
+    }
+
+    /* Recent Order Notification Popup */
+    .order-popup {
+      position: fixed;
+      bottom: 24px;
+      left: 24px;
+      background-color: var(--white);
+      border-radius: 16px;
+      padding: 1rem;
+      box-shadow: var(--shadow-lg);
+      border: 1px solid var(--border-color);
+      z-index: 97;
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      max-width: 320px;
+      transform: translateY(120px);
+      opacity: 0;
+      transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .order-popup.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    .order-popup-avatar {
+      width: 44px;
+      height: 44px;
+      background-color: var(--primary-light);
+      border-radius: 50%;
+      color: var(--secondary-dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+
+    .order-popup-details {
+      font-size: 0.825rem;
+      line-height: 1.4;
+    }
+
+    .order-popup-title {
+      font-weight: 700;
+      color: var(--secondary-dark);
+    }
+
+    .order-popup-time {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-top: 0.15rem;
+    }
+
+    /* Skeleton Loading effect */
+    .skeleton {
+      background: linear-gradient(90deg, #f3f4f6 25%, #e5e7eb 50%, #f3f4f6 75%);
+      background-size: 200% 100%;
+      animation: skeleton-loading 1.5s infinite;
+      border-radius: 4px;
+    }
+
+    @keyframes skeleton-loading {
+      0% { background-position: 200% 0; }
+      100% { background-position: -200% 0; }
+    }
+
+    .skeleton-image {
+      width: 100%;
+      height: 250px;
+      border-radius: 12px;
+    }
+
+    .skeleton-text {
+      height: 20px;
+      margin-bottom: 10px;
+      width: 100%;
+    }
+
+    /* -------------------------------------------------------------
+       14. FOOTER
+       ------------------------------------------------------------- */
+    footer {
+      background-color: var(--secondary-dark);
+      color: var(--white);
+      padding: 4rem 0 2rem 0;
+      border-top: 4px solid var(--primary);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr 1fr;
+      gap: 3rem;
+      margin-bottom: 3rem;
+    }
+
+    @media (max-width: 992px) {
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+    }
+
+    .footer-desc h3 {
+      color: var(--white);
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+    }
+
+    .footer-desc p {
+      color: rgba(255,255,255,0.7);
+      font-size: 0.95rem;
+      margin-bottom: 1.5rem;
+      line-height: 1.7;
+    }
+
+    .footer-links h4, .footer-contact h4 {
+      color: var(--primary);
+      margin-bottom: 1.25rem;
+      font-size: 1.1rem;
+      font-weight: 700;
+    }
+
+    .footer-links-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .footer-links-list a {
+      color: rgba(255,255,255,0.8);
+      font-size: 0.95rem;
+      transition: var(--transition-smooth);
+    }
+
+    .footer-links-list a:hover {
+      color: var(--primary);
+      padding-left: 4px;
+    }
+
+    .footer-contact-details {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      color: rgba(255,255,255,0.8);
+      font-size: 0.95rem;
+    }
+
+    .footer-contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+    }
+
+    .footer-contact-item svg {
+      color: var(--primary);
+      margin-top: 0.2rem;
+      flex-shrink: 0;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.6);
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer-payment-badges {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .footer-payment-badges span {
+      background-color: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      padding: 0.25rem 0.75rem;
+      border-radius: 6px;
+      font-weight: 700;
+      color: var(--white);
+      font-size: 0.75rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- URGENCY TOP BAR -->
+  <div class="urgency-bar">
+    <span>🔥 Promosi Penghantaran Sedang Berlangsung Untuk Masa Terhad. Beli Hari Ini &amp; Dapatkan Kudapan Premium Terbaik Perak!</span>
+  </div>
+
+  <!-- STICKY HEADER -->
+  <header id="header">
+    <div class="container header-container">
+      <a href="#" class="logo-area">
+        <img class="logo-img" src="assets/brand-logo.svg" alt="LDR Brand Logo" loading="lazy">
+        <div class="logo-text">
+          <h2 id="js-header-company-name">Roti Biskut DLekir</h2>
+          <p>Pelanta Asli Perak</p>
+        </div>
+      </a>
+      
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#kenapa-pilih">Kenapa Pilih Kami</a></li>
+          <li><a href="#galeri">Galeri</a></li>
+          <li><a href="#siapa-sesuai">Siapa Sesuai</a></li>
+          <li><a href="#pakej">Pakej Harga</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+        <button onclick="openCheckoutModal()" class="btn btn-primary header-btn" style="padding: 0.6rem 1.5rem; font-size: 0.9rem;">
+          Order Sekarang
+        </button>
+        <div class="menu-toggle" id="menu-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- MOBILE NAVIGATION DRAWER -->
+  <div class="nav-overlay" id="nav-overlay"></div>
+  <div class="mobile-nav" id="mobile-nav">
+    <ul class="mobile-nav-links">
+      <li><a href="#kenapa-pilih">Kenapa Pilih Kami</a></li>
+      <li><a href="#galeri">Galeri</a></li>
+      <li><a href="#siapa-sesuai">Siapa Sesuai</a></li>
+      <li><a href="#pakej">Pakej Harga</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+    <button onclick="openCheckoutModal(); document.getElementById('menu-toggle').click();" class="btn btn-primary text-center" style="margin-top: 1rem; width:100%;">Order Sekarang</button>
+  </div>
+
+  <!-- SECTION 1: HERO SECTION -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <span class="badge-primary">✓ Produk Tradisional Tempatan</span>
+        <h1>Biskut Pelanta Asli Dari <span class="highlight">Lekir, Perak</span></h1>
+        <p class="lead">Rangup, sedap dan sesuai untuk kudapan harian, goodies majlis serta jualan semula. Dibuat bersih &amp; bermutu secara tradisional.</p>
+        
+        <div class="hero-badges">
+          <div class="hero-badge-item">
+            <svg width="18" height="18" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+            Produk Tempatan
+          </div>
+          <div class="hero-badge-item">
+            <svg width="18" height="18" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+            Penghantaran Seluruh MY
+          </div>
+          <div class="hero-badge-item">
+            <svg width="18" height="18" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+            Sesuai Untuk Majlis
+          </div>
+          <div class="hero-badge-item">
+            <svg width="18" height="18" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+            Sesuai Untuk Reseller
+          </div>
+        </div>
+
+        <div class="hero-ctas">
+          <button onclick="openCheckoutModal()" class="btn btn-primary btn-lg">Order Sekarang</button>
+          <a href="#" id="js-hero-wa-btn" target="_blank" class="btn btn-secondary btn-lg">
+            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.733-1.455L0 24zm6.29-4.314c1.666.988 3.396 1.5 5.65 1.5 5.484 0 9.95-4.466 9.953-9.95.002-2.654-1.02-5.152-2.877-7.009C17.217 2.37 14.72 1.35 12.01 1.35 6.525 1.35 2.062 5.811 2.06 11.3c-.001 2.26.513 3.994 1.517 5.688l-.982 3.585 3.752-.987z"></path></svg>
+            WhatsApp Kami
+          </a>
+        </div>
+      </div>
+      
+      <div class="hero-image-container">
+        <div class="hero-img-wrapper">
+          <img src="assets/hero-closeup.jpg" alt="Biskut Pelanta Golden Stack" width="600" height="480">
+          <div class="hero-badge-floating">Kualiti Premium ⭐</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LIVE VISITOR STRIP -->
+  <div class="live-counter-strip">
+    <div class="container live-counter-flex">
+      <div style="display: flex; align-items: center; gap: 0.5rem;">
+        <span class="live-dot"></span>
+        <span id="js-live-visitors">🔥 23 orang sedang melihat produk ini sekarang</span>
+      </div>
+      <div>
+        <span>⏳ Batch jualan segar minggu ini diproses terhad!</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 2: WHY CUSTOMERS LOVE IT -->
+  <section class="section-padding" id="kenapa-pilih">
+    <div class="container">
+      <div class="section-title text-center">
+        <h2>Kenapa Ramai Pilih Biskut Pelanta?</h2>
+        <p>Biskut Pelanta kami disediakan mengikut resipi turun-temurun dengan standard kebersihan tertinggi.</p>
+      </div>
+
+      <div class="benefits-grid">
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+          </div>
+          <h3>Rangup Dan Sedap</h3>
+          <p>Keseimbangan kerangupan luar biasa dengan aroma harum mentega Pelanta asli di setiap gigitan.</p>
+        </div>
+
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+          </div>
+          <h3>Tidak Cepat Muak</h3>
+          <p>Gabungan rasa manis-asin yang ideal. Sangat serasi dinikmati pada bila-bila masa tanpa jemu.</p>
+        </div>
+
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+          </div>
+          <h3>Sesuai Semua Umur</h3>
+          <p>Dari kanak-kanak hingga warga emas, tekstur biskut yang tidak terlalu keras menjadikannya kegemaran ramai.</p>
+        </div>
+
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"></path></svg>
+          </div>
+          <h3>Mudah Dibawa</h3>
+          <p>Dibungkus dengan kemas dan kedap udara. Sesuai dibawa bercuti, berkelah atau disimpan di pejabat.</p>
+        </div>
+
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path></svg>
+          </div>
+          <h3>Produk Tempatan</h3>
+          <p>Dihasilkan secara bersih &amp; suci di Lekir, Perak. Menjamin kualiti bahan mentah tempatan terpilih.</p>
+        </div>
+
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+          </div>
+          <h3>Pembelian Pukal</h3>
+          <p>Tersedia dalam pakej borong istimewa. Margin keuntungan menarik bagi ejen dan jualan semula.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: PRODUCT GALLERY SLIDER & LIGHTBOX -->
+  <section class="section-padding showcase" id="galeri">
+    <div class="container">
+      <div class="section-title text-center">
+        <h2>Galeri Produk Kami</h2>
+        <p>Lihat kualiti penghasilan Biskut Pelanta asli kami. Klik pada gambar untuk melihat lebih dekat.</p>
+      </div>
+
+      <div class="gallery-container">
+        <div class="gallery-slider" id="gallery-slider">
+          <div class="gallery-slide" onclick="openLightbox(0)">
+            <img src="assets/hero-closeup.jpg" alt="Biskut Pelanta Close-up" loading="lazy">
+            <div class="gallery-caption">Biskut Pelanta Karamel Emas - Rangup &amp; Lazat</div>
+          </div>
+          <div class="gallery-slide" onclick="openLightbox(1)">
+            <img src="assets/coffee-dip-lifestyle.jpg" alt="Cicah Kopi O Panas" loading="lazy">
+            <div class="gallery-caption">Cadangan Hidangan - Serasi Dicicah Kopi O Panas</div>
+          </div>
+          <div class="gallery-slide" onclick="openLightbox(2)">
+            <img src="assets/packaging-stacks.jpg" alt="Packaging Pek Biskut Pelanta" loading="lazy">
+            <div class="gallery-caption">Pek Segar Kedap Udara - Sedia Dihantar Seluruh Malaysia</div>
+          </div>
+          <div class="gallery-slide" onclick="openLightbox(3)">
+            <img src="assets/factory-production.jpg" alt="Proses Pembuatan di Kilang" loading="lazy">
+            <div class="gallery-caption">Pembuatan Tradisional Bersih &amp; Bermutu Terus Dari Dulang Oven</div>
+          </div>
+          <div class="gallery-slide" onclick="openLightbox(4)">
+            <img src="assets/promo-goodies.jpg" alt="Promosi Goodies Majlis" loading="lazy">
+            <div class="gallery-caption">Goodies Majlis Mesra Tetamu - Roti Biskut DLekir Asli Lekir</div>
+          </div>
+        </div>
+
+        <div class="gallery-nav gallery-prev" id="gallery-prev">&#10094;</div>
+        <div class="gallery-nav gallery-next" id="gallery-next">&#10095;</div>
+      </div>
+
+      <div class="gallery-dots" id="gallery-dots">
+        <!-- JS will populate dots -->
+      </div>
+    </div>
+  </section>
+
+  <!-- LIGHTBOX MODAL -->
+  <div class="lightbox" id="lightbox">
+    <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+    <div class="lightbox-img-container">
+      <div class="lightbox-nav lightbox-prev" onclick="changeLightboxSlide(-1)">&#10094;</div>
+      <img class="lightbox-img" id="lightbox-img" src="" alt="Lightbox Image">
+      <div class="lightbox-nav lightbox-next" onclick="changeLightboxSlide(1)">&#10095;</div>
+    </div>
+  </div>
+
+  <!-- SECTION 4: PRODUCT SHOWCASE (Lifestyle split) -->
+  <section class="section-padding">
+    <div class="container showcase-grid">
+      <div class="showcase-img-container">
+        <div class="showcase-img-wrapper">
+          <img src="assets/coffee-dip-lifestyle.jpg" alt="Dipping biskut in hot coffee" loading="lazy">
+        </div>
+      </div>
+      <div class="showcase-content">
+        <span class="badge-primary">Tradisi Nikmat Minum Petang</span>
+        <h2>Nikmati Cicahan Biskut Margarin Yang Mencair Di Mulut</h2>
+        <p>Tiada apa yang lebih menenangkan daripada menikmati Biskut Pelanta Lekir bersama secawan kopi O panas. Keharuman mentega biskut ini akan bangkit meresap saat bersatu dengan kehangatan kopi.</p>
+        
+        <div class="showcase-quote">
+          <p>"Setiap kali minum petang, biskut Lekir inilah wajib ada. Rangup dan menteganya cukup terasa, cicah kopi O memang terbaik!"</p>
+          <span>— Kak Ros, Batu Gajah Perak</span>
+        </div>
+
+        <button onclick="openCheckoutModal()" class="btn btn-outline">Mula Menempah Sekarang</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 5: WHO IS IT FOR -->
+  <section class="section-padding" style="background-color: var(--white);" id="siapa-sesuai">
+    <div class="container">
+      <div class="section-title text-center">
+        <h2>Sesuai Untuk Siapa?</h2>
+        <p>Biskut Pelanta Lekir direka untuk memenuhi pelbagai keperluan kudapan dan sambutan anda.</p>
+      </div>
+
+      <div class="audience-grid">
+        <div class="audience-card">
+          <div class="audience-img-wrapper">
+            <img src="assets/hero-closeup.jpg" alt="Untuk Keluarga" loading="lazy">
+          </div>
+          <div class="audience-info">
+            <h3>Untuk Keluarga</h3>
+            <p>Kudapan santai di rumah ketika menonton TV bersama anak-anak atau diletakkan di pantry pejabat.</p>
+          </div>
+        </div>
+
+        <div class="audience-card">
+          <div class="audience-img-wrapper">
+            <img src="assets/promo-goodies.jpg" alt="Untuk Majlis" loading="lazy">
+          </div>
+          <div class="audience-info">
+            <h3>Untuk Majlis</h3>
+            <p>Sangat popular sebagai goodies perkahwinan, pertunangan, aqiqah, hari jadi, serta pelbagai acara korporat.</p>
+          </div>
+        </div>
+
+        <div class="audience-card">
+          <div class="audience-img-wrapper">
+            <img src="assets/packaging-stacks.jpg" alt="Untuk Reseller" loading="lazy">
+          </div>
+          <div class="audience-info">
+            <h3>Untuk Reseller</h3>
+            <p>Produk makanan tradisional yang tinggi permintaan berulang dengan margin keuntungan yang sangat memuaskan.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 6: PACKAGE SELECTION & PRICING -->
+  <section class="section-padding pricing" id="pakej">
+    <div class="container">
+      <div class="section-title text-center">
+        <h2>Pakej Istimewa Biskut Pelanta</h2>
+        <p>Pilih pakej yang sesuai mengikut keperluan anda. Dapatkan diskaun menarik untuk pembelian lebih banyak!</p>
+      </div>
+
+      <div class="pricing-grid" id="js-pricing-cards-container">
+        <!-- Dynamically generated via JS settings -->
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 7: TRUST SECTION -->
+  <section class="trust-strip">
+    <div class="container trust-grid">
+      <div class="trust-item">
+        <div class="trust-icon-box">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path></svg>
+        </div>
+        <div class="trust-text">
+          <h4>100% Produk Tempatan</h4>
+          <p>Diadun dan dihasilkan sepenuhnya di Lekir, Perak.</p>
+        </div>
+      </div>
+
+      <div class="trust-item">
+        <div class="trust-icon-box">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+        </div>
+        <div class="trust-text">
+          <h4>Pembelian Selamat</h4>
+          <p>Simulasi gerbang FPX &amp; DuitNow QR yang diyakini.</p>
+        </div>
+      </div>
+
+      <div class="trust-item">
+        <div class="trust-icon-box">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z"></path></svg>
+        </div>
+        <div class="trust-text">
+          <h4>Sokongan WhatsApp</h4>
+          <p>Ada soalan? Hubungi kami terus untuk maklum balas pantas.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BORDER BANNER SECTION (V2 Replacement for static form) -->
+  <section class="section-padding text-center" style="background-color: var(--white);">
+    <div class="container">
+      <div style="max-width: 600px; margin: 0 auto; background: var(--bg-cream); padding: 3.5rem 2rem; border-radius: 28px; border: 2px dashed var(--primary); box-shadow: var(--shadow-md);">
+        <span class="badge-primary">Beli Terus Dari Kilang</span>
+        <h2 style="font-size: 2rem; margin-bottom: 1rem; color: var(--secondary-dark);">Sedia Untuk Menikmati Kerangupan?</h2>
+        <p style="color: var(--text-muted); margin-bottom: 2rem;">Klik butang di bawah untuk menempah pek Biskut Pelanta segar anda terus dari Lekir, Perak menerusi sistem tempahan popup kami.</p>
+        <button onclick="openCheckoutModal()" class="btn btn-primary btn-lg" style="width: 100%; max-width: 320px;">Tempah Sekarang</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- POPUP CHECKOUT WIZARD MODAL -->
+  <div class="checkout-modal-overlay" id="checkoutModalOverlay">
+    <div class="checkout-modal-card" id="checkoutModalWindow">
+      
+      <!-- Modal Header -->
+      <div class="checkout-modal-header">
+        <h3>
+          <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
+          Borang Tempahan Biskut Pelanta
+        </h3>
+        <span class="checkout-modal-close" onclick="closeCheckoutModal()">&times;</span>
+      </div>
+
+      <!-- Modal Body (Steps) -->
+      <div class="checkout-modal-body">
+        
+        <!-- Steps Progress bar -->
+        <div class="checkout-step-indicator-bar">
+          <div class="checkout-step-tab active" id="step-tab-1">1. Alamat Pos</div>
+          <div class="checkout-step-tab" id="step-tab-2">2. Pakej &amp; Kuantiti</div>
+          <div class="checkout-step-tab" id="step-tab-3">3. Bayar &amp; Selesai</div>
+        </div>
+
+        <!-- Form Element wrapper -->
+        <form id="orderForm" onsubmit="handleFormSubmit(event)">
+          
+          <!-- STEP 1: Maklumat Hubungan & Alamat -->
+          <div class="checkout-step-content active" id="checkout-step-1">
+            <div class="form-group">
+              <label class="form-label" for="fullname">Nama Penuh <span style="color:red;">*</span></label>
+              <input class="form-input" type="text" id="fullname" placeholder="Masukkan nama penuh anda" required>
+            </div>
+
+            <div class="form-group-row">
+              <div class="form-group">
+                <label class="form-label" for="phone">No. Telefon (WhatsApp) <span style="color:red;">*</span></label>
+                <input class="form-input" type="tel" id="phone" placeholder="Contoh: 0135024652" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="email">Alamat Email <span style="color:red;">*</span></label>
+                <input class="form-input" type="email" id="email" placeholder="Contoh: nama@domain.com" required>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="address">Alamat Penghantaran <span style="color:red;">*</span></label>
+              <textarea class="form-textarea" id="address" placeholder="Masukkan alamat pos penuh anda" required></textarea>
+            </div>
+
+            <div class="form-group-row">
+              <div class="form-group">
+                <label class="form-label" for="postcode">Poskod <span style="color:red;">*</span></label>
+                <input class="form-input" type="text" id="postcode" placeholder="Contoh: 32020" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="city">Bandar <span style="color:red;">*</span></label>
+                <input class="form-input" type="text" id="city" placeholder="Contoh: Sitiawan" required>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="state">Negeri <span style="color:red;">*</span></label>
+              <select class="form-select" id="state" onchange="calculatePrices()" required>
+                <option value="" disabled selected>Pilih Negeri</option>
+                <option value="Perak">Perak</option>
+                <option value="Selangor">Selangor</option>
+                <option value="Kuala Lumpur">Kuala Lumpur</option>
+                <option value="Johor">Johor</option>
+                <option value="Kedah">Kedah</option>
+                <option value="Kelantan">Kelantan</option>
+                <option value="Melaka">Melaka</option>
+                <option value="Negeri Sembilan">Negeri Sembilan</option>
+                <option value="Pahang">Pahang</option>
+                <option value="Pulau Pinang">Pulau Pinang</option>
+                <option value="Perlis">Perlis</option>
+                <option value="Terengganu">Terengganu</option>
+                <option value="Putrajaya">Putrajaya</option>
+                <option value="Sabah">Sabah</option>
+                <option value="Sarawak">Sarawak</option>
+                <option value="Labuan">Labuan</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- STEP 2: Pemilihan Pakej & Kuantiti & Summary -->
+          <div class="checkout-step-content" id="checkout-step-2">
+            <div class="checkout-summary-split">
+              
+              <!-- Pakej Details -->
+              <div>
+                <label class="form-label" style="display:block; margin-bottom: 0.75rem;">Pilih Pakej Biskut</label>
+                <div class="form-pkg-grid" id="js-form-pkg-grid">
+                  <!-- Dynamically populated from SETTINGS packages -->
+                </div>
+
+                <div class="form-group" id="js-qty-select-wrapper" style="margin-top: 1.5rem;">
+                  <label class="form-label">Kuantiti Set/Pek</label>
+                  <div class="qty-row">
+                    <div class="qty-btn" type="button" onclick="adjustQty(-1)">-</div>
+                    <div class="qty-val" id="qty-display">1</div>
+                    <div class="qty-btn" type="button" onclick="adjustQty(1)">+</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Live Summary -->
+              <div>
+                <div class="summary-card">
+                  <div class="summary-title">
+                    <span>Ringkasan Harga</span>
+                  </div>
+
+                  <div class="summary-row">
+                    <span id="summary-pkg-name">Starter Pack (1 Pek)</span>
+                    <span id="summary-pkg-price">RM 9.90</span>
+                  </div>
+
+                  <div class="summary-row">
+                    <span>Kuantiti</span>
+                    <span id="summary-qty">1 set</span>
+                  </div>
+
+                  <div class="summary-row">
+                    <span>Caj Penghantaran</span>
+                    <span id="summary-shipping">Sila pilih negeri</span>
+                  </div>
+
+                  <div class="summary-divider"></div>
+
+                  <div class="summary-total-row">
+                    <span class="summary-total-label">Jumlah Bersih</span>
+                    <span class="summary-total-price" id="summary-total-price">RM 9.90</span>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- STEP 3: Kaedah Pembayaran & Simulasi -->
+          <div class="checkout-step-content" id="checkout-step-3">
+            
+            <!-- Standard form inputs are hidden/processed. Show simulated checkout selector -->
+            <div id="checkout-payment-methods-view">
+              <label class="form-label" style="display:block; margin-bottom: 1rem; text-align:center;">Pilih Kaedah Pembayaran Pilihan</label>
+              
+              <div class="pm-method-grid" style="margin-bottom: 2rem;">
+                <div class="pm-method-card selected" id="pm-fpx" onclick="selectPaymentMethod('fpx')">
+                  <svg fill="currentColor" viewBox="0 0 24 24"><path d="M4 2h16a2 2 0 012 2v16a2 2 0 01-2 2H4a2 2 0 01-2-2V4a2 2 0 012-2zm0 2v3h16V4H4zm0 5v11h16V9H4zm5 2h6v2H9v-2zm0 4h6v2H9v-2z"></path></svg>
+                  <span class="pm-method-name">FPX Online Banking</span>
+                </div>
+                
+                <div class="pm-method-card" id="pm-qr" onclick="selectPaymentMethod('qr')">
+                  <svg fill="currentColor" viewBox="0 0 24 24"><path d="M3 3h6v6H3V3zm2 2v2h2V5H5zm8-2h6v6h-6V3zm2 2v2h2V5h-2zM3 15h6v6H3v-6zm2 2v2h2v-2H5zm13-2h3v3h-3v-3zm0 5h3v1h-3v-1zm-3-5h2v2h-2v-2zm0 3h2v3h-2v-3zm-3 2h2v1h-2v-1zm0-5h2v3h-2v-3zm3 0h2v2h-2v-2zm-3-3h2v2h-2v-2zm6-2h2v2h-2V7z"></path></svg>
+                  <span class="pm-method-name">DuitNow QR</span>
+                </div>
+              </div>
+
+              <!-- FPX Inner Bank list selector -->
+              <div id="inner-fpx-view" style="margin-bottom: 2rem;">
+                <div class="form-group">
+                  <label class="form-label" for="bankSelect">Pilih Bank Pembayar</label>
+                  <select class="form-select" id="bankSelect">
+                    <option value="" disabled selected>Pilih Bank</option>
+                    <option value="Maybank2u">Maybank2u</option>
+                    <option value="CIMB Clicks">CIMB Clicks</option>
+                    <option value="Public Bank">Public Bank</option>
+                    <option value="RHB Now">RHB Now</option>
+                    <option value="Bank Islam">Bank Islam</option>
+                    <option value="Hong Leong Connect">Hong Leong Connect</option>
+                    <option value="AmOnline">AmOnline</option>
+                    <option value="Alliance Bank">Alliance Bank</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- QR Inner Scan instructions -->
+              <div id="inner-qr-view" style="display:none; margin-bottom: 2rem;">
+                <div class="qr-modal-body">
+                  <div class="qr-image-frame">
+                    <img id="js-duitnow-qr-img" src="assets/duitnow-qr.svg" alt="DuitNow QR Code">
+                  </div>
+                  <div style="width:100%;">
+                    <p style="font-size:0.8rem; font-weight:700; color:var(--secondary-dark); text-align:left; margin-bottom:0.35rem;">Maklumat Akaun Manual:</p>
+                    <div class="qr-copy-btn" type="button" onclick="copyMerchantAccount()">
+                      <div style="text-align:left;">
+                        <span id="js-fpx-bank-label" style="font-weight:800; display:block; font-size:0.85rem;">Maybank</span>
+                        <span id="js-fpx-acc-label" style="font-family:monospace; font-size:0.8rem; color:var(--text-muted);">558000123456</span>
+                      </div>
+                      <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"></path></svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Loading Spinner view -->
+            <div class="payment-loading" id="modal-screen-loading">
+              <div class="spinner"></div>
+              <div>
+                <h3 id="js-loading-text">Menghubungkan ke secure portal FPX...</h3>
+                <p>Sila tunggu seketika. Jangan tutup tetingkap ini.</p>
+              </div>
+            </div>
+
+            <!-- Success screen view -->
+            <div class="payment-success-screen" id="modal-screen-success">
+              <div class="success-icon-wrap">
+                <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+              </div>
+              <h3>Tempahan Berjaya Diterima!</h3>
+              <p>Terima kasih. Pembayaran anda telah berjaya disahkan oleh sistem simulasi kami.</p>
+
+              <div class="success-summary-box">
+                <div class="success-summary-row">
+                  <span>Nama:</span>
+                  <span id="success-display-name">Ahmad</span>
+                </div>
+                <div class="success-summary-row">
+                  <span>Pakej:</span>
+                  <span id="success-display-pkg">Family Pack (3 Pek)</span>
+                </div>
+                <div class="success-summary-row">
+                  <span>Kuantiti:</span>
+                  <span id="success-display-qty">1 set</span>
+                </div>
+                <div class="success-summary-row">
+                  <span>Total Bayaran:</span>
+                  <span id="success-display-total">RM 35.90</span>
+                </div>
+              </div>
+
+              <button type="button" onclick="redirectToWhatsApp()" class="btn btn-secondary" style="width:100%; background-color:#25D366; box-shadow:0 4px 12px rgba(37,211,102,0.3); border:none;">
+                <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24" style="margin-right:0.25rem;"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.733-1.455L0 24zm6.29-4.314c1.666.988 3.396 1.5 5.65 1.5 5.484 0 9.95-4.466 9.953-9.95.002-2.654-1.02-5.152-2.877-7.009C17.217 2.37 14.72 1.35 12.01 1.35 6.525 1.35 2.062 5.811 2.06 11.3c-.001 2.26.513 3.994 1.517 5.688l-.982 3.585 3.752-.987z"></path></svg>
+                Sahkan Tempahan ke WhatsApp
+              </button>
+            </div>
+
+          </div>
+
+        </form>
+      </div>
+
+      <!-- Modal Footer -->
+      <div class="checkout-modal-footer" id="js-modal-footer">
+        <button type="button" class="btn btn-outline" id="js-prev-step-btn" onclick="navigateStep(-1)" style="display:none;">Kembali</button>
+        <div style="flex-grow:1;"></div>
+        <button type="button" class="btn btn-primary" id="js-next-step-btn" onclick="navigateStep(1)">Pilih Pakej &amp; Kuantiti</button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- SECTION 11: ACCORDION FAQ -->
+  <section class="section-padding faq" id="faq">
+    <div class="container">
+      <div class="section-title text-center">
+        <h2>Soalan Lazim (FAQ)</h2>
+        <p>Kami telah menghimpunkan jawapan bagi soalan-soalan yang kerap ditanyakan oleh para pelanggan kami.</p>
+      </div>
+
+      <div class="faq-container">
+        
+        <div class="faq-item">
+          <div class="faq-question">
+            Adakah penghantaran seluruh Malaysia?
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path></svg>
+          </div>
+          <div class="faq-answer">
+            <p>Ya. Kami membuat penghantaran ke seluruh Semenanjung Malaysia, Sabah, dan Sarawak menggunakan kurier yang dipercayai seperti J&amp;T Express dan PosLaju untuk menjamin kesegaran biskut.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            Berapa lama proses penghantaran?
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path></svg>
+          </div>
+          <div class="faq-answer">
+            <p>Bagi Semenanjung Malaysia, biskut biasanya sampai dalam tempoh 2-4 hari bekerja selepas pengeposan. Manakala bagi Sabah dan Sarawak mengambil masa 5-7 hari bekerja.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            Boleh tempah untuk majlis?
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path></svg>
+          </div>
+          <div class="faq-answer">
+            <p>Sangat boleh! Kami berpengalaman membekalkan goodies biskut untuk majlis perkahwinan, pertunangan, aqiqah, korporat dan tahlil. Anda dinasihatkan membuat tempahan sekurang-kurangnya 2-3 minggu lebih awal.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            Ada harga reseller?
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path></svg>
+          </div>
+          <div class="faq-answer">
+            <p>Ya, kami menawarkan Pakej Borong/Majlis khusus untuk reseller atau pembelian pukal dengan potongan harga yang menarik. Anda boleh memilih Pakej Majlis / Borong di atas dan klik butang Hubungi Kami untuk terus berhubung dengan team kami.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            Bagaimana cara pembayaran?
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path></svg>
+          </div>
+          <div class="faq-answer">
+            <p>Kami menerima pembayaran secara FPX Online Banking (pindahan terus bank) dan DuitNow QR (boleh scan menggunakan apa-apa aplikasi e-wallet seperti TnG eWallet, Boost atau aplikasi bank anda).</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container footer-grid">
+      <div class="footer-desc">
+        <h3 id="js-footer-company-title">Roti Biskut DLekir Sdn. Bhd.</h3>
+        <p>Peneraju pengeluaran kudapan tradisional Biskut Pelanta bermutu tinggi. Mengekalkan resipi klasik warisan bagi menjamin kepuasan rasa asli yang segar terus dari oven.</p>
+        <div class="footer-payment-badges">
+          <span>FPX Secure</span>
+          <span>DuitNow QR</span>
+          <span>WhatsApp Verified</span>
+        </div>
+      </div>
+
+      <div class="footer-links">
+        <h4>Pautan Pantas</h4>
+        <ul class="footer-links-list">
+          <li><a href="#kenapa-pilih">Kenapa Pilih Kami</a></li>
+          <li><a href="#galeri">Galeri</a></li>
+          <li><a href="#siapa-sesuai">Siapa Sesuai</a></li>
+          <li><a href="#pakej">Pakej Harga</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-contact">
+        <h4>Hubungi Kami</h4>
+        <div class="footer-contact-details">
+          <div class="footer-contact-item">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+            <span id="js-footer-address">25B, Batu 10, Lekir, 32020, Sitiawan, Perak</span>
+          </div>
+          <div class="footer-contact-item">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+            <span id="js-footer-email">admin@dlekir.com.my</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <p>&copy; 2026 Roti Biskut DLekir Sdn. Bhd. Hak Cipta Terpelihara.</p>
+      <p>Dibina dengan penuh dedikasi untuk Peminat Biskut Pelanta Sejati.</p>
+    </div>
+  </footer>
+
+  <!-- CONVERSION BOOSTERS -->
+  <!-- Floating WhatsApp Button -->
+  <div class="floating-wa-btn" id="js-floating-wa-btn" onclick="openGeneralWhatsApp()">
+    <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.733-1.455L0 24zm6.29-4.314c1.666.988 3.396 1.5 5.65 1.5 5.484 0 9.95-4.466 9.953-9.95.002-2.654-1.02-5.152-2.877-7.009C17.217 2.37 14.72 1.35 12.01 1.35 6.525 1.35 2.062 5.811 2.06 11.3c-.001 2.26.513 3.994 1.517 5.688l-.982 3.585 3.752-.987z"></path></svg>
+  </div>
+
+  <!-- Back to Top -->
+  <div class="back-to-top" id="js-back-to-top" onclick="window.scrollTo({top:0, behavior:'smooth'})">
+    <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"></path></svg>
+  </div>
+
+  <!-- Sticky Mobile Bottom CTA (Opens modal directly in v2) -->
+  <div class="sticky-mobile-cta">
+    <div class="mobile-cta-info">
+      <span class="mobile-cta-price" id="js-mobile-cta-price">RM 27.90</span>
+      <span class="mobile-cta-label" id="js-mobile-cta-label">Pilihan Popular (3 Pek)</span>
+    </div>
+    <button onclick="openCheckoutModal()" class="btn btn-primary mobile-cta-btn">Order Sekarang</button>
+  </div>
+
+  <!-- Recent Order Notification Popup -->
+  <div class="order-popup" id="order-popup">
+    <div class="order-popup-avatar" id="order-popup-avatar">A</div>
+    <div class="order-popup-details">
+      <div class="order-popup-title" id="order-popup-text">Ahmad dari Johor baru membuat pesanan.</div>
+      <div class="order-popup-time" id="order-popup-time">Sekejap tadi</div>
+    </div>
+  </div>
+
+  <!-- -------------------------------------------------------------
+       JAVASCRIPT LOGIC & CONVERSION FUNCTIONALITY
+       ------------------------------------------------------------- */ -->
+  <script>
+    /* ==========================================
+       SETTINGS CONFIGURATION OBJECT
+       ========================================== */
+    const SETTINGS = {
+      companyName: "Roti Biskut DLekir Sdn. Bhd.",
+      whatsAppNumber: "60135024652", // WhatsApp Format: Tanpa simbol '+' atau '00' di hadapan, mulakan dengan '60'
+      companyAddress: "25B, Batu 10, Lekir, 32020, Sitiawan, Perak",
+      companyEmail: "admin@dlekir.com.my",
+      shippingFeePeninsular: 8.00,
+      shippingFeeEast: 15.00,
+      stockQuantity: 37,
+      visitorCounterMin: 15,
+      visitorCounterMax: 48,
+      duitnowQrPath: "assets/duitnow-qr.svg",
+      fpxInformation: {
+        bankName: "Maybank",
+        accountNumber: "558000123456",
+        accountHolder: "Roti Biskut DLekir Sdn. Bhd."
+      },
+      packages: [
+        {
+          id: "pkg_1",
+          name: "Starter Pack",
+          quantityDisplay: "1 Pek",
+          price: 9.90,
+          quantity: 1,
+          features: ["✓ 1 Pek Biskut Pelanta", "✓ Sesuai untuk percubaan", "✓ Pek zip-lock tahan segar", "✓ Dibungkus dengan bubble wrap"],
+          badge: ""
+        },
+        {
+          id: "pkg_2",
+          name: "Family Pack",
+          quantityDisplay: "3 Pek",
+          price: 27.90,
+          quantity: 3,
+          features: ["✓ 3 Pek Biskut Pelanta", "✓ Paling laris & popular", "✓ Sesuai untuk keluarga", "✓ Penghantaran segera pantas"],
+          badge: "PALING POPULAR",
+          popular: true
+        },
+        {
+          id: "pkg_3",
+          name: "Value Pack",
+          quantityDisplay: "10 Pek",
+          price: 79.90,
+          quantity: 10,
+          features: ["✓ 10 Pek Biskut Pelanta", "✓ Penjimatan berganda", "✓ Sesuai stok kudapan rumah", "✓ Percuma bubble wrap tebal"],
+          badge: "PILIHAN TERBAIK"
+        },
+        {
+          id: "pkg_4",
+          name: "Majlis / Borong",
+          quantityDisplay: "50 Pek Ke Atas",
+          price: 0, // 0 bermaksud memerlukan rundingan
+          quantity: 50,
+          features: ["✓ 50 Pek Ke Atas", "✓ Khas Goodies & Reseller", "✓ Boleh kustom pembungkusan", "✓ Sokongan WhatsApp 1-on-1"],
+          badge: "HUBUNGI KAMI",
+          action: "whatsapp"
+        }
+      ]
+    };
+
+    // State Variables
+    let selectedPackageId = "pkg_2"; // Default selected is Family Pack
+    let currentQuantity = 1;
+    let selectedPaymentMethodVal = "fpx";
+    let activeGalleryIndex = 0;
+    let currentStock = SETTINGS.stockQuantity;
+    let checkoutCurrentStep = 1; // Wizard steps range [1..3]
+
+    /* ==========================================
+       INITIALIZATION
+       ========================================== */
+    window.addEventListener('DOMContentLoaded', () => {
+      // Load configuration details into UI elements
+      document.getElementById('js-header-company-name').innerText = SETTINGS.companyName;
+      document.getElementById('js-footer-company-title').innerText = SETTINGS.companyName;
+      document.getElementById('js-footer-address').innerText = SETTINGS.companyAddress;
+      document.getElementById('js-footer-email').innerText = SETTINGS.companyEmail;
+      document.getElementById('js-fpx-bank-label').innerText = SETTINGS.fpxInformation.bankName;
+      document.getElementById('js-fpx-acc-label').innerText = SETTINGS.fpxInformation.accountNumber;
+      document.getElementById('js-duitnow-qr-img').src = SETTINGS.duitnowQrPath;
+
+      // Render Pricing Cards and Form Radio options
+      renderPricingCards();
+      renderFormPackages();
+      
+      // Update checkout prices first time
+      calculatePrices();
+      
+      // Initialise Gallery Dots
+      initGalleryDots();
+
+      // Start Countdown Timer / Conversion boosters
+      startVisitorCounter();
+      startOrderPopupRotator();
+
+      // Scroll Event for Sticky effects
+      window.addEventListener('scroll', handleWindowScroll);
+    });
+
+    /* ==========================================
+       RENDER DOM ELEMENTS FROM SETTINGS
+       ========================================== */
+    function renderPricingCards() {
+      const container = document.getElementById('js-pricing-cards-container');
+      container.innerHTML = '';
+
+      SETTINGS.packages.forEach(pkg => {
+        const isPopular = pkg.popular ? 'popular' : '';
+        const badgeHTML = pkg.badge ? `<div class="pricing-popular-tag">${pkg.badge}</div>` : '';
+        
+        let priceHTML = '';
+        let btnHTML = '';
+
+        if (pkg.price > 0) {
+          priceHTML = `
+            <span class="currency">RM</span>
+            <span class="price">${pkg.price.toFixed(2).split('.')[0]}</span>
+            <span class="currency">.${pkg.price.toFixed(2).split('.')[1]}</span>
+            <span class="per-pack">/ ${pkg.quantityDisplay}</span>
+          `;
+          btnHTML = `<button onclick="selectPackageAndOpenCheckout('${pkg.id}')" class="btn ${pkg.popular ? 'btn-primary' : 'btn-outline'} pricing-btn">Pilih Pakej</button>`;
+        } else {
+          priceHTML = `
+            <span class="price" style="font-size: 2.2rem; display:block; padding: 0.5rem 0;">Bincang Harga</span>
+            <span class="per-pack">Borong / Reseller</span>
+          `;
+          btnHTML = `<button onclick="openGeneralWhatsApp('Pertanyaan Pakej Borong Biskut Pelanta')" class="btn btn-secondary pricing-btn">Hubungi Kami</button>`;
+        }
+
+        const featuresHTML = pkg.features.map(f => `
+          <li>
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+            ${f}
+          </li>
+        `).join('');
+
+        const card = document.createElement('div');
+        card.className = `pricing-card ${isPopular}`;
+        card.innerHTML = `
+          ${badgeHTML}
+          <div class="pricing-header">
+            <h3>${pkg.name}</h3>
+            <p>${pkg.quantityDisplay}</p>
+          </div>
+          <div class="pricing-price-wrap">
+            ${priceHTML}
+          </div>
+          <ul class="pricing-features">
+            ${featuresHTML}
+          </ul>
+          ${btnHTML}
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    function renderFormPackages() {
+      const container = document.getElementById('js-form-pkg-grid');
+      container.innerHTML = '';
+
+      SETTINGS.packages.forEach(pkg => {
+        // Skip bulk/whatsapp package from automated fpx form if it's strictly manual negotiation
+        if (pkg.price === 0) return;
+
+        const isSelected = pkg.id === selectedPackageId ? 'selected' : '';
+        const div = document.createElement('div');
+        div.className = `form-pkg-option ${isSelected}`;
+        div.id = `form-pkg-${pkg.id}`;
+        div.setAttribute('onclick', `selectPackageFromForm('${pkg.id}')`);
+        div.innerHTML = `
+          <span class="form-pkg-name">${pkg.name}</span>
+          <span class="form-pkg-price">RM ${pkg.price.toFixed(2)}</span>
+          <span class="form-pkg-qty">${pkg.quantityDisplay}</span>
+        `;
+        container.appendChild(div);
+      });
+    }
+
+    /* ==========================================
+       POPUP CHECKOUT MODAL LOGIC
+       ========================================== */
+    function openCheckoutModal() {
+      // Open modal overlay
+      document.getElementById('checkoutModalOverlay').classList.add('show');
+      document.body.classList.add('modal-open');
+
+      // Reset step to Step 1
+      setCheckoutStep(1);
+    }
+
+    function selectPackageAndOpenCheckout(packageId) {
+      // Set package
+      selectPackageFromForm(packageId);
+      
+      // Open modal
+      openCheckoutModal();
+      
+      // We open directly at Step 1, but with package pre-selected
+      // This ensures we collect shipping address info cleanly
+    }
+
+    function closeCheckoutModal() {
+      document.getElementById('checkoutModalOverlay').classList.remove('show');
+      document.body.classList.remove('modal-open');
+    }
+
+    // Modal click out to close
+    document.getElementById('checkoutModalOverlay').addEventListener('click', (e) => {
+      if (e.target === document.getElementById('checkoutModalOverlay')) {
+        closeCheckoutModal();
+      }
+    });
+
+    function setCheckoutStep(stepNum) {
+      checkoutCurrentStep = stepNum;
+
+      // Update Step Tabs active state
+      document.getElementById('step-tab-1').className = `checkout-step-tab ${stepNum === 1 ? 'active' : (stepNum > 1 ? 'completed' : '')}`;
+      document.getElementById('step-tab-2').className = `checkout-step-tab ${stepNum === 2 ? 'active' : (stepNum > 2 ? 'completed' : '')}`;
+      document.getElementById('step-tab-3').className = `checkout-step-tab ${stepNum === 3 ? 'active' : ''}`;
+
+      // Show/Hide Step Content wrappers
+      document.getElementById('checkout-step-1').className = `checkout-step-content ${stepNum === 1 ? 'active' : ''}`;
+      document.getElementById('checkout-step-2').className = `checkout-step-content ${stepNum === 2 ? 'active' : ''}`;
+      document.getElementById('checkout-step-3').className = `checkout-step-content ${stepNum === 3 ? 'active' : ''}`;
+
+      // Reset simulated payment screens if coming back to Step 3
+      if (stepNum === 3) {
+        document.getElementById('checkout-payment-methods-view').style.display = 'block';
+        document.getElementById('modal-screen-loading').style.display = 'none';
+        document.getElementById('modal-screen-success').style.display = 'none';
+      }
+
+      // Update Footer buttons
+      const prevBtn = document.getElementById('js-prev-step-btn');
+      const nextBtn = document.getElementById('js-next-step-btn');
+      const footerEl = document.getElementById('js-modal-footer');
+
+      footerEl.style.display = 'flex'; // show footer defaults
+
+      if (stepNum === 1) {
+        prevBtn.style.display = 'none';
+        nextBtn.style.display = 'inline-flex';
+        nextBtn.innerText = "Pilih Pakej & Kuantiti";
+        nextBtn.setAttribute('onclick', 'navigateStep(1)');
+      } else if (stepNum === 2) {
+        prevBtn.style.display = 'inline-flex';
+        nextBtn.style.display = 'inline-flex';
+        nextBtn.innerText = "Seterusnya (Pembayaran)";
+        nextBtn.setAttribute('onclick', 'navigateStep(1)');
+      } else if (stepNum === 3) {
+        prevBtn.style.display = 'inline-flex';
+        nextBtn.style.display = 'inline-flex';
+        nextBtn.innerText = "Sahkan & Bayar";
+        nextBtn.setAttribute('onclick', 'submitCheckoutForm()');
+      }
+    }
+
+    function navigateStep(direction) {
+      const targetStep = checkoutCurrentStep + direction;
+
+      // Validation logic for Step 1
+      if (direction === 1 && checkoutCurrentStep === 1) {
+        const fullname = document.getElementById('fullname');
+        const phone = document.getElementById('phone');
+        const email = document.getElementById('email');
+        const address = document.getElementById('address');
+        const postcode = document.getElementById('postcode');
+        const city = document.getElementById('city');
+        const state = document.getElementById('state');
+
+        if (!fullname.value || !phone.value || !email.value || !address.value || !postcode.value || !city.value || !state.value) {
+          alert("Sila isi semua maklumat bertanda * sebelum meneruskan.");
+          if (!fullname.value) fullname.focus();
+          else if (!phone.value) phone.focus();
+          else if (!address.value) address.focus();
+          else if (!state.value) state.focus();
+          return;
+        }
+      }
+
+      // Validation logic for Step 2
+      if (direction === 1 && checkoutCurrentStep === 2) {
+        const stateSelect = document.getElementById('state');
+        if (!stateSelect.value) {
+          alert("Sila pastikan Negeri telah terpilih pada langkah pertama.");
+          setCheckoutStep(1);
+          return;
+        }
+      }
+
+      setCheckoutStep(targetStep);
+    }
+
+    function submitCheckoutForm() {
+      // Validate payment state
+      if (selectedPaymentMethodVal === 'fpx') {
+        const bankSelect = document.getElementById('bankSelect');
+        if (!bankSelect.value) {
+          alert("Sila pilih bank pembayar untuk FPX.");
+          bankSelect.focus();
+          return;
+        }
+      }
+
+      // Construct Order details
+      const name = document.getElementById('fullname').value;
+      const phone = document.getElementById('phone').value;
+      const email = document.getElementById('email').value;
+      const address = document.getElementById('address').value;
+      const postcode = document.getElementById('postcode').value;
+      const city = document.getElementById('city').value;
+      const state = document.getElementById('state').value;
+      
+      const pkg = SETTINGS.packages.find(p => p.id === selectedPackageId);
+      if (!pkg) return;
+
+      const subtotal = pkg.price * currentQuantity;
+      const shipping = ["Sabah", "Sarawak", "Labuan"].includes(state) ? SETTINGS.shippingFeeEast : SETTINGS.shippingFeePeninsular;
+      const grandTotal = subtotal + shipping;
+
+      lastOrderDetails = {
+        name,
+        phone,
+        email,
+        address: `${address}, ${postcode} ${city}, ${state}`,
+        packageName: pkg.name,
+        packageQty: pkg.quantityDisplay,
+        orderQty: currentQuantity,
+        total: grandTotal.toFixed(2)
+      };
+
+      // Trigger simulated payment screens
+      processSimulatedPayment();
+    }
+
+    /* ==========================================
+       PACKAGE SELECTION LOGIC
+       ========================================== */
+    function selectPackageFromForm(packageId) {
+      // Toggle selected class in form pkg elements
+      const prevSelected = document.querySelector('.form-pkg-option.selected');
+      if (prevSelected) prevSelected.classList.remove('selected');
+
+      selectedPackageId = packageId;
+      const targetElement = document.getElementById(`form-pkg-${packageId}`);
+      if (targetElement) targetElement.classList.add('selected');
+
+      // Reset quantity to 1 when changing package
+      currentQuantity = 1;
+      document.getElementById('qty-display').innerText = currentQuantity;
+
+      // Update calculations
+      calculatePrices();
+    }
+
+    function adjustQty(amount) {
+      currentQuantity += amount;
+      if (currentQuantity < 1) currentQuantity = 1;
+      if (currentQuantity > 20) currentQuantity = 20; // limit to maximum 20 sets of any package
+
+      document.getElementById('qty-display').innerText = currentQuantity;
+      calculatePrices();
+    }
+
+    function calculatePrices() {
+      const stateSelect = document.getElementById('state');
+      const selectedState = stateSelect.value;
+      
+      const pkg = SETTINGS.packages.find(p => p.id === selectedPackageId);
+      if (!pkg) return;
+
+      const subtotal = pkg.price * currentQuantity;
+      let shipping = 0;
+
+      // Update Summary Info
+      document.getElementById('summary-pkg-name').innerText = `${pkg.name} (${pkg.quantityDisplay})`;
+      document.getElementById('summary-pkg-price').innerText = `RM ${pkg.price.toFixed(2)}`;
+      document.getElementById('summary-qty').innerText = `${currentQuantity} set`;
+
+      // Calculate Shipping based on state
+      if (!selectedState) {
+        document.getElementById('summary-shipping').innerText = "Sila pilih negeri";
+        document.getElementById('summary-total-price').innerText = `RM ${subtotal.toFixed(2)}`;
+      } else {
+        const eastMalaysiaStates = ["Sabah", "Sarawak", "Labuan"];
+        if (eastMalaysiaStates.includes(selectedState)) {
+          shipping = SETTINGS.shippingFeeEast;
+        } else {
+          shipping = SETTINGS.shippingFeePeninsular;
+        }
+        document.getElementById('summary-shipping').innerText = `RM ${shipping.toFixed(2)}`;
+        const grandTotal = subtotal + shipping;
+        document.getElementById('summary-total-price').innerText = `RM ${grandTotal.toFixed(2)}`;
+        
+        // Update Mobile CTA bar prices
+        document.getElementById('js-mobile-cta-price').innerText = `RM ${grandTotal.toFixed(2)}`;
+        document.getElementById('js-mobile-cta-label').innerText = `${pkg.name} × ${currentQuantity}`;
+      }
+    }
+
+    function selectPaymentMethod(method) {
+      selectedPaymentMethodVal = method;
+      document.getElementById('pm-fpx').classList.remove('selected');
+      document.getElementById('pm-qr').classList.remove('selected');
+
+      const innerFpx = document.getElementById('inner-fpx-view');
+      const innerQr = document.getElementById('inner-qr-view');
+
+      if (method === 'fpx') {
+        document.getElementById('pm-fpx').classList.add('selected');
+        innerFpx.style.display = 'block';
+        innerQr.style.display = 'none';
+      } else {
+        document.getElementById('pm-fpx').classList.add('selected'); // fallback highlights
+        document.getElementById('pm-qr').classList.add('selected');
+        innerFpx.style.display = 'none';
+        innerQr.style.display = 'block';
+      }
+    }
+
+    /* ==========================================
+       SCROLL & STICKY ACTIONS
+       ========================================== */
+    function handleWindowScroll() {
+      const header = document.getElementById('header');
+      const backToTop = document.getElementById('js-back-to-top');
+
+      if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+
+      if (window.scrollY > 400) {
+        backToTop.classList.add('show');
+      } else {
+        backToTop.classList.remove('show');
+      }
+    }
+
+    // Mobile Hamburger Menu
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileNav = document.getElementById('mobile-nav');
+    const navOverlay = document.getElementById('nav-overlay');
+
+    menuToggle.addEventListener('click', () => {
+      mobileNav.classList.toggle('open');
+      navOverlay.classList.toggle('show');
+    });
+
+    navOverlay.addEventListener('click', () => {
+      mobileNav.classList.remove('open');
+      navOverlay.classList.remove('show');
+    });
+
+    document.querySelectorAll('.mobile-nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileNav.classList.remove('open');
+        navOverlay.classList.remove('show');
+      });
+    });
+
+    /* ==========================================
+       PRODUCT GALLERY SLIDER & LIGHTBOX CODE
+       ========================================== */
+    const gallerySlider = document.getElementById('gallery-slider');
+    const totalSlides = document.querySelectorAll('.gallery-slide').length;
+    
+    document.getElementById('gallery-prev').addEventListener('click', () => slideGallery(-1));
+    document.getElementById('gallery-next').addEventListener('click', () => slideGallery(1));
+
+    function slideGallery(direction) {
+      activeGalleryIndex += direction;
+      if (activeGalleryIndex < 0) activeGalleryIndex = totalSlides - 1;
+      if (activeGalleryIndex >= totalSlides) activeGalleryIndex = 0;
+
+      updateGalleryUI();
+    }
+
+    function initGalleryDots() {
+      const dotsContainer = document.getElementById('gallery-dots');
+      dotsContainer.innerHTML = '';
+      for (let i = 0; i < totalSlides; i++) {
+        const dot = document.createElement('div');
+        dot.className = `gallery-dot ${i === 0 ? 'active' : ''}`;
+        dot.setAttribute('onclick', `jumpToSlide(${i})`);
+        dotsContainer.appendChild(dot);
+      }
+    }
+
+    function jumpToSlide(index) {
+      activeGalleryIndex = index;
+      updateGalleryUI();
+    }
+
+    function updateGalleryUI() {
+      gallerySlider.style.transform = `translateX(-${activeGalleryIndex * 100}%)`;
+      // Update Dots
+      const dots = document.querySelectorAll('.gallery-dot');
+      dots.forEach((dot, idx) => {
+        if (idx === activeGalleryIndex) {
+          dot.classList.add('active');
+        } else {
+          dot.classList.remove('active');
+        }
+      });
+    }
+
+    // Touch support for Mobile swipe on Gallery
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    gallerySlider.addEventListener('touchstart', e => {
+      touchStartX = e.changedTouches[0].screenX;
+    }, {passive: true});
+
+    gallerySlider.addEventListener('touchend', e => {
+      touchEndX = e.changedTouches[0].screenX;
+      handleSwipeGesture();
+    }, {passive: true});
+
+    function handleSwipeGesture() {
+      const threshold = 50; // swipe offset limit
+      if (touchStartX - touchEndX > threshold) {
+        slideGallery(1); // swipe left -> next
+      } else if (touchEndX - touchStartX > threshold) {
+        slideGallery(-1); // swipe right -> prev
+      }
+    }
+
+    // LIGHTBOX FUNCS
+    const lightboxModal = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const slideImages = [
+      "assets/hero-closeup.jpg",
+      "assets/coffee-dip-lifestyle.jpg",
+      "assets/packaging-stacks.jpg",
+      "assets/factory-production.jpg",
+      "assets/promo-goodies.jpg"
+    ];
+
+    function openLightbox(slideIndex) {
+      activeGalleryIndex = slideIndex;
+      lightboxImg.src = slideImages[activeGalleryIndex];
+      lightboxModal.classList.add('show');
+    }
+
+    function closeLightbox() {
+      lightboxModal.classList.remove('show');
+    }
+
+    function changeLightboxSlide(direction) {
+      activeGalleryIndex += direction;
+      if (activeGalleryIndex < 0) activeGalleryIndex = slideImages.length - 1;
+      if (activeGalleryIndex >= slideImages.length) activeGalleryIndex = 0;
+      lightboxImg.src = slideImages[activeGalleryIndex];
+    }
+
+    // Close lightbox on click outside image
+    lightboxModal.addEventListener('click', (e) => {
+      if (e.target === lightboxModal || e.target.classList.contains('lightbox-img-container')) {
+        closeLightbox();
+      }
+    });
+
+    /* ==========================================
+       CONVERSION BOOSTERS RUNNERS
+       ========================================== */
+    function startVisitorCounter() {
+      const counterElement = document.getElementById('js-live-visitors');
+      setInterval(() => {
+        const currentVal = Math.floor(Math.random() * (SETTINGS.visitorCounterMax - SETTINGS.visitorCounterMin + 1)) + SETTINGS.visitorCounterMin;
+        counterElement.innerHTML = `🔥 <strong>${currentVal} orang</strong> sedang melihat produk ini sekarang`;
+      }, 5000);
+    }
+
+    function startOrderPopupRotator() {
+      const popup = document.getElementById('order-popup');
+      const textEl = document.getElementById('order-popup-text');
+      const avatarEl = document.getElementById('order-popup-avatar');
+
+      const names = ["Ahmad", "Nurul", "Farid", "Siti", "Hafiz", "Zila", "Khairul", "Norazlina", "Ridzuan", "Amira"];
+      const locations = ["Johor Bahru", "Shah Alam", "Ipoh", "Kuala Kangsar", "Klang", "Melaka", "Kuantan", "Alor Setar", "Kuala Lumpur", "Taiping"];
+      const purchasePackages = ["Starter Pack (1 Pek)", "Family Pack (3 Pek)", "Value Pack (10 Pek)"];
+
+      setInterval(() => {
+        // Randomise name & package details
+        const name = names[Math.floor(Math.random() * names.length)];
+        const loc = locations[Math.floor(Math.random() * locations.length)];
+        const pkg = purchasePackages[Math.floor(Math.random() * purchasePackages.length)];
+
+        avatarEl.innerText = name.charAt(0);
+        textEl.innerHTML = `<strong>${name}</strong> dari <strong>${loc}</strong> baru membeli <strong>${pkg}</strong>.`;
+
+        // Show popup
+        popup.classList.add('show');
+
+        // Hide after 6 seconds
+        setTimeout(() => {
+          popup.classList.remove('show');
+        }, 6000);
+
+      }, 25000); // Trigger every 25 seconds
+    }
+
+    /* ==========================================
+       CHECKOUT & FORM HANDLING (SIMULATION)
+       ========================================== */
+    let lastOrderDetails = null;
+
+    function handleFormSubmit(event) {
+      event.preventDefault(); // handled by manual wizards button clicks instead of standard submits
+    }
+
+    function copyMerchantAccount() {
+      const accNum = SETTINGS.fpxInformation.accountNumber;
+      navigator.clipboard.writeText(accNum).then(() => {
+        alert("Nombor akaun bank disalin ke papan klip!");
+      }).catch(err => {
+        console.error("Gagal menyalin: ", err);
+      });
+    }
+
+    function processSimulatedPayment() {
+      const paymentMethodsView = document.getElementById('checkout-payment-methods-view');
+      const screenLoading = document.getElementById('modal-screen-loading');
+      const screenSuccess = document.getElementById('modal-screen-success');
+      const loadingText = document.getElementById('js-loading-text');
+      const footerEl = document.getElementById('js-modal-footer');
+
+      // Hide checkout choices and hide footer
+      paymentMethodsView.style.display = 'none';
+      footerEl.style.display = 'none';
+      screenLoading.style.display = 'flex';
+
+      if (selectedPaymentMethodVal === 'fpx') {
+        const bankName = document.getElementById('bankSelect').value || 'Bank Pilihan';
+        loadingText.innerText = `Menghubungkan ke secure portal ${bankName}...`;
+      } else {
+        loadingText.innerText = `Mengesahkan bayaran QR DuitNow...`;
+      }
+
+      // Simulate payment delay (1.5 seconds)
+      setTimeout(() => {
+        screenLoading.style.display = 'none';
+        screenSuccess.style.display = 'flex';
+
+        // Load summary text to success dialog
+        document.getElementById('success-display-name').innerText = lastOrderDetails.name;
+        document.getElementById('success-display-pkg').innerText = lastOrderDetails.packageName;
+        document.getElementById('success-display-qty').innerText = `${lastOrderDetails.orderQty} set`;
+        document.getElementById('success-display-total').innerText = `RM ${lastOrderDetails.total}`;
+      }, 1500);
+    }
+
+    /* ==========================================
+       WHATSAPP REDIRECT GENERATOR
+       ========================================== */
+    function redirectToWhatsApp() {
+      if (!lastOrderDetails) return;
+
+      const message = `Assalamualaikum.
+Saya telah membuat pesanan Biskut Pelanta.
+
+Nama: ${lastOrderDetails.name}
+Telefon: ${lastOrderDetails.phone}
+Pakej: ${lastOrderDetails.packageName} (${lastOrderDetails.packageQty})
+Kuantiti: ${lastOrderDetails.orderQty} set
+Jumlah Bayaran: RM ${lastOrderDetails.total}
+
+Mohon pihak tuan semak pesanan saya. Terima kasih!`;
+
+      const encodedMsg = encodeURIComponent(message);
+      const url = `https://wa.me/${SETTINGS.whatsAppNumber}?text=${encodedMsg}`;
+      
+      // Open WhatsApp link
+      window.open(url, '_blank');
+      
+      // Close payment modal
+      closeCheckoutModal();
+    }
+
+    function openGeneralWhatsApp(customMessage = "Hi, saya ingin bertanyakan tentang Biskut Pelanta Lekir.") {
+      const encodedMsg = encodeURIComponent(customMessage);
+      const url = `https://wa.me/${SETTINGS.whatsAppNumber}?text=${encodedMsg}`;
+      window.open(url, '_blank');
+    }
+
+    // Set general WhatsApp action for header button
+    document.getElementById('js-hero-wa-btn').addEventListener('click', (e) => {
+      e.preventDefault();
+      openGeneralWhatsApp();
+    });
+
+    /* ==========================================
+       FAQ ACCORDION LOGIC
+       ========================================== */
+    document.querySelectorAll('.faq-question').forEach(question => {
+      question.addEventListener('click', () => {
+        const item = question.parentElement;
+        const answer = item.querySelector('.faq-answer');
+        
+        // Check if item is already active
+        const isActive = item.classList.contains('active');
+
+        // Close all other FAQ items
+        document.querySelectorAll('.faq-item').forEach(otherItem => {
+          otherItem.classList.remove('active');
+          otherItem.querySelector('.faq-answer').style.maxHeight = null;
+        });
+
+        // Toggle active status for clicked item
+        if (!isActive) {
+          item.classList.add('active');
+          answer.style.maxHeight = answer.scrollHeight + "px";
+        }
+      });
+    });
+  </script>
+</body>
+</html>

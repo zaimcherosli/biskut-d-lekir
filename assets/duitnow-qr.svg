@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 400" width="100%" height="100%">
+  <!-- Card Background -->
+  <rect width="300" height="400" rx="16" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+  
+  <!-- DuitNow Brand Header Banner -->
+  <path d="M 0,16 C 0,7.16 7.16,0 16,0 L 284,0 C 292.84,0 300,7.16 300,16 L 300,65 L 0,65 Z" fill="#EE1C25"/>
+  
+  <!-- DuitNow text/logo in header -->
+  <text x="150" y="38" font-family="'Inter', sans-serif" font-weight="900" font-size="22" fill="#FFFFFF" text-anchor="middle" letter-spacing="1">DuitNow</text>
+  <text x="150" y="52" font-family="'Inter', sans-serif" font-weight="500" font-size="9" fill="#FFFFFF" text-anchor="middle" opacity="0.9" letter-spacing="1.5">NATIONAL QR STANDARD</text>
+  
+  <!-- Merchant Info -->
+  <text x="150" y="95" font-family="'Inter', sans-serif" font-weight="700" font-size="13" fill="#1E293B" text-anchor="middle">ROTI BISKUT DLEKIR SDN BHD</text>
+  <text x="150" y="112" font-family="'Inter', sans-serif" font-weight="500" font-size="10" fill="#64748B" text-anchor="middle">NML: 103984029384</text>
+  
+  <!-- QR Code Container Box -->
+  <rect x="40" y="130" width="220" height="220" rx="8" fill="#FFFFFF" stroke="#F1F5F9" stroke-width="4"/>
+  
+  <!-- QR Code grid (simulated QR blocks) -->
+  <g fill="#1E293B">
+    <!-- Top-Left Finder Pattern -->
+    <rect x="55" y="145" width="40" height="40" rx="2"/>
+    <rect x="65" y="155" width="20" height="20" fill="#FFFFFF"/>
+    <rect x="70" y="160" width="10" height="10"/>
+    
+    <!-- Top-Right Finder Pattern -->
+    <rect x="205" y="145" width="40" height="40" rx="2"/>
+    <rect x="215" y="155" width="20" height="20" fill="#FFFFFF"/>
+    <rect x="220" y="160" width="10" height="10"/>
+    
+    <!-- Bottom-Left Finder Pattern -->
+    <rect x="55" y="295" width="40" height="40" rx="2"/>
+    <rect x="65" y="305" width="20" height="20" fill="#FFFFFF"/>
+    <rect x="70" y="310" width="10" height="10"/>
+    
+    <!-- Center Logo Emblem Placeholder -->
+    <rect x="135" y="225" width="30" height="30" rx="6" fill="#EE1C25"/>
+    <circle cx="150" cy="240" r="8" fill="#FFFFFF"/>
+    <circle cx="150" cy="240" r="5" fill="#EE1C25"/>
+    
+    <!-- Simulated QR Code Details/Dots (Randomized Grid blocks) -->
+    <rect x="110" y="145" width="10" height="10"/>
+    <rect x="125" y="145" width="15" height="10"/>
+    <rect x="150" y="145" width="10" height="20"/>
+    <rect x="170" y="145" width="25" height="10"/>
+    
+    <rect x="110" y="160" width="20" height="10"/>
+    <rect x="135" y="165" width="10" height="15"/>
+    <rect x="175" y="160" width="10" height="25"/>
+    <rect x="190" y="160" width="10" height="10"/>
+    
+    <rect x="55" y="195" width="15" height="10"/>
+    <rect x="80" y="195" width="10" height="15"/>
+    <rect x="100" y="190" width="20" height="10"/>
+    <rect x="130" y="190" width="10" height="20"/>
+    <rect x="150" y="195" width="25" height="10"/>
+    <rect x="185" y="190" width="15" height="15"/>
+    <rect x="210" y="195" width="10" height="30"/>
+    <rect x="230" y="190" width="15" height="10"/>
+    
+    <rect x="55" y="215" width="30" height="10"/>
+    <rect x="95" y="210" width="10" height="25"/>
+    <rect x="115" y="215" width="15" height="10"/>
+    <rect x="175" y="210" width="20" height="15"/>
+    <rect x="200" y="215" width="8" height="20"/>
+    <rect x="225" y="210" width="20" height="10"/>
+    
+    <rect x="55" y="235" width="10" height="20"/>
+    <rect x="75" y="240" width="15" height="10"/>
+    <rect x="100" y="245" width="25" height="15"/>
+    <rect x="180" y="235" width="10" height="35"/>
+    <rect x="200" y="245" width="25" height="10"/>
+    <rect x="235" y="235" width="10" height="20"/>
+    
+    <rect x="55" y="265" width="25" height="10"/>
+    <rect x="90" y="260" width="10" height="25"/>
+    <rect x="110" y="270" width="20" height="10"/>
+    <rect x="140" y="265" width="30" height="15"/>
+    <rect x="215" y="265" width="10" height="25"/>
+    <rect x="230" y="260" width="15" height="10"/>
+    
+    <rect x="110" y="295" width="10" height="20"/>
+    <rect x="130" y="290" width="25" height="10"/>
+    <rect x="165" y="295" width="15" height="25"/>
+    <rect x="190" y="290" width="10" height="15"/>
+    <rect x="210" y="295" width="35" height="10"/>
+    
+    <rect x="110" y="325" width="20" height="10"/>
+    <rect x="140" y="315" width="10" height="20"/>
+    <rect x="185" y="320" width="20" height="15"/>
+    <rect x="210" y="325" width="10" height="10"/>
+    <rect x="225" y="320" width="20" height="10"/>
+  </g>
+  
+  <!-- Footer instructions inside the card -->
+  <text x="150" y="375" font-family="'Inter', sans-serif" font-weight="600" font-size="10" fill="#475569" text-anchor="middle">Scan to pay with any Mobile Banking or E-Wallet</text>
+</svg>
