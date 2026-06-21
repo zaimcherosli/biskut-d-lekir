@@ -2400,6 +2400,236 @@
       color: var(--white);
       font-size: 0.75rem;
     }
+
+    /* =============================================================
+       MOBILE RESPONSIVENESS OVERRIDES (Below 768px)
+       ============================================================= */
+    @media (max-width: 768px) {
+      /* 1. Mobile First Layout & Prevent Horizontal Scroll - Bottom Sheet style */
+      .checkout-modal-overlay {
+        padding: 0 !important;
+        align-items: flex-end !important; /* Anchor modal to bottom of screen */
+        display: none;
+      }
+      
+      .checkout-modal-overlay.show {
+        display: flex !important;
+      }
+      
+      .checkout-modal-card {
+        border-radius: 24px 24px 0 0 !important; /* Rounded top corners, flat bottom */
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        height: 92vh !important; /* Standard bottom sheet height */
+        max-height: 92vh !important;
+        display: flex !important;
+        flex-direction: column !important;
+      }
+
+      .checkout-modal-header {
+        padding: 1rem 1.25rem !important;
+      }
+
+      .checkout-modal-header h3 {
+        font-size: 1.15rem !important;
+      }
+
+      .checkout-modal-body {
+        padding: 1.25rem 1rem !important;
+        flex: 1 1 auto !important;
+        overflow-y: auto !important;
+      }
+
+      /* Single column form elements */
+      .form-group-row {
+        grid-template-columns: 1fr !important;
+        gap: 1rem !important;
+        margin-bottom: 1rem !important;
+      }
+
+      .form-group {
+        margin-bottom: 1rem !important;
+        gap: 0.4rem !important;
+      }
+
+      /* 2. Package Selection Vertical Stack */
+      .form-pkg-grid {
+        grid-template-columns: 1fr !important;
+        gap: 0.85rem !important;
+      }
+
+      .form-pkg-option {
+        padding: 1.25rem !important;
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: wrap !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        text-align: left !important;
+        gap: 0.25rem 1rem !important;
+        border-radius: 14px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+      }
+
+      .form-pkg-name {
+        font-size: 1.05rem !important;
+        font-weight: 800 !important;
+        flex: 1 1 50% !important;
+      }
+
+      .form-pkg-price {
+        font-size: 1.15rem !important;
+        font-weight: 900 !important;
+        text-align: right !important;
+        flex: 1 1 auto !important;
+        margin-top: 0 !important;
+      }
+
+      .form-pkg-qty {
+        font-size: 0.8rem !important;
+        color: var(--text-muted) !important;
+        flex: 1 1 100% !important;
+        margin-top: 0.15rem !important;
+      }
+
+      /* 3. Quantity Selector Finger Friendly Controls */
+      .qty-row {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 2rem !important;
+        padding: 0.5rem 1rem !important;
+        border-radius: 12px !important;
+        width: 100% !important;
+        max-width: 220px !important;
+        margin: 0.5rem auto 0 auto !important;
+        height: 56px !important;
+        box-sizing: border-box !important;
+      }
+
+      .qty-btn {
+        width: 44px !important;
+        height: 44px !important;
+        font-size: 1.25rem !important;
+        border-radius: 50% !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+      }
+
+      .qty-val {
+        font-size: 1.2rem !important;
+        min-width: 32px !important;
+      }
+
+      /* 4. Form Inputs Height & Spacing */
+      .form-input, .form-select, .form-textarea {
+        height: 48px !important;
+        font-size: 16px !important; /* Prevents auto zoom in iOS Safari */
+        padding: 0.75rem 1rem !important;
+        box-sizing: border-box !important;
+      }
+
+      .form-textarea {
+        height: auto !important;
+        min-height: 90px !important;
+      }
+
+      /* 5. Order Summary Card Stacking & Padding */
+      .checkout-summary-split {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+      }
+
+      .summary-card {
+        padding: 1.25rem !important;
+        border-radius: 16px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+      }
+
+      .summary-title {
+        font-size: 1.1rem !important;
+        margin-bottom: 1rem !important;
+      }
+
+      .summary-row {
+        font-size: 0.9rem !important;
+        margin-bottom: 0.65rem !important;
+      }
+
+      .summary-total-price {
+        font-size: 1.25rem !important;
+      }
+
+      /* 6. Checkout & wizard modal footer Button Stacking */
+      .checkout-modal-footer {
+        padding: 1rem !important;
+        display: flex !important;
+        flex-direction: column-reverse !important;
+        gap: 0.75rem !important;
+        background-color: var(--bg-light) !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        justify-content: center !important;
+        align-items: center !important;
+      }
+
+      .checkout-modal-footer button,
+      .checkout-modal-footer .btn {
+        width: 100% !important;
+        height: 52px !important;
+        font-size: 1rem !important;
+        display: inline-flex;
+        align-items: center !important;
+        justify-content: center !important;
+        margin: 0 !important;
+      }
+
+      /* Hide spacer div in footer on mobile */
+      .checkout-modal-footer div {
+        display: none !important;
+      }
+      
+      /* Step Tab text adjustment to prevent wrapping overflow */
+      .checkout-step-indicator-bar {
+        padding: 0.35rem !important;
+        border-radius: 10px !important;
+        margin-bottom: 1.25rem !important;
+      }
+      
+      .checkout-step-tab {
+        font-size: 0.7rem !important;
+        padding: 0.4rem 0.1rem !important;
+      }
+
+      /* Sticky Mobile Bottom CTA Bar Stacked Layout */
+      .sticky-mobile-cta {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 0.5rem !important;
+        padding: 0.75rem 1.25rem calc(0.75rem + env(safe-area-inset-bottom, 0px)) 1.25rem !important;
+      }
+
+      .mobile-cta-info {
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        width: 100% !important;
+      }
+
+      .mobile-cta-btn {
+        width: 100% !important;
+        height: 50px !important;
+        margin: 0 !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+      }
+    }
   </style>
 </head>
 <body>
@@ -2960,8 +3190,6 @@
               </div>
             </div>
             <!-- BILLPLZ END -->
-
-          </div>
 
           </div>
 
