@@ -2908,104 +2908,60 @@
             </div>
           </div>
 
-          <!-- STEP 3: Kaedah Pembayaran & Simulasi -->
+          <!-- STEP 3: Ringkasan Tempahan & Pembayaran -->
           <div class="checkout-step-content" id="checkout-step-3">
             
-            <!-- Standard form inputs are hidden/processed. Show simulated checkout selector -->
-            <div id="checkout-payment-methods-view">
-              <label class="form-label" style="display:block; margin-bottom: 1rem; text-align:center;">Pilih Kaedah Pembayaran Pilihan</label>
+            <!-- BILLPLZ START -->
+            <div id="checkout-order-summary-view">
+              <h3 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 1rem; color: var(--secondary-dark); border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem; text-align: center;">Ringkasan Tempahan</h3>
               
-              <div class="pm-method-grid" style="margin-bottom: 2rem;">
-                <div class="pm-method-card selected" id="pm-fpx" onclick="selectPaymentMethod('fpx')">
-                  <svg fill="currentColor" viewBox="0 0 24 24"><path d="M4 2h16a2 2 0 012 2v16a2 2 0 01-2 2H4a2 2 0 01-2-2V4a2 2 0 012-2zm0 2v3h16V4H4zm0 5v11h16V9H4zm5 2h6v2H9v-2zm0 4h6v2H9v-2z"></path></svg>
-                  <span class="pm-method-name">FPX Online Banking</span>
+              <div class="success-summary-box" style="margin-bottom: 1.5rem; background-color: var(--bg-light); border: 1px solid var(--border-color); padding: 1.25rem; border-radius: 12px;">
+                <div class="success-summary-row" style="display: flex; justify-content: space-between; margin-bottom: 0.5rem; font-size: 0.9rem;">
+                  <span style="color: var(--text-muted);">Nama:</span>
+                  <span id="summary-display-name" style="font-weight: 700; color: var(--secondary-dark);">-</span>
                 </div>
-                
-                <div class="pm-method-card" id="pm-qr" onclick="selectPaymentMethod('qr')">
-                  <svg fill="currentColor" viewBox="0 0 24 24"><path d="M3 3h6v6H3V3zm2 2v2h2V5H5zm8-2h6v6h-6V3zm2 2v2h2V5h-2zM3 15h6v6H3v-6zm2 2v2h2v-2H5zm13-2h3v3h-3v-3zm0 5h3v1h-3v-1zm-3-5h2v2h-2v-2zm0 3h2v3h-2v-3zm-3 2h2v1h-2v-1zm0-5h2v3h-2v-3zm3 0h2v2h-2v-2zm-3-3h2v2h-2v-2zm6-2h2v2h-2V7z"></path></svg>
-                  <span class="pm-method-name">DuitNow QR</span>
+                <div class="success-summary-row" style="display: flex; justify-content: space-between; margin-bottom: 0.5rem; font-size: 0.9rem;">
+                  <span style="color: var(--text-muted);">Telefon:</span>
+                  <span id="summary-display-phone" style="font-weight: 700; color: var(--secondary-dark);">-</span>
                 </div>
-              </div>
-
-              <!-- FPX Inner Bank list selector -->
-              <div id="inner-fpx-view" style="margin-bottom: 2rem;">
-                <div class="form-group">
-                  <label class="form-label" for="bankSelect">Pilih Bank Pembayar</label>
-                  <select class="form-select" id="bankSelect">
-                    <option value="" disabled selected>Pilih Bank</option>
-                    <option value="Maybank2u">Maybank2u</option>
-                    <option value="CIMB Clicks">CIMB Clicks</option>
-                    <option value="Public Bank">Public Bank</option>
-                    <option value="RHB Now">RHB Now</option>
-                    <option value="Bank Islam">Bank Islam</option>
-                    <option value="Hong Leong Connect">Hong Leong Connect</option>
-                    <option value="AmOnline">AmOnline</option>
-                    <option value="Alliance Bank">Alliance Bank</option>
-                  </select>
+                <div class="success-summary-row" style="display: flex; justify-content: space-between; margin-bottom: 0.5rem; font-size: 0.9rem;">
+                  <span style="color: var(--text-muted);">Alamat:</span>
+                  <span id="summary-display-address" style="font-weight: 700; color: var(--secondary-dark); text-align: right; max-width: 60%; word-break: break-word;">-</span>
                 </div>
-              </div>
-
-              <!-- QR Inner Scan instructions -->
-              <div id="inner-qr-view" style="display:none; margin-bottom: 2rem;">
-                <div class="qr-modal-body">
-                  <div class="qr-image-frame">
-                    <img id="js-duitnow-qr-img" src="assets/duitnow-qr.svg" alt="DuitNow QR Code">
-                  </div>
-                  <div style="width:100%;">
-                    <p style="font-size:0.8rem; font-weight:700; color:var(--secondary-dark); text-align:left; margin-bottom:0.35rem;">Maklumat Akaun Manual:</p>
-                    <div class="qr-copy-btn" type="button" onclick="copyMerchantAccount()">
-                      <div style="text-align:left;">
-                        <span id="js-fpx-bank-label" style="font-weight:800; display:block; font-size:0.85rem;">Maybank</span>
-                        <span id="js-fpx-acc-label" style="font-family:monospace; font-size:0.8rem; color:var(--text-muted);">558000123456</span>
-                      </div>
-                      <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"></path></svg>
-                    </div>
-                  </div>
+                <div class="success-summary-row" style="display: flex; justify-content: space-between; margin-bottom: 0.5rem; font-size: 0.9rem;">
+                  <span style="color: var(--text-muted);">Pakej:</span>
+                  <span id="summary-display-pkg" style="font-weight: 700; color: var(--secondary-dark);">-</span>
+                </div>
+                <div class="success-summary-row" style="display: flex; justify-content: space-between; margin-bottom: 0.5rem; font-size: 0.9rem;">
+                  <span style="color: var(--text-muted);">Kuantiti:</span>
+                  <span id="summary-display-qty" style="font-weight: 700; color: var(--secondary-dark);">-</span>
+                </div>
+                <div class="success-summary-row" style="display: flex; justify-content: space-between; margin-bottom: 0.5rem; font-size: 0.9rem;">
+                  <span style="color: var(--text-muted);">Kos Pos:</span>
+                  <span id="summary-display-shipping" style="font-weight: 700; color: var(--secondary-dark);">-</span>
+                </div>
+                <div class="success-summary-row" style="display: flex; justify-content: space-between; font-weight: 800; border-top: 1px dashed var(--border-color); padding-top: 0.5rem; margin-top: 0.5rem; color: var(--primary); font-size: 1rem;">
+                  <span>Jumlah Bayaran:</span>
+                  <span id="summary-display-total">-</span>
                 </div>
               </div>
+              
+              <p style="font-size: 0.85rem; color: var(--text-muted); text-align: center; margin-bottom: 0.5rem; line-height: 1.4;">
+                Klik butang di bawah untuk melengkapkan pembayaran selamat menerusi FPX Online Banking menggunakan portal Billplz.
+              </p>
             </div>
-
+            
             <!-- Loading Spinner view -->
-            <div class="payment-loading" id="modal-screen-loading">
+            <div class="payment-loading" id="modal-screen-loading" style="display: none; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 2rem 1rem; gap: 1.5rem;">
               <div class="spinner"></div>
               <div>
-                <h3 id="js-loading-text">Menghubungkan ke secure portal FPX...</h3>
-                <p>Sila tunggu seketika. Jangan tutup tetingkap ini.</p>
+                <h3 id="js-loading-text" style="font-size: 1.2rem; font-weight: 700; color: var(--secondary-dark); margin-bottom: 0.5rem;">Sedang menyediakan halaman pembayaran...</h3>
+                <p style="font-size: 0.9rem; color: var(--text-muted);">Sila tunggu seketika. Jangan tutup tetingkap ini.</p>
               </div>
             </div>
+            <!-- BILLPLZ END -->
 
-            <!-- Success screen view -->
-            <div class="payment-success-screen" id="modal-screen-success">
-              <div class="success-icon-wrap">
-                <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
-              </div>
-              <h3>Tempahan Berjaya Diterima!</h3>
-              <p>Terima kasih. Pembayaran anda telah berjaya disahkan oleh sistem simulasi kami.</p>
-
-              <div class="success-summary-box">
-                <div class="success-summary-row">
-                  <span>Nama:</span>
-                  <span id="success-display-name">Ahmad</span>
-                </div>
-                <div class="success-summary-row">
-                  <span>Pakej:</span>
-                  <span id="success-display-pkg">Family Pack (3 Pek)</span>
-                </div>
-                <div class="success-summary-row">
-                  <span>Kuantiti:</span>
-                  <span id="success-display-qty">1 set</span>
-                </div>
-                <div class="success-summary-row">
-                  <span>Total Bayaran:</span>
-                  <span id="success-display-total">RM 35.90</span>
-                </div>
-              </div>
-
-              <button type="button" onclick="redirectToWhatsApp()" class="btn btn-secondary" style="width:100%; background-color:#25D366; box-shadow:0 4px 12px rgba(37,211,102,0.3); border:none;">
-                <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24" style="margin-right:0.25rem;"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.733-1.455L0 24zm6.29-4.314c1.666.988 3.396 1.5 5.65 1.5 5.484 0 9.95-4.466 9.953-9.95.002-2.654-1.02-5.152-2.877-7.009C17.217 2.37 14.72 1.35 12.01 1.35 6.525 1.35 2.062 5.811 2.06 11.3c-.001 2.26.513 3.994 1.517 5.688l-.982 3.585 3.752-.987z"></path></svg>
-                Sahkan Tempahan ke WhatsApp
-              </button>
-            </div>
+          </div>
 
           </div>
 
@@ -3231,7 +3187,6 @@
     // State Variables
     let selectedPackageId = "pkg_2"; // Default selected is Family Pack
     let currentQuantity = 1;
-    let selectedPaymentMethodVal = "fpx";
     let activeGalleryIndex = 0;
     let currentStock = SETTINGS.stockQuantity;
     let checkoutCurrentStep = 1; // Wizard steps range [1..3]
@@ -3245,9 +3200,6 @@
       document.getElementById('js-footer-company-title').innerText = SETTINGS.companyName;
       document.getElementById('js-footer-address').innerText = SETTINGS.companyAddress;
       document.getElementById('js-footer-email').innerText = SETTINGS.companyEmail;
-      document.getElementById('js-fpx-bank-label').innerText = SETTINGS.fpxInformation.bankName;
-      document.getElementById('js-fpx-acc-label').innerText = SETTINGS.fpxInformation.accountNumber;
-      document.getElementById('js-duitnow-qr-img').src = SETTINGS.duitnowQrPath;
 
       // Render Pricing Cards and Form Radio options
       renderPricingCards();
@@ -3394,12 +3346,36 @@
       document.getElementById('checkout-step-2').className = `checkout-step-content ${stepNum === 2 ? 'active' : ''}`;
       document.getElementById('checkout-step-3').className = `checkout-step-content ${stepNum === 3 ? 'active' : ''}`;
 
-      // Reset simulated payment screens if coming back to Step 3
+      // BILLPLZ START
       if (stepNum === 3) {
-        document.getElementById('checkout-payment-methods-view').style.display = 'block';
+        document.getElementById('checkout-order-summary-view').style.display = 'block';
         document.getElementById('modal-screen-loading').style.display = 'none';
-        document.getElementById('modal-screen-success').style.display = 'none';
+        
+        // Populate summary values
+        const name = document.getElementById('fullname').value;
+        const phone = document.getElementById('phone').value;
+        const email = document.getElementById('email').value;
+        const address = document.getElementById('address').value;
+        const postcode = document.getElementById('postcode').value;
+        const city = document.getElementById('city').value;
+        const state = document.getElementById('state').value;
+        
+        const pkg = SETTINGS.packages.find(p => p.id === selectedPackageId);
+        if (pkg) {
+          const subtotal = pkg.price * currentQuantity;
+          const shipping = ["Sabah", "Sarawak", "Labuan"].includes(state) ? SETTINGS.shippingFeeEast : SETTINGS.shippingFeePeninsular;
+          const grandTotal = subtotal + shipping;
+          
+          document.getElementById('summary-display-name').innerText = name;
+          document.getElementById('summary-display-phone').innerText = phone;
+          document.getElementById('summary-display-address').innerText = `${address}, ${postcode} ${city}, ${state}`;
+          document.getElementById('summary-display-pkg').innerText = `${pkg.name} (${pkg.quantityDisplay})`;
+          document.getElementById('summary-display-qty').innerText = `${currentQuantity} set`;
+          document.getElementById('summary-display-shipping').innerText = `RM ${shipping.toFixed(2)}`;
+          document.getElementById('summary-display-total').innerText = `RM ${grandTotal.toFixed(2)}`;
+        }
       }
+      // BILLPLZ END
 
       // Update Footer buttons
       const prevBtn = document.getElementById('js-prev-step-btn');
@@ -3462,18 +3438,11 @@
       setCheckoutStep(targetStep);
     }
 
-    function submitCheckoutForm() {
-      // Validate payment state
-      if (selectedPaymentMethodVal === 'fpx') {
-        const bankSelect = document.getElementById('bankSelect');
-        if (!bankSelect.value) {
-          alert("Sila pilih bank pembayar untuk FPX.");
-          bankSelect.focus();
-          return;
-        }
-      }
+    // BILLPLZ START
+    const API_ENDPOINT = "https://billplz-api.huzaimrosli.workers.dev/";
 
-      // Construct Order details
+    async function submitCheckoutForm() {
+      // Validate inputs
       const name = document.getElementById('fullname').value;
       const phone = document.getElementById('phone').value;
       const email = document.getElementById('email').value;
@@ -3482,6 +3451,12 @@
       const city = document.getElementById('city').value;
       const state = document.getElementById('state').value;
       
+      if (!name || !phone || !email || !address || !postcode || !city || !state) {
+        alert("Sila isi semua maklumat bertanda * pada langkah pertama.");
+        setCheckoutStep(1);
+        return;
+      }
+
       const pkg = SETTINGS.packages.find(p => p.id === selectedPackageId);
       if (!pkg) return;
 
@@ -3489,20 +3464,73 @@
       const shipping = ["Sabah", "Sarawak", "Labuan"].includes(state) ? SETTINGS.shippingFeeEast : SETTINGS.shippingFeePeninsular;
       const grandTotal = subtotal + shipping;
 
-      lastOrderDetails = {
-        name,
-        phone,
-        email,
-        address: `${address}, ${postcode} ${city}, ${state}`,
-        packageName: pkg.name,
-        packageQty: pkg.quantityDisplay,
-        orderQty: currentQuantity,
-        total: grandTotal.toFixed(2)
+      const payload = {
+        customer_name: name,
+        phone: phone,
+        email: email,
+        address: address,
+        postcode: postcode,
+        city: city,
+        state: state,
+        package_name: pkg.name,
+        quantity: currentQuantity,
+        shipping_fee: shipping.toFixed(2),
+        total_amount: grandTotal.toFixed(2)
       };
 
-      // Trigger simulated payment screens
-      processSimulatedPayment();
+      // Show Loading Screen
+      document.getElementById('checkout-order-summary-view').style.display = 'none';
+      document.getElementById('modal-screen-loading').style.display = 'flex';
+      
+      // Disable buttons
+      const prevBtn = document.getElementById('js-prev-step-btn');
+      const nextBtn = document.getElementById('js-next-step-btn');
+      const closeBtn = document.querySelector('.checkout-modal-close');
+      
+      if (prevBtn) prevBtn.disabled = true;
+      if (nextBtn) {
+        nextBtn.disabled = true;
+        nextBtn.innerText = "Sedang menyediakan halaman pembayaran...";
+      }
+      if (closeBtn) closeBtn.style.pointerEvents = 'none'; // prevent closing
+
+      try {
+        const response = await fetch(API_ENDPOINT, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(payload)
+        });
+
+        if (!response.ok) {
+          throw new Error("HTTP error status: " + response.status);
+        }
+
+        const result = await response.json();
+
+        if (result.success === true && result.payment_url) {
+          window.location.href = result.payment_url;
+        } else {
+          throw new Error("Missing payment_url or success flag in response");
+        }
+      } catch (error) {
+        console.error("Billplz Payment Error:", error);
+        alert("Gagal menyediakan pembayaran. Sila cuba semula.");
+        
+        // Revert UI State
+        document.getElementById('checkout-order-summary-view').style.display = 'block';
+        document.getElementById('modal-screen-loading').style.display = 'none';
+        
+        if (prevBtn) prevBtn.disabled = false;
+        if (nextBtn) {
+          nextBtn.disabled = false;
+          nextBtn.innerText = "Sahkan & Bayar";
+        }
+        if (closeBtn) closeBtn.style.pointerEvents = 'auto';
+      }
     }
+    // BILLPLZ END
 
     /* ==========================================
        PACKAGE SELECTION LOGIC
@@ -3569,25 +3597,7 @@
       }
     }
 
-    function selectPaymentMethod(method) {
-      selectedPaymentMethodVal = method;
-      document.getElementById('pm-fpx').classList.remove('selected');
-      document.getElementById('pm-qr').classList.remove('selected');
 
-      const innerFpx = document.getElementById('inner-fpx-view');
-      const innerQr = document.getElementById('inner-qr-view');
-
-      if (method === 'fpx') {
-        document.getElementById('pm-fpx').classList.add('selected');
-        innerFpx.style.display = 'block';
-        innerQr.style.display = 'none';
-      } else {
-        document.getElementById('pm-fpx').classList.add('selected'); // fallback highlights
-        document.getElementById('pm-qr').classList.add('selected');
-        innerFpx.style.display = 'none';
-        innerQr.style.display = 'block';
-      }
-    }
 
     /* ==========================================
        SCROLL & STICKY ACTIONS
@@ -3792,64 +3802,7 @@
       });
     }
 
-    function processSimulatedPayment() {
-      const paymentMethodsView = document.getElementById('checkout-payment-methods-view');
-      const screenLoading = document.getElementById('modal-screen-loading');
-      const screenSuccess = document.getElementById('modal-screen-success');
-      const loadingText = document.getElementById('js-loading-text');
-      const footerEl = document.getElementById('js-modal-footer');
 
-      // Hide checkout choices and hide footer
-      paymentMethodsView.style.display = 'none';
-      footerEl.style.display = 'none';
-      screenLoading.style.display = 'flex';
-
-      if (selectedPaymentMethodVal === 'fpx') {
-        const bankName = document.getElementById('bankSelect').value || 'Bank Pilihan';
-        loadingText.innerText = `Menghubungkan ke secure portal ${bankName}...`;
-      } else {
-        loadingText.innerText = `Mengesahkan bayaran QR DuitNow...`;
-      }
-
-      // Simulate payment delay (1.5 seconds)
-      setTimeout(() => {
-        screenLoading.style.display = 'none';
-        screenSuccess.style.display = 'flex';
-
-        // Load summary text to success dialog
-        document.getElementById('success-display-name').innerText = lastOrderDetails.name;
-        document.getElementById('success-display-pkg').innerText = lastOrderDetails.packageName;
-        document.getElementById('success-display-qty').innerText = `${lastOrderDetails.orderQty} set`;
-        document.getElementById('success-display-total').innerText = `RM ${lastOrderDetails.total}`;
-      }, 1500);
-    }
-
-    /* ==========================================
-       WHATSAPP REDIRECT GENERATOR
-       ========================================== */
-    function redirectToWhatsApp() {
-      if (!lastOrderDetails) return;
-
-      const message = `Assalamualaikum.
-Saya telah membuat pesanan Biskut Pelanta.
-
-Nama: ${lastOrderDetails.name}
-Telefon: ${lastOrderDetails.phone}
-Pakej: ${lastOrderDetails.packageName} (${lastOrderDetails.packageQty})
-Kuantiti: ${lastOrderDetails.orderQty} set
-Jumlah Bayaran: RM ${lastOrderDetails.total}
-
-Mohon pihak tuan semak pesanan saya. Terima kasih!`;
-
-      const encodedMsg = encodeURIComponent(message);
-      const url = `https://wa.me/${SETTINGS.whatsAppNumber}?text=${encodedMsg}`;
-      
-      // Open WhatsApp link
-      window.open(url, '_blank');
-      
-      // Close payment modal
-      closeCheckoutModal();
-    }
 
     function openGeneralWhatsApp(customMessage = "Hi, saya ingin bertanyakan tentang Biskut Pelanta Lekir.") {
       const encodedMsg = encodeURIComponent(customMessage);
