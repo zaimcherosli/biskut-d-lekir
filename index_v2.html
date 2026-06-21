@@ -83,125 +83,206 @@
     body {
       font-family: var(--font-body);
       color: var(--text-dark);
+      background-color: var(--bg-light);
       line-height: 1.6;
       overflow-x: hidden;
       -webkit-font-smoothing: antialiased;
     }
 
-    /* Premium Hand-crafted Blob & Grid Background System */
-    .bg-decorations {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -10;
-      pointer-events: none;
-      overflow: hidden;
-      background-color: var(--bg-light);
-    }
-    
-    .bg-grid-overlay {
-      position: absolute;
-      inset: 0;
-      background-image: 
-        linear-gradient(rgba(120, 53, 15, 0.055) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(120, 53, 15, 0.055) 1px, transparent 1px);
-      background-size: 30px 30px;
-    }
-    
-    .bg-blob {
-      position: absolute;
-      opacity: 0.75;
-      filter: blur(45px);
-      transition: var(--transition-smooth);
-    }
-    
-    .blob-tl {
-      top: -15%;
-      left: -15%;
-      width: 480px;
-      height: 480px;
-      background-color: #FDE68A; /* Warm butter yellow */
-      border-radius: 42% 58% 70% 30% / 45% 45% 65% 55%;
-      animation: morph-blob 22s ease-in-out infinite alternate;
-    }
-    
-    .blob-tr {
-      top: -10%;
-      right: -15%;
-      width: 420px;
-      height: 420px;
-      background-color: #EDE0D4; /* Warm latte beige */
-      border-radius: 70% 30% 52% 48% / 60% 40% 50% 50%;
-      animation: morph-blob 18s ease-in-out infinite alternate-reverse;
-    }
-    
-    .blob-ml {
-      top: 35%;
-      left: -18%;
-      width: 380px;
-      height: 480px;
-      background-color: #FFEDD5; /* Soft peach amber */
-      opacity: 0.65;
-      border-radius: 60% 40% 30% 70% / 50% 50% 40% 60%;
-      animation: float-slow 25s ease-in-out infinite;
-    }
-    
-    .blob-mr {
-      top: 45%;
-      right: -18%;
-      width: 380px;
-      height: 480px;
-      background-color: #FDE68A; /* Warm butter yellow */
-      opacity: 0.70;
-      border-radius: 30% 70% 40% 60% / 60% 40% 50% 50%;
-      animation: float-slow 20s ease-in-out infinite reverse;
-    }
-    
-    .blob-bl {
-      bottom: -15%;
-      left: -15%;
-      width: 480px;
-      height: 480px;
-      background-color: #EDE0D4; /* Warm latte beige */
-      border-radius: 40% 60% 50% 50% / 50% 60% 40% 50%;
-      animation: morph-blob 20s ease-in-out infinite alternate-reverse;
-    }
-    
-    .blob-br {
-      bottom: -12%;
-      right: -12%;
-      width: 420px;
-      height: 420px;
-      background-color: #FDE68A; /* Warm butter yellow */
-      border-radius: 60% 40% 50% 50% / 40% 60% 50% 50%;
-      animation: morph-blob 16s ease-in-out infinite alternate;
-    }
-    
-    /* Fine margin wavy drawings & flower accent overlays (like the user image) */
-    .bg-lines-overlay {
-      position: absolute;
-      inset: 0;
-      opacity: 0.25;
-      background-image: url("data:image/svg+xml,%3Csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3E%3Cg stroke='%2378350F' stroke-width='2.2' fill='none'%3E%3Cpath d='M-20,120 C40,160 50,220 -10,320 T-30,480' /%3E%3Cpath d='M1220,180 C1170,280 1190,380 1210,480 T1235,700' /%3E%3Cpath d='M-30,900 C30,960 40,1060 -10,1160 T-35,1300' /%3E%3C/g%3E%3Cg fill='%2378350F'%3E%3Cpath d='M100,80 L104,74 L110,76 L106,82 L110,88 L104,90 L100,84 L96,90 L90,88 L94,82 L90,76 L96,74 Z' opacity='0.28'/%3E%3Cpath d='M1150,600 L1154,594 L1160,596 L1156,602 L1160,608 L1154,610 L1150,604 L1146,610 L1140,608 L1144,602 L1140,596 L1146,594 Z' opacity='0.28'/%3E%3C/g%3E%3C/svg%3E");
-      background-size: 100% 100%;
-    }
-
-    @keyframes morph-blob {
-      0% { border-radius: 42% 58% 70% 30% / 45% 45% 65% 55%; }
-      50% { border-radius: 70% 30% 52% 48% / 60% 40% 50% 50%; }
-      100% { border-radius: 42% 58% 70% 30% / 45% 45% 65% 55%; }
-    }
-
-    @keyframes float-slow {
-      0% { transform: translateY(0px) rotate(0deg); }
-      50% { transform: translateY(-15px) rotate(3deg); }
-      100% { transform: translateY(0px) rotate(0deg); }
-    }
-
     body.modal-open {
       overflow: hidden; /* Scroll lock when modal is open */
+    }
+
+    /* Premium Watermark background system inside sections */
+    section, .hero {
+      position: relative;
+      overflow: hidden; /* Prevent horizontal scrollbars from bleeding elements */
+    }
+
+    .container, .hero-grid {
+      position: relative;
+      z-index: 2; /* Render above watermarks */
+    }
+
+    .bg-wheat-section {
+      position: absolute;
+      pointer-events: none;
+      z-index: 1; /* Render behind content container but above background */
+      transition: var(--transition-smooth);
+    }
+
+    /* 1. Hero Section - Left & Right Wheat Bouquets */
+    .bg-wheat-hero-left {
+      top: 5%;
+      left: 0;
+      height: 600px;
+      width: auto;
+      opacity: 0.28; /* Increased opacity to 28% for better visibility */
+    }
+    .bg-wheat-hero-right {
+      top: 5%;
+      right: 0;
+      height: 600px;
+      width: auto;
+      opacity: 0.28; /* Increased opacity to 28% for better visibility */
+    }
+
+    /* 2. Pricing Section - Left & Right Wheat Bouquets */
+    .bg-wheat-pricing-left {
+      top: 10%;
+      left: 0;
+      height: 700px;
+      width: auto;
+      opacity: 0.25; /* Increased opacity to 25% for better visibility */
+    }
+    .bg-wheat-pricing-right {
+      top: 10%;
+      right: 0;
+      height: 700px;
+      width: auto;
+      opacity: 0.25; /* Increased opacity to 25% for better visibility */
+    }
+
+    /* 3. Wheat Grains Watermarks (Additional Sections) */
+    .bg-grains-benefits-left {
+      top: 15%;
+      left: 0;
+      height: 350px;
+      width: auto;
+      opacity: 0.22;
+    }
+    .bg-grains-benefits-right {
+      top: 15%;
+      right: 0;
+      height: 350px;
+      width: auto;
+      opacity: 0.22;
+    }
+    .bg-grains-audience-left {
+      top: 10%;
+      left: 0;
+      height: 380px;
+      width: auto;
+      opacity: 0.22;
+    }
+    .bg-grains-audience-right {
+      top: 10%;
+      right: 0;
+      height: 380px;
+      width: auto;
+      opacity: 0.22;
+    }
+    .bg-wheat-faq-left {
+      top: 20%;
+      left: 0;
+      height: 600px;
+      width: auto;
+      opacity: 0.25;
+    }
+    .bg-wheat-faq-right {
+      top: 20%;
+      right: 0;
+      height: 600px;
+      width: auto;
+      opacity: 0.25;
+    }
+
+    /* Responsive adjustments for mobile screen */
+    @media (max-width: 768px) {
+      .bg-wheat-hero-left,
+      .bg-wheat-hero-right {
+        height: 380px;
+        opacity: 0.20;
+      }
+      .bg-wheat-hero-left {
+        left: 0;
+      }
+      .bg-wheat-hero-right {
+        right: 0;
+      }
+      .bg-wheat-pricing-left,
+      .bg-wheat-pricing-right {
+        height: 450px;
+        opacity: 0.18;
+      }
+      .bg-wheat-pricing-left {
+        left: 0;
+      }
+      .bg-wheat-pricing-right {
+        right: 0;
+      }
+      .bg-grains-benefits-left,
+      .bg-grains-benefits-right,
+      .bg-grains-audience-left,
+      .bg-grains-audience-right {
+        height: 250px;
+        opacity: 0.15;
+      }
+      .bg-grains-benefits-left, .bg-grains-audience-left {
+        left: 0;
+      }
+      .bg-grains-benefits-right, .bg-grains-audience-right {
+        right: 0;
+      }
+      .bg-wheat-faq-left,
+      .bg-wheat-faq-right {
+        height: 380px;
+        opacity: 0.20;
+      }
+      .bg-wheat-faq-left {
+        left: 0;
+      }
+      .bg-wheat-faq-right {
+        right: 0;
+      }
+    }
+    @media (max-width: 480px) {
+      .bg-wheat-hero-left,
+      .bg-wheat-hero-right {
+        height: 280px;
+        opacity: 0.16;
+      }
+      .bg-wheat-hero-left {
+        left: 0;
+      }
+      .bg-wheat-hero-right {
+        right: 0;
+      }
+      .bg-wheat-pricing-left,
+      .bg-wheat-pricing-right {
+        height: 320px;
+        opacity: 0.14;
+      }
+      .bg-wheat-pricing-left {
+        left: 0;
+      }
+      .bg-wheat-pricing-right {
+        right: 0;
+      }
+      .bg-grains-benefits-left,
+      .bg-grains-benefits-right,
+      .bg-grains-audience-left,
+      .bg-grains-audience-right {
+        height: 180px;
+        opacity: 0.12;
+      }
+      .bg-grains-benefits-left, .bg-grains-audience-left {
+        left: 0;
+      }
+      .bg-grains-benefits-right, .bg-grains-audience-right {
+        right: 0;
+      }
+      .bg-wheat-faq-left,
+      .bg-wheat-faq-right {
+        height: 280px;
+        opacity: 0.16;
+      }
+      .bg-wheat-faq-left {
+        left: 0;
+      }
+      .bg-wheat-faq-right {
+        right: 0;
+      }
     }
 
     h1, h2, h3, h4, h5, h6 {
@@ -499,8 +580,7 @@
        2. HERO SECTION
        ------------------------------------------------------------- */
     .hero {
-      background: radial-gradient(circle at 10% 20%, rgba(254, 243, 199, 0.45) 0%, rgba(255, 255, 255, 0.95) 90%),
-                  url("data:image/svg+xml,%3Csvg width='120' height='120' viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%2378350F' fill-opacity='0.08'%3E%3Ccircle cx='20' cy='20' r='10'/%3E%3Ccircle cx='20' cy='20' r='1' fill='%23FFF'/%3E%3Cpath d='M75 15h15v15H75zm5 5h5v5h-5z'/%3E%3Ccircle cx='95' cy='75' r='6'/%3E%3Ccircle cx='40' cy='90' r='12'/%3E%3Ccircle cx='35' cy='85' r='1.5' fill='%23FFF'/%3E%3Ccircle cx='45' cy='95' r='1.5' fill='%23FFF'/%3E%3Ccircle cx='110' cy='25' r='2'/%3E%3Ccircle cx='60' cy='55' r='3'/%3E%3Crect x='80' y='100' width='8' height='8' rx='2'/%3E%3C/g%3E%3C/svg%3E");
+      background: radial-gradient(circle at 10% 20%, rgba(254, 243, 199, 0.45) 0%, rgba(255, 255, 255, 0.95) 90%);
       position: relative;
       overflow: hidden;
       padding: 4rem 0 5rem 0;
@@ -714,7 +794,6 @@
 
     #kenapa-pilih {
       background-color: var(--bg-cream);
-      background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='8' cy='8' r='1' fill='%2378350F' fill-opacity='0.075'/%3E%3C/svg%3E");
     }
 
     .benefits-grid {
@@ -788,7 +867,6 @@
        ------------------------------------------------------------- */
     .showcase {
       background-color: var(--bg-cream);
-      background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 10 Q 10 5, 20 10 T 40 10 M0 30 Q 10 25, 20 30 T 40 30' fill='none' stroke='%2378350F' stroke-width='1.2' stroke-opacity='0.085'/%3E%3C/svg%3E");
     }
 
     .showcase-grid {
@@ -1128,7 +1206,6 @@
        ------------------------------------------------------------- */
     .pricing {
       background-color: var(--bg-light);
-      background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%2378350f' fill-opacity='0.075' fill-rule='evenodd'%3E%3Cpath d='M 30,0 L 60,30 L 30,60 L 0,30 Z M 30,10 L 50,30 L 30,50 L 10,30 Z'/%3E%3Ccircle cx='30' cy='30' r='4'/%3E%3C/g%3E%3C/svg%3E");
     }
 
     .urgency-badge-wrap {
@@ -2288,17 +2365,7 @@
 </head>
 <body>
 
-  <!-- Premium Hand-crafted Organic Blob & Grid Background System -->
-  <div class="bg-decorations" aria-hidden="true">
-    <div class="bg-grid-overlay"></div>
-    <div class="bg-blob blob-tl"></div>
-    <div class="bg-blob blob-tr"></div>
-    <div class="bg-blob blob-ml"></div>
-    <div class="bg-blob blob-mr"></div>
-    <div class="bg-blob blob-bl"></div>
-    <div class="bg-blob blob-br"></div>
-    <div class="bg-lines-overlay"></div>
-  </div>
+  <!-- Premium Hand-crafted Organic Wheat Background System (Section-specific botanical watermarks) -->
 
   <!-- URGENCY TOP BAR -->
   <div class="urgency-bar">
@@ -2351,6 +2418,9 @@
 
   <!-- SECTION 1: HERO SECTION -->
   <section class="hero">
+    <!-- Hero Left & Right Watermarks (New premium wheat branding) -->
+    <img class="bg-wheat-section bg-wheat-hero-left" src="assets/wheat-new-left.png" alt="" aria-hidden="true">
+    <img class="bg-wheat-section bg-wheat-hero-right" src="assets/wheat-new-right.png" alt="" aria-hidden="true">
     <div class="container hero-grid">
       <div class="hero-content">
         <span class="badge-primary">✓ Produk Tradisional Tempatan</span>
@@ -2409,6 +2479,9 @@
 
   <!-- SECTION 2: WHY CUSTOMERS LOVE IT -->
   <section class="section-padding" id="kenapa-pilih">
+    <!-- Wheat Grains Watermarks -->
+    <img class="bg-wheat-section bg-grains-benefits-left" src="assets/wheat-grains-left.png" alt="" aria-hidden="true">
+    <img class="bg-wheat-section bg-grains-benefits-right" src="assets/wheat-grains-right.png" alt="" aria-hidden="true">
     <div class="container">
       <div class="section-title text-center">
         <h2>Kenapa Ramai Pilih Biskut Pelanta?</h2>
@@ -2544,6 +2617,9 @@
 
   <!-- SECTION 5: WHO IS IT FOR -->
   <section class="section-padding" style="background-color: var(--white);" id="siapa-sesuai">
+    <!-- Wheat Grains Watermarks -->
+    <img class="bg-wheat-section bg-grains-audience-left" src="assets/wheat-grains-left.png" alt="" aria-hidden="true">
+    <img class="bg-wheat-section bg-grains-audience-right" src="assets/wheat-grains-right.png" alt="" aria-hidden="true">
     <div class="container">
       <div class="section-title text-center">
         <h2>Sesuai Untuk Siapa?</h2>
@@ -2586,6 +2662,9 @@
 
   <!-- SECTION 6: PACKAGE SELECTION & PRICING -->
   <section class="section-padding pricing" id="pakej">
+    <!-- Pricing Left & Right Watermarks (New premium wheat branding) -->
+    <img class="bg-wheat-section bg-wheat-pricing-left" src="assets/wheat-new-left.png" alt="" aria-hidden="true">
+    <img class="bg-wheat-section bg-wheat-pricing-right" src="assets/wheat-new-right.png" alt="" aria-hidden="true">
     <div class="container">
       <div class="section-title text-center">
         <h2>Pakej Istimewa Biskut Pelanta</h2>
@@ -2900,6 +2979,9 @@
 
   <!-- SECTION 11: ACCORDION FAQ -->
   <section class="section-padding faq" id="faq">
+    <!-- Wheat Stalks Watermarks -->
+    <img class="bg-wheat-section bg-wheat-faq-left" src="assets/wheat-new-left.png" alt="" aria-hidden="true">
+    <img class="bg-wheat-section bg-wheat-faq-right" src="assets/wheat-new-right.png" alt="" aria-hidden="true">
     <div class="container">
       <div class="section-title text-center">
         <h2>Soalan Lazim (FAQ)</h2>
