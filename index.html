@@ -1589,6 +1589,11 @@
       color: var(--success);
     }
 
+    /* Mobile step progress indicator (Desktop hidden) */
+    .checkout-mobile-progress-wrapper {
+      display: none;
+    }
+
     /* Step content toggles */
     .checkout-step-content {
       display: none;
@@ -2435,10 +2440,77 @@
         font-size: 1.15rem !important;
       }
 
+      /* Hide desktop step tabs on mobile */
+      .checkout-step-indicator-bar {
+        display: none !important;
+      }
+
+      /* Slim Mobile Step Progress tracker */
+      .checkout-mobile-progress-wrapper {
+        display: block !important;
+        margin-bottom: 1.25rem !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+      }
+
+      .checkout-mobile-step-text {
+        display: flex !important;
+        flex-direction: column !important;
+        margin-bottom: 0.5rem !important;
+        text-align: left !important;
+        gap: 0.15rem !important;
+      }
+
+      .checkout-mobile-step-text .step-lbl {
+        font-size: 0.75rem !important;
+        font-weight: 700 !important;
+        text-transform: uppercase !important;
+        color: var(--accent) !important;
+        letter-spacing: 0.5px !important;
+      }
+
+      .checkout-mobile-step-text .step-title {
+        font-size: 1.1rem !important;
+        font-weight: 800 !important;
+        color: var(--secondary-dark) !important;
+      }
+
+      .checkout-mobile-progress-track {
+        width: 100% !important;
+        height: 6px !important;
+        background-color: var(--border-color) !important;
+        border-radius: 9999px !important;
+        overflow: hidden !important;
+      }
+
+      .checkout-mobile-progress-bar {
+        height: 100% !important;
+        background: linear-gradient(90deg, var(--primary), var(--accent)) !important;
+        border-radius: 9999px !important;
+        transition: width 0.3s ease !important;
+      }
+
       .checkout-modal-body {
-        padding: 1.25rem 1rem !important;
+        padding: 1.25rem 1rem 4.5rem 1rem !important; /* Raised bottom padding to 4.5rem to prevent sticky footer overlap */
         flex: 1 1 auto !important;
         overflow-y: auto !important;
+        -webkit-overflow-scrolling: touch !important; /* Smooth inertial scroll on iOS */
+      }
+
+      /* Specific spacing tweaks for smaller phone screens */
+      @media (max-width: 480px) {
+        .checkout-modal-body {
+          padding: 1rem 0.85rem 4rem 0.85rem !important;
+        }
+        .qty-row {
+          gap: 1.5rem !important;
+        }
+        .form-pkg-option {
+          padding: 1rem !important;
+        }
+        .checkout-mobile-step-text .step-title {
+          font-size: 1rem !important;
+        }
       }
 
       /* Single column form elements */
@@ -2527,6 +2599,7 @@
       /* 4. Form Inputs Height & Spacing */
       .form-input, .form-select, .form-textarea {
         height: 48px !important;
+        width: 100% !important;
         font-size: 16px !important; /* Prevents auto zoom in iOS Safari */
         padding: 0.75rem 1rem !important;
         box-sizing: border-box !important;
@@ -3020,6 +3093,17 @@
           <div class="checkout-step-tab active" id="step-tab-1">1. Alamat Pos</div>
           <div class="checkout-step-tab" id="step-tab-2">2. Pakej &amp; Kuantiti</div>
           <div class="checkout-step-tab" id="step-tab-3">3. Bayar &amp; Selesai</div>
+        </div>
+
+        <!-- Slim Mobile Step Progress (Screens < 768px) -->
+        <div class="checkout-mobile-progress-wrapper" id="js-mobile-progress-wrapper">
+          <div class="checkout-mobile-step-text">
+            <span class="step-lbl" id="mobile-step-label-number">Langkah 1/3</span>
+            <span class="step-title" id="mobile-step-label-title">Alamat Penghantaran</span>
+          </div>
+          <div class="checkout-mobile-progress-track">
+            <div class="checkout-mobile-progress-bar" id="mobile-step-progress-bar" style="width: 33.33%;"></div>
+          </div>
         </div>
 
         <!-- Form Element wrapper -->
@@ -3574,7 +3658,26 @@
       document.getElementById('checkout-step-2').className = `checkout-step-content ${stepNum === 2 ? 'active' : ''}`;
       document.getElementById('checkout-step-3').className = `checkout-step-content ${stepNum === 3 ? 'active' : ''}`;
 
-      // BILLPLZ START
+      // Update Mobile Step Progress Bar & Labels
+      const mobileBar = document.getElementById('mobile-step-progress-bar');
+      const mobileLabelNum = document.getElementById('mobile-step-label-number');
+      const mobileLabelTitle = document.getElementById('mobile-step-label-title');
+      
+      if (mobileBar && mobileLabelNum && mobileLabelTitle) {
+        if (stepNum === 1) {
+          mobileBar.style.width = '33.33%';
+          mobileLabelNum.innerText = 'Langkah 1/3';
+          mobileLabelTitle.innerText = 'Alamat Penghantaran';
+        } else if (stepNum === 2) {
+          mobileBar.style.width = '66.66%';
+          mobileLabelNum.innerText = 'Langkah 2/3';
+          mobileLabelTitle.innerText = 'Pilih Pakej & Kuantiti';
+        } else if (stepNum === 3) {
+          mobileBar.style.width = '100%';
+          mobileLabelNum.innerText = 'Langkah 3/3';
+          mobileLabelTitle.innerText = 'Pembayaran';
+        }
+      }
       if (stepNum === 3) {
         document.getElementById('checkout-order-summary-view').style.display = 'block';
         document.getElementById('modal-screen-loading').style.display = 'none';
