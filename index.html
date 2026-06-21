@@ -1532,6 +1532,7 @@
 
     .checkout-modal-body {
       padding: 2rem;
+      padding-bottom: 120px; /* Safe padding for footer space */
       overflow-y: auto;
       flex-grow: 1;
     }
@@ -2426,8 +2427,9 @@
         width: 100% !important;
         max-width: 100% !important;
         margin: 0 !important;
-        height: 92vh !important; /* Standard bottom sheet height */
-        max-height: 92vh !important;
+        height: 92vh !important; /* Fallback for older browsers */
+        height: 92dvh !important; /* Dynamic viewport height to prevent browser bar layout shifts */
+        max-height: 92dvh !important;
         display: flex !important;
         flex-direction: column !important;
       }
@@ -2491,7 +2493,7 @@
       }
 
       .checkout-modal-body {
-        padding: 1.25rem 1rem 4.5rem 1rem !important; /* Raised bottom padding to 4.5rem to prevent sticky footer overlap */
+        padding: 1.25rem 1rem calc(140px + env(safe-area-inset-bottom)) 1rem !important; /* Safe margin so final inputs scroll above the sticky footer */
         flex: 1 1 auto !important;
         overflow-y: auto !important;
         -webkit-overflow-scrolling: touch !important; /* Smooth inertial scroll on iOS */
@@ -2500,7 +2502,7 @@
       /* Specific spacing tweaks for smaller phone screens */
       @media (max-width: 480px) {
         .checkout-modal-body {
-          padding: 1rem 0.85rem 4rem 0.85rem !important;
+          padding: 1rem 0.85rem calc(140px + env(safe-area-inset-bottom)) 0.85rem !important;
         }
         .qty-row {
           gap: 1.5rem !important;
@@ -2639,21 +2641,27 @@
 
       /* 6. Checkout & wizard modal footer Button Stacking */
       .checkout-modal-footer {
+        flex-shrink: 0 !important;
+        position: sticky !important;
+        bottom: 0 !important;
+        z-index: 20 !important;
+        background-color: var(--bg-light) !important;
         padding: 1rem !important;
+        padding-bottom: calc(1rem + env(safe-area-inset-bottom)) !important; /* Safe area inset bottom padding */
         display: flex !important;
         flex-direction: column-reverse !important;
         gap: 0.75rem !important;
-        background-color: var(--bg-light) !important;
         width: 100% !important;
         box-sizing: border-box !important;
         justify-content: center !important;
         align-items: center !important;
+        border-top: 1px solid var(--border-color) !important;
       }
 
       .checkout-modal-footer button,
       .checkout-modal-footer .btn {
         width: 100% !important;
-        height: 52px !important;
+        height: 56px !important; /* Raised minimum touch target to 56px */
         font-size: 1rem !important;
         display: inline-flex;
         align-items: center !important;
