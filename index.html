@@ -187,6 +187,23 @@
       opacity: 0.25;
     }
 
+    /* 4. Flour Bowl Watermarks */
+    .bg-flour-gallery-left {
+      bottom: 5%;
+      left: 0;
+      height: 380px;
+      width: auto;
+      opacity: 0.22;
+    }
+    .bg-flour-showcase-right {
+      bottom: 5%;
+      right: 0;
+      height: 380px;
+      width: auto;
+      opacity: 0.22;
+      transform: scaleX(-1); /* mirror horizontally */
+    }
+
     /* Responsive adjustments for mobile screen */
     @media (max-width: 768px) {
       .bg-wheat-hero-left,
@@ -235,6 +252,17 @@
       .bg-wheat-faq-right {
         right: 0;
       }
+      .bg-flour-gallery-left,
+      .bg-flour-showcase-right {
+        height: 250px;
+        opacity: 0.15;
+      }
+      .bg-flour-gallery-left {
+        left: 0;
+      }
+      .bg-flour-showcase-right {
+        right: 0;
+      }
     }
     @media (max-width: 480px) {
       .bg-wheat-hero-left,
@@ -281,6 +309,17 @@
         left: 0;
       }
       .bg-wheat-faq-right {
+        right: 0;
+      }
+      .bg-flour-gallery-left,
+      .bg-flour-showcase-right {
+        height: 180px;
+        opacity: 0.12;
+      }
+      .bg-flour-gallery-left {
+        left: 0;
+      }
+      .bg-flour-showcase-right {
         right: 0;
       }
     }
@@ -2544,6 +2583,8 @@
 
   <!-- SECTION 3: PRODUCT GALLERY SLIDER & LIGHTBOX -->
   <section class="section-padding showcase" id="galeri">
+    <!-- Flour Bowl Watermark -->
+    <img class="bg-wheat-section bg-flour-gallery-left" src="assets/flour-bowl.png" alt="" aria-hidden="true">
     <div class="container">
       <div class="section-title text-center">
         <h2>Galeri Produk Kami</h2>
@@ -2596,6 +2637,8 @@
 
   <!-- SECTION 4: PRODUCT SHOWCASE (Lifestyle split) -->
   <section class="section-padding showcase">
+    <!-- Flour Bowl Watermark -->
+    <img class="bg-wheat-section bg-flour-showcase-right" src="assets/flour-bowl.png" alt="" aria-hidden="true">
     <div class="container showcase-grid">
       <div class="showcase-img-container">
         <div class="showcase-img-wrapper">
