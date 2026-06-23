@@ -3787,7 +3787,7 @@
     }
 
     // BILLPLZ START
-    const API_ENDPOINT = "https://billplz-api.huzaimrosli.workers.dev/";
+    const API_ENDPOINT = "https://api.zaimrosli.my";
 
     async function submitCheckoutForm() {
       // Validate inputs
@@ -3842,29 +3842,71 @@
       }
       if (closeBtn) closeBtn.style.pointerEvents = 'none'; // prevent closing
 
+      let data = null;
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 15000);
+
       try {
+        // Logging before fetch
+        console.log("Creating Billplz payment...", payload);
+
         const response = await fetch(API_ENDPOINT, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
           },
-          body: JSON.stringify(payload)
+          body: JSON.stringify(payload),
+          signal: controller.signal
         });
 
+        clearTimeout(timeoutId);
+
+        let responseText = "";
+        try {
+          responseText = await response.text();
+        } catch (e) {}
+
+        try {
+          data = JSON.parse(responseText);
+        } catch (e) {}
+
         if (!response.ok) {
-          throw new Error("HTTP error status: " + response.status);
+          const errMsg = (data && data.message) ? data.message : ("HTTP error status: " + response.status);
+          throw new Error(errMsg);
         }
 
-        const result = await response.json();
+        // Logging after response
+        console.log("Billplz response:", data);
 
-        if (result.success === true && result.payment_url) {
-          window.location.href = result.payment_url;
+        if (data && data.success === true && data.payment_url) {
+          window.location.href = data.payment_url;
         } else {
-          throw new Error("Missing payment_url or success flag in response");
+          if (data && data.payment_url === undefined) {
+            throw new Error("Payment URL tidak diterima daripada server.");
+          } else {
+            const errMsg = (data && data.message) ? data.message : "Missing payment_url or success flag in response";
+            throw new Error(errMsg);
+          }
         }
       } catch (error) {
-        console.error("Billplz Payment Error:", error);
-        alert("Gagal menyediakan pembayaran. Sila cuba semula.");
+        clearTimeout(timeoutId);
+        // Logging if error
+        console.error("Billplz error:", error);
+
+        if (error.name === 'AbortError') {
+          alert("Sambungan ke sistem pembayaran mengambil masa terlalu lama. Sila cuba semula.");
+        } else {
+          const isCustomError = error.message === "Payment URL tidak diterima daripada server.";
+          const isApiError = data && data.message && error.message === data.message;
+          
+          if (isCustomError) {
+            alert("Payment URL tidak diterima daripada server.");
+          } else if (isApiError) {
+            alert(data.message);
+          } else {
+            alert("Pembayaran tidak dapat disediakan. Sila semak sambungan internet anda dan cuba semula.");
+          }
+        }
         
         // Revert UI State
         document.getElementById('checkout-order-summary-view').style.display = 'block';
