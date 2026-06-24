@@ -24,7 +24,7 @@
   <meta property="twitter:image" content="assets/hero-closeup.jpg">
 
   <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="assets/brand-logo.svg">
+  <link rel="icon" type="image/jpeg" href="assets/brand-logo.jpg">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -902,6 +902,196 @@
     }
 
     /* -------------------------------------------------------------
+       3.5 CERTIFICATES & QUALITY AWARDS (Pengiktirafan)
+       ------------------------------------------------------------- */
+    .certs-slider-container {
+      position: relative;
+      width: 100%;
+    }
+
+    .certs-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+
+    .cert-card {
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      transition: var(--transition-smooth);
+    }
+
+    /* Desktop Balanced Grid: 3 on top, 2 below centered */
+    @media (min-width: 768px) {
+      .cert-card {
+        grid-column: span 2;
+      }
+      .cert-card:nth-child(4) {
+        grid-column: 2 / span 2;
+      }
+      .cert-card:nth-child(5) {
+        grid-column: 4 / span 2;
+      }
+      .certs-dots {
+        display: none !important;
+      }
+    }
+
+    /* Mobile View: Slide Mode */
+    @media (max-width: 767px) {
+      .certs-slider-container {
+        overflow: hidden;
+        border-radius: 20px;
+        box-shadow: var(--shadow-md);
+      }
+      
+      .certs-grid {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        margin-top: 2rem;
+        gap: 0;
+        transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .cert-card {
+        min-width: 100%;
+        box-sizing: border-box;
+        border-radius: 20px;
+        padding: 0 1rem;
+        background-color: transparent;
+        border: none;
+        box-shadow: none;
+      }
+      
+      .cert-card-inner {
+        background-color: var(--white);
+        border-radius: 20px;
+        box-shadow: var(--shadow-sm);
+        border: 1px solid var(--border-color);
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+      }
+
+      .certs-dots {
+        display: flex;
+        justify-content: center;
+        gap: 0.5rem;
+        margin-top: 1.5rem;
+      }
+
+      .certs-dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: rgba(69, 26, 3, 0.2);
+        cursor: pointer;
+        transition: var(--transition-smooth);
+      }
+
+      .certs-dot.active {
+        background-color: var(--accent);
+        transform: scale(1.2);
+      }
+    }
+
+    .cert-card-inner {
+      background-color: var(--white);
+      border-radius: 16px;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border-color);
+      transition: var(--transition-smooth);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    @media (min-width: 768px) {
+      .cert-card:hover .cert-card-inner {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-lg);
+        border-color: rgba(245, 158, 11, 0.3);
+      }
+    }
+
+    .cert-img-wrapper {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 4/3;
+      background-color: #f3f4f6;
+      overflow: hidden;
+    }
+
+    .cert-img-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: var(--transition-smooth);
+    }
+
+    .cert-card:hover .cert-img-wrapper img {
+      transform: scale(1.05);
+    }
+
+    .cert-hover-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(69, 26, 3, 0.6);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      opacity: 0;
+      transition: var(--transition-smooth);
+      gap: 0.5rem;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+
+    .cert-card:hover .cert-hover-overlay {
+      opacity: 1;
+    }
+
+    .cert-hover-overlay svg {
+      width: 28px;
+      height: 28px;
+      stroke: var(--primary);
+    }
+
+    .cert-info {
+      padding: 1.25rem;
+      text-align: center;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background-color: var(--white);
+    }
+
+    .cert-info h3 {
+      font-size: 1.1rem;
+      margin-bottom: 0.25rem;
+      color: var(--secondary-dark);
+      font-family: 'Outfit', sans-serif;
+      font-weight: 700;
+    }
+
+    .cert-info p {
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      margin: 0;
+    }
+
+    /* ---------------------------------------------------------------------------------------------
        4. PRODUCT SHOWCASE (Lifestyle split)
        ------------------------------------------------------------- */
     .showcase {
@@ -2216,6 +2406,22 @@
       .sticky-mobile-cta {
         display: flex;
       }
+      .floating-wa-btn {
+        bottom: 110px !important;
+        right: 16px !important;
+        width: 50px !important;
+        height: 50px !important;
+      }
+      .floating-wa-btn svg {
+        width: 26px !important;
+        height: 26px !important;
+      }
+      .back-to-top {
+        bottom: 172px !important;
+        right: 19px !important;
+        width: 38px !important;
+        height: 38px !important;
+      }
     }
 
     /* Recent Order Notification Popup */
@@ -2737,10 +2943,10 @@
   <header id="header">
     <div class="container header-container">
       <a href="#" class="logo-area">
-        <img class="logo-img" src="assets/brand-logo.svg" alt="LDR Brand Logo" loading="lazy">
+        <img class="logo-img" src="assets/brand-logo.jpg" alt="LDR Brand Logo" loading="lazy">
         <div class="logo-text">
-          <h2 id="js-header-company-name">Roti Biskut DLekir</h2>
-          <p>Pelanta Asli Perak</p>
+          <h2 id="js-header-company-name">Roti Biskut Dlekir</h2>
+          <p>Citarasa Tradisi, Pilihan Hati</p>
         </div>
       </a>
       
@@ -2785,25 +2991,25 @@
     <div class="container hero-grid">
       <div class="hero-content">
         <span class="badge-primary">✓ Produk Tradisional Tempatan</span>
-        <h1>Biskut Pelanta Asli Dari <span class="highlight">Lekir, Perak</span></h1>
-        <p class="lead">Rangup, sedap dan sesuai untuk kudapan harian, goodies majlis serta jualan semula. Dibuat bersih &amp; bermutu secara tradisional.</p>
+        <h1>Biskut Pelanta Legend Lekir: Ramai Repeat Order Sampai Borong <span class="highlight">10 Pek Sekali!</span></h1>
+        <p class="lead">Nikmati kerangupan luar biasa dengan aroma wangi mentega Pelanta asli yang tidak cepat muak. Sesuai untuk minum petang seisi keluarga mahupun sebagai pilihan goodies majlis yang premium.</p>
         
         <div class="hero-badges">
           <div class="hero-badge-item">
             <svg width="18" height="18" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-            Produk Tempatan
+            Produk Muslim
           </div>
           <div class="hero-badge-item">
             <svg width="18" height="18" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-            Penghantaran Seluruh MY
+            Halal &amp; MeSTI
           </div>
           <div class="hero-badge-item">
             <svg width="18" height="18" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-            Sesuai Untuk Majlis
+            Penghantaran Seluruh Malaysia
           </div>
           <div class="hero-badge-item">
             <svg width="18" height="18" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-            Sesuai Untuk Reseller
+            Produk Tradisi Lekir
           </div>
         </div>
 
@@ -2818,7 +3024,7 @@
       
       <div class="hero-image-container">
         <div class="hero-img-wrapper">
-          <img src="assets/hero-closeup.jpg" alt="Biskut Pelanta Golden Stack" width="600" height="480">
+          <img src="assets/biskut-pelanta-main.jpg" alt="Roti Biskut Dlekir Biskut Pelanta" width="600" height="480">
           <div class="hero-badge-floating">Kualiti Premium ⭐</div>
         </div>
       </div>
@@ -2854,49 +3060,149 @@
           <div class="benefit-icon">
             <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
           </div>
-          <h3>Rangup Dan Sedap</h3>
-          <p>Keseimbangan kerangupan luar biasa dengan aroma harum mentega Pelanta asli di setiap gigitan.</p>
+          <h3>Rangup Sampai Gigitan Terakhir</h3>
+          <p>Dibakar dengan suhu sempurna untuk memastikan setiap kepingan kekal rangup dan padat dengan aroma mentega dari gigitan pertama hingga terakhir.</p>
         </div>
 
         <div class="benefit-card">
           <div class="benefit-icon">
             <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
           </div>
-          <h3>Tidak Cepat Muak</h3>
-          <p>Gabungan rasa manis-asin yang ideal. Sangat serasi dinikmati pada bila-bila masa tanpa jemu.</p>
+          <h3>Tak Cepat Muak</h3>
+          <p>Keseimbangan rasa manis dan masin yang secukup rasa, dibakar khusus supaya anda boleh makan berterusan tanpa rasa muak atau jemu.</p>
         </div>
 
         <div class="benefit-card">
           <div class="benefit-icon">
             <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
           </div>
-          <h3>Sesuai Semua Umur</h3>
-          <p>Dari kanak-kanak hingga warga emas, tekstur biskut yang tidak terlalu keras menjadikannya kegemaran ramai.</p>
+          <h3>Sesuai Cicah Kopi &amp; Teh</h3>
+          <p>Tekstur berongga halus yang menyerap kopi atau teh panas dengan sempurna, memberikan nikmat cicahan mencair di dalam mulut yang tiada tandingan.</p>
         </div>
 
         <div class="benefit-card">
           <div class="benefit-icon">
             <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"></path></svg>
           </div>
-          <h3>Mudah Dibawa</h3>
-          <p>Dibungkus dengan kemas dan kedap udara. Sesuai dibawa bercuti, berkelah atau disimpan di pejabat.</p>
+          <h3>Pilihan Goodies Popular</h3>
+          <p>Reka bentuk pek yang kemas dan kualiti premium menjadikannya buah tangan paling digemari tetamu untuk majlis kahwin, tahlil, kesyukuran, dan keraian.</p>
         </div>
 
         <div class="benefit-card">
           <div class="benefit-icon">
             <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path></svg>
           </div>
-          <h3>Produk Tempatan</h3>
-          <p>Dihasilkan secara bersih &amp; suci di Lekir, Perak. Menjamin kualiti bahan mentah tempatan terpilih.</p>
+          <h3>Jaminan Bersih &amp; Suci</h3>
+          <p>Disediakan bersih dan bermutu dari kilang bertaraf MeSTI dan 100% milik bumiputera Muslim. Boleh dimakan tanpa was-was oleh seisi keluarga.</p>
         </div>
 
         <div class="benefit-card">
           <div class="benefit-icon">
             <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
           </div>
-          <h3>Pembelian Pukal</h3>
-          <p>Tersedia dalam pakej borong istimewa. Margin keuntungan menarik bagi ejen dan jualan semula.</p>
+          <h3>Mudah Dijual Semula</h3>
+          <p>Kudapan tradisional yang sentiasa dicari dan cepat habis. Peluang buat ejen dan reseller menjana untung bersih yang tinggi dengan repeat order pantas.</p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION: PENGIKTIRAFAN & KUALITI -->
+  <section class="section-padding" id="pengiktirafan" style="background-color: var(--primary-light); position: relative; overflow: hidden;">
+    <div class="container" style="position: relative; z-index: 2;">
+      <div class="section-title text-center">
+        <h2 style="color: var(--secondary-dark);">Kenapa Pelanggan Yakin Membeli Terus Dari Kami?</h2>
+        <p style="color: var(--secondary); max-width: 600px; margin: 0.5rem auto 0 auto;">Setiap bungkus Roti Biskut Dlekir dihasilkan dengan pematuhan kualiti yang ketat, diiktiraf selamat, suci, dan dipantau secara rasmi oleh agensi kerajaan.</p>
+      </div>
+
+      <div class="certs-slider-container">
+        <div class="certs-grid">
+          <!-- Card 1 -->
+          <div class="cert-card" onclick="openSingleLightbox('assets/sijil-analisa.jpg')">
+            <div class="cert-card-inner">
+              <div class="cert-img-wrapper">
+                <img src="assets/sijil-analisa.jpg" alt="Sijil Analisa Makmal" loading="lazy">
+                <div class="cert-hover-overlay">
+                  <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"></path></svg>
+                  <span>Klik untuk besarkan</span>
+                </div>
+              </div>
+              <div class="cert-info">
+                <h3>Selamat Dimakan</h3>
+                <p>Sijil Analisa Makmal (KBio)</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="cert-card" onclick="openSingleLightbox('assets/sijil-halal-mesti.jpg')">
+            <div class="cert-card-inner">
+              <div class="cert-img-wrapper">
+                <img src="assets/sijil-halal-mesti.jpg" alt="Sijil Halal & MeSTI" loading="lazy">
+                <div class="cert-hover-overlay">
+                  <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"></path></svg>
+                  <span>Klik untuk besarkan</span>
+                </div>
+              </div>
+              <div class="cert-info">
+                <h3>Halal &amp; Toyyiban</h3>
+                <p>Sijil MeSTI &amp; Pengesahan Halal</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="cert-card" onclick="openSingleLightbox('assets/bimbingan-pertanian.jpg')">
+            <div class="cert-card-inner">
+              <div class="cert-img-wrapper">
+                <img src="assets/bimbingan-pertanian.jpg" alt="Usahawan Bimbingan Jabatan Pertanian" loading="lazy">
+                <div class="cert-hover-overlay">
+                  <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"></path></svg>
+                  <span>Klik untuk besarkan</span>
+                </div>
+              </div>
+              <div class="cert-info">
+                <h3>Bimbingan Pertanian</h3>
+                <p>Usahawan Bimbingan Jabatan Pertanian</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="cert-card" onclick="openSingleLightbox('assets/anugerah-manjung.jpg')">
+            <div class="cert-card-inner">
+              <div class="cert-img-wrapper">
+                <img src="assets/anugerah-manjung.jpg" alt="Penerima Anugerah PKD Manjung" loading="lazy">
+                <div class="cert-hover-overlay">
+                  <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"></path></svg>
+                  <span>Klik untuk besarkan</span>
+                </div>
+              </div>
+              <div class="cert-info">
+                <h3>Penerima Anugerah</h3>
+                <p>Hari Keselamatan Makanan PKD Manjung</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 5 -->
+          <div class="cert-card" onclick="openSingleLightbox('assets/produk-muslim.jpg')">
+            <div class="cert-card-inner">
+              <div class="cert-img-wrapper">
+                <img src="assets/produk-muslim.jpg" alt="100% Produk Muslim" loading="lazy">
+                <div class="cert-hover-overlay">
+                  <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"></path></svg>
+                  <span>Klik untuk besarkan</span>
+                </div>
+              </div>
+              <div class="cert-info">
+                <h3>100% Produk Muslim</h3>
+                <p>Pengeluaran Bumiputera Muslim Asli</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="certs-dots" id="certs-dots"></div>
       </div>
     </div>
   </section>
@@ -2914,24 +3220,44 @@
       <div class="gallery-container">
         <div class="gallery-slider" id="gallery-slider">
           <div class="gallery-slide" onclick="openLightbox(0)">
-            <img src="assets/hero-closeup.jpg" alt="Biskut Pelanta Close-up" loading="lazy">
-            <div class="gallery-caption">Biskut Pelanta Karamel Emas - Rangup &amp; Lazat</div>
+            <img src="assets/biskut-pelanta-main.jpg" alt="Roti Biskut Dlekir Biskut Pelanta" loading="lazy">
+            <div class="gallery-caption">Biskut Pelanta Premium - Dihasilkan Segar &amp; Sedia Untuk Dihantar Terus Ke Pintu Rumah Anda!</div>
           </div>
           <div class="gallery-slide" onclick="openLightbox(1)">
-            <img src="assets/coffee-dip-lifestyle.jpg" alt="Cicah Kopi O Panas" loading="lazy">
-            <div class="gallery-caption">Cadangan Hidangan - Serasi Dicicah Kopi O Panas</div>
+            <img src="assets/hero-closeup.jpg" alt="Biskut Pelanta Close-up" loading="lazy">
+            <div class="gallery-caption">Warna Karamel Keemasan Menggoda - Rangup, Wangi Mentega &amp; Cukup Ranggup Di Setiap Gigitan!</div>
           </div>
           <div class="gallery-slide" onclick="openLightbox(2)">
-            <img src="assets/packaging-stacks.jpg" alt="Packaging Pek Biskut Pelanta" loading="lazy">
-            <div class="gallery-caption">Pek Segar Kedap Udara - Sedia Dihantar Seluruh Malaysia</div>
+            <img src="assets/coffee-dip-lifestyle.jpg" alt="Cicah Kopi O Panas" loading="lazy">
+            <div class="gallery-caption">Gandingan Sempurna Minum Petang - Sangat Lazat Apabila Dicicah Kopi O Atau Teh Panas!</div>
           </div>
           <div class="gallery-slide" onclick="openLightbox(3)">
-            <img src="assets/factory-production.jpg" alt="Proses Pembuatan di Kilang" loading="lazy">
-            <div class="gallery-caption">Pembuatan Tradisional Bersih &amp; Bermutu Terus Dari Dulang Oven</div>
+            <img src="assets/packaging-stacks.jpg" alt="Packaging Pek Biskut Pelanta" loading="lazy">
+            <div class="gallery-caption">Pembungkusan Selamat &amp; Kemas - Dijamin Sampai Dalam Keadaan Baik &amp; Kekal Segar!</div>
           </div>
           <div class="gallery-slide" onclick="openLightbox(4)">
+            <img src="assets/factory-production.jpg" alt="Proses Pembuatan di Kilang" loading="lazy">
+            <div class="gallery-caption">Kebersihan Diutamakan - Dihasilkan Setiap Hari Terus Dari Dulang Oven Kilang Kami</div>
+          </div>
+          <div class="gallery-slide" onclick="openLightbox(5)">
             <img src="assets/promo-goodies.jpg" alt="Promosi Goodies Majlis" loading="lazy">
-            <div class="gallery-caption">Goodies Majlis Mesra Tetamu - Roti Biskut DLekir Asli Lekir</div>
+            <div class="gallery-caption">Pakej Goodies Mesra Bajet - Naikkan Seri Majlis Anda Dengan Buah Tangan Yang Disukai Ramai</div>
+          </div>
+          <div class="gallery-slide" onclick="openLightbox(6)">
+            <img src="assets/bakery-trays.jpg" alt="Penyediaan Segar Setiap Hari" loading="lazy">
+            <div class="gallery-caption">Stok Segar Setiap Hari - Dibakar Sempurna Tanpa Bahan Pengawet Untuk Mutu Terbaik</div>
+          </div>
+          <div class="gallery-slide" onclick="openLightbox(7)">
+            <img src="assets/event-booth.jpg" alt="Booth Roti Biskut DLekir" loading="lazy">
+            <div class="gallery-caption">Sambutan Luar Biasa Di Karnival Usahawan - Diiktiraf &amp; Dibimbing Oleh Jabatan Pertanian</div>
+          </div>
+          <div class="gallery-slide" onclick="openLightbox(8)">
+            <img src="assets/event-sales.jpg" alt="Sambutan Hangat Pengunjung" loading="lazy">
+            <div class="gallery-caption">Sentiasa Menjadi Rebutan Pengunjung - Bukti Keenakan Rasa Tradisional Lekir Yang Digemari</div>
+          </div>
+          <div class="gallery-slide" onclick="openLightbox(9)">
+            <img src="assets/audit-session.jpg" alt="Sesi Audit & Bimbingan" loading="lazy">
+            <div class="gallery-caption">Pemeriksaan Kualiti Berkala - Memastikan Setiap Langkah Penyediaan Mematuhi Standard Kebersihan</div>
           </div>
         </div>
 
@@ -2971,11 +3297,59 @@
         <p>Tiada apa yang lebih menenangkan daripada menikmati Biskut Pelanta Lekir bersama secawan kopi O panas. Keharuman mentega biskut ini akan bangkit meresap saat bersatu dengan kehangatan kopi.</p>
         
         <div class="showcase-quote">
-          <p>"Setiap kali minum petang, biskut Lekir inilah wajib ada. Rangup dan menteganya cukup terasa, cicah kopi O memang terbaik!"</p>
+          <p>"Mula-mula beli sepeket buat rasa. Sekali anak-anak berebut makan petang cicah teh. Biskut dia memang jenis rapuh dan wangi mentega, tak sedar sekejap je dah habis. Terus order 10 paket terus buat stok."</p>
           <span>— Kak Ros, Batu Gajah Perak</span>
         </div>
 
         <button onclick="openCheckoutModal()" class="btn btn-outline">Mula Menempah Sekarang</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION: DETAIL PRODUK -->
+  <section class="section-padding" style="background-color: var(--primary-light); position: relative; overflow: hidden;" id="detail-produk">
+    <!-- Grains Watermark -->
+    <img class="bg-wheat-section bg-wheat-detail-left" src="assets/wheat-grains-left.png" alt="" aria-hidden="true" style="position: absolute; left: 0; bottom: -50px; height: 300px; opacity: 0.15; z-index: 1;">
+    <div class="container" style="position: relative; z-index: 2;">
+      <div class="section-title text-center">
+        <h2 style="color: var(--secondary-dark);">Detail &amp; Spesifikasi Produk</h2>
+        <p style="color: var(--secondary); max-width: 600px; margin: 0.5rem auto 0 auto;">Kenali Biskut Pelanta asli kami dengan lebih dekat.</p>
+      </div>
+
+      <div class="spec-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 3rem;">
+        <!-- Card 1: Visual & Packaging -->
+        <div class="spec-img-card" style="background: var(--white); border-radius: 20px; box-shadow: var(--shadow-md); overflow: hidden; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 1.5rem; border: 1px solid var(--border-color);">
+          <img src="assets/biskut-pelanta-main.jpg" alt="Biskut Pelanta Pek" style="width: 100%; max-height: 250px; object-fit: contain; border-radius: 10px; margin-bottom: 1rem;">
+          <span style="font-weight: 700; color: var(--secondary-dark); font-size: 1.1rem;">Biskut Pelanta Lekir</span>
+          <span style="color: var(--secondary); font-size: 0.9rem; text-align: center; margin-top: 0.25rem;">Rangup &amp; Rapuh, Sedap cicah dengan kopi &amp; tea panas.</span>
+        </div>
+
+        <!-- Card 2: Specifications List -->
+        <div class="spec-info-card" style="background: var(--white); border-radius: 20px; box-shadow: var(--shadow-md); padding: 2rem; display: flex; flex-direction: column; justify-content: center; border: 1px solid var(--border-color);">
+          <h3 style="color: var(--secondary-dark); margin-bottom: 1.5rem; border-bottom: 2px solid var(--primary); padding-bottom: 0.5rem; font-size: 1.3rem;">Apa Yang Anda Akan Terima</h3>
+          <ul class="spec-list" style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 1rem;">
+            <li style="display: flex; align-items: center; gap: 0.5rem; border-bottom: 1px dashed var(--border-color); padding-bottom: 0.5rem;">
+              <span style="color: var(--primary-dark); font-weight: bold;">✅</span>
+              <span style="color: var(--secondary-dark); font-weight: 600;">1 Pek Biskut Pelanta Premium (220g &plusmn;)</span>
+            </li>
+            <li style="display: flex; align-items: center; gap: 0.5rem; border-bottom: 1px dashed var(--border-color); padding-bottom: 0.5rem;">
+              <span style="color: var(--primary-dark); font-weight: bold;">✅</span>
+              <span style="color: var(--secondary-dark); font-weight: 600;">11-12 Keping Biskut Setiap Pek</span>
+            </li>
+            <li style="display: flex; align-items: center; gap: 0.5rem; border-bottom: 1px dashed var(--border-color); padding-bottom: 0.5rem;">
+              <span style="color: var(--primary-dark); font-weight: bold;">✅</span>
+              <span style="color: var(--secondary-dark); font-weight: 600;">Pek Zip-Lock Kedap Udara (Kekal Rangup)</span>
+            </li>
+            <li style="display: flex; align-items: center; gap: 0.5rem; border-bottom: 1px dashed var(--border-color); padding-bottom: 0.5rem;">
+              <span style="color: var(--primary-dark); font-weight: bold;">✅</span>
+              <span style="color: var(--secondary-dark); font-weight: 600;">Ketahanan Segar Selama 3-5 Bulan</span>
+            </li>
+            <li style="display: flex; align-items: center; gap: 0.5rem; padding-bottom: 0.5rem;">
+              <span style="color: var(--primary-dark); font-weight: bold;">✅</span>
+              <span style="color: var(--secondary-dark); font-weight: 600;">Sangat Sesuai Untuk Kudapan Harian &amp; Goodies Majlis</span>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
@@ -2998,7 +3372,7 @@
           </div>
           <div class="audience-info">
             <h3>Untuk Keluarga</h3>
-            <p>Kudapan santai di rumah ketika menonton TV bersama anak-anak atau diletakkan di pantry pejabat.</p>
+            <p>Sukar cari kudapan yang disukai anak-anak dan warga emas? Biskut ini rangup, tidak keras dan wangi, menjadikannya pilihan utama untuk stok hidangan petang seisi keluarga.</p>
           </div>
         </div>
 
@@ -3008,7 +3382,7 @@
           </div>
           <div class="audience-info">
             <h3>Untuk Majlis</h3>
-            <p>Sangat popular sebagai goodies perkahwinan, pertunangan, aqiqah, hari jadi, serta pelbagai acara korporat.</p>
+            <p>Mahu tetamu majlis anda bawa pulang buah tangan yang confirm dimakan? Pek zip-lock premium yang cantik ini menjimatkan masa anda dan dijamin buat tetamu tersenyum puas.</p>
           </div>
         </div>
 
@@ -3018,7 +3392,7 @@
           </div>
           <div class="audience-info">
             <h3>Untuk Reseller</h3>
-            <p>Produk makanan tradisional yang tinggi permintaan berulang dengan margin keuntungan yang sangat memuaskan.</p>
+            <p>Sering rugi dengan produk yang lambat terjual? Biskut Pelanta Lekir adalah barangan "fast-moving" dengan repeat order luar biasa dan margin untung bersih yang tinggi.</p>
           </div>
         </div>
       </div>
@@ -3050,8 +3424,8 @@
           <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path></svg>
         </div>
         <div class="trust-text">
-          <h4>100% Produk Tempatan</h4>
-          <p>Diadun dan dihasilkan sepenuhnya di Lekir, Perak.</p>
+          <h4>100% Produk Muslim Bumiputera</h4>
+          <p>Dihasilkan secara suci dan bersih oleh usahawan bimbingan Jabatan Pertanian di Lekir, Perak.</p>
         </div>
       </div>
 
@@ -3060,8 +3434,8 @@
           <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
         </div>
         <div class="trust-text">
-          <h4>Pembelian Selamat</h4>
-          <p>Simulasi gerbang FPX &amp; DuitNow QR yang diyakini.</p>
+          <h4>Penghantaran Selamat Seluruh Malaysia</h4>
+          <p>Kami pos terus ke pintu anda dengan balutan bubble wrap tebal tanpa sebarang caj tambahan.</p>
         </div>
       </div>
 
@@ -3070,8 +3444,8 @@
           <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z"></path></svg>
         </div>
         <div class="trust-text">
-          <h4>Sokongan WhatsApp</h4>
-          <p>Ada soalan? Hubungi kami terus untuk maklum balas pantas.</p>
+          <h4>Gerbang Pembayaran Rasmi Billplz</h4>
+          <p>Pembayaran yang pantas dan selamat menggunakan FPX bank online pilihan anda.</p>
         </div>
       </div>
     </div>
@@ -3082,8 +3456,8 @@
     <div class="container">
       <div style="max-width: 600px; margin: 0 auto; background: var(--bg-cream); padding: 3.5rem 2rem; border-radius: 28px; border: 2px dashed var(--primary); box-shadow: var(--shadow-md);">
         <span class="badge-primary">Beli Terus Dari Kilang</span>
-        <h2 style="font-size: 2rem; margin-bottom: 1rem; color: var(--secondary-dark);">Sedia Untuk Menikmati Kerangupan?</h2>
-        <p style="color: var(--text-muted); margin-bottom: 2rem;">Klik butang di bawah untuk menempah pek Biskut Pelanta segar anda terus dari Lekir, Perak menerusi sistem tempahan popup kami.</p>
+        <h2 style="font-size: 2.1rem; margin-bottom: 1rem; color: var(--secondary-dark); line-height: 1.2;">Jangan Tunggu Stok Jualan Segar Minggu Ini Habis!</h2>
+        <p style="color: var(--text-muted); margin-bottom: 2rem;">Stok dibakar segar dalam kelompok terhad setiap minggu bagi menjaga mutu kerangupan. Tempah pek anda hari ini sebelum slot penuh dan terpaksa menunggu batch minggu hadapan!</p>
         <button onclick="openCheckoutModal()" class="btn btn-primary btn-lg" style="width: 100%; max-width: 320px;">Tempah Sekarang</button>
       </div>
     </div>
@@ -3370,6 +3744,26 @@
           </div>
         </div>
 
+        <div class="faq-item">
+          <div class="faq-question">
+            Berapa lama biskut boleh tahan?
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path></svg>
+          </div>
+          <div class="faq-answer">
+            <p>Biskut Pelanta kami dibungkus rapi dalam paket zip-lock kedap udara dan boleh bertahan selama 3 hingga 5 bulan tanpa menjejaskan kerangupan dan aromanya, asalkan pek ditutup rapat semula selepas dibuka.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            Adakah biskut mudah hancur ketika penghantaran?
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path></svg>
+          </div>
+          <div class="faq-answer">
+            <p>Jangan risau. Kami mengambil berat tentang keselamatan pesanan anda. Setiap penghantaran akan dibalut dengan bubble wrap tebal secara percuma bagi meminimumkan risiko biskut hancur dan memastikan ia sampai ke tangan anda dalam keadaan yang terbaik.</p>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -3415,7 +3809,7 @@
 
     <div class="container footer-bottom">
       <p>&copy; 2026 Roti Biskut DLekir Sdn. Bhd. Hak Cipta Terpelihara.</p>
-      <p>Dibina dengan penuh dedikasi untuk Peminat Biskut Pelanta Sejati.</p>
+      <p>Dibina dengan penuh dedikasi untuk Peminat Biskut Pelanta Sejati. | Developed by <a href="https://binawebsitemurah-by.zaimrosli.my/" target="_blank" style="color: inherit; text-decoration: underline; font-weight: bold;">kwikezee design</a></p>
     </div>
   </footer>
 
@@ -3439,14 +3833,7 @@
     <button onclick="openCheckoutModal()" class="btn btn-primary mobile-cta-btn">Order Sekarang</button>
   </div>
 
-  <!-- Recent Order Notification Popup -->
-  <div class="order-popup" id="order-popup">
-    <div class="order-popup-avatar" id="order-popup-avatar">A</div>
-    <div class="order-popup-details">
-      <div class="order-popup-title" id="order-popup-text">Ahmad dari Johor baru membuat pesanan.</div>
-      <div class="order-popup-time" id="order-popup-time">Sekejap tadi</div>
-    </div>
-  </div>
+  
 
   <!-- -------------------------------------------------------------
        JAVASCRIPT LOGIC & CONVERSION FUNCTIONALITY
@@ -3456,7 +3843,7 @@
        SETTINGS CONFIGURATION OBJECT
        ========================================== */
     const SETTINGS = {
-      companyName: "Roti Biskut DLekir Sdn. Bhd.",
+      companyName: "Roti Biskut Dlekir Sdn Bhd",
       whatsAppNumber: "60135024652", // WhatsApp Format: Tanpa simbol '+' atau '00' di hadapan, mulakan dengan '60'
       companyAddress: "25B, Batu 10, Lekir, 32020, Sitiawan, Perak",
       companyEmail: "admin@dlekir.com.my",
@@ -3469,35 +3856,35 @@
       fpxInformation: {
         bankName: "Maybank",
         accountNumber: "558000123456",
-        accountHolder: "Roti Biskut DLekir Sdn. Bhd."
+        accountHolder: "Roti Biskut Dlekir Sdn Bhd"
       },
       packages: [
         {
           id: "pkg_1",
           name: "Starter Pack",
           quantityDisplay: "1 Pek",
-          price: 9.90,
+          price: 7.90,
           quantity: 1,
-          features: ["✓ 1 Pek Biskut Pelanta", "✓ Sesuai untuk percubaan", "✓ Pek zip-lock tahan segar", "✓ Dibungkus dengan bubble wrap"],
+          features: ["✓ 1 Paket Biskut Pelanta", "✓ Berat: 220g (11-12 keping)", "✓ Pek zip-lock tahan segar", "✓ Dibungkus kemas & selamat"],
           badge: ""
         },
         {
           id: "pkg_2",
           name: "Family Pack",
-          quantityDisplay: "3 Pek",
-          price: 27.90,
-          quantity: 3,
-          features: ["✓ 3 Pek Biskut Pelanta", "✓ Paling laris & popular", "✓ Sesuai untuk keluarga", "✓ Penghantaran segera pantas"],
+          quantityDisplay: "5 Pek",
+          price: 37.50,
+          quantity: 5,
+          features: ["🔥 Paling Ramai Pilih", "⭐ Jimat Berbanding Beli Asing", "🚚 Sesuai Untuk Keluarga", "✓ 5 Paket Biskut Pelanta Premium"],
           badge: "PALING POPULAR",
           popular: true
         },
         {
           id: "pkg_3",
-          name: "Value Pack",
+          name: "Value Pack (1 Bundle)",
           quantityDisplay: "10 Pek",
-          price: 79.90,
+          price: 49.00,
           quantity: 10,
-          features: ["✓ 10 Pek Biskut Pelanta", "✓ Penjimatan berganda", "✓ Sesuai stok kudapan rumah", "✓ Percuma bubble wrap tebal"],
+          features: ["🔥 Jimat RM10 (Promosi)", "🔥 Percuma Bubble Wrap Tebal", "🔥 Sesuai Untuk Simpanan Stok", "✓ 10 Paket Biskut Pelanta Premium"],
           badge: "PILIHAN TERBAIK"
         },
         {
@@ -3537,12 +3924,17 @@
       // Update checkout prices first time
       calculatePrices();
       
-      // Initialise Gallery Dots
+      // Initialise Gallery Dots & Auto Slide
       initGalleryDots();
+      startGalleryAutoSlide();
+
+      // Initialise Certs Slider
+      initCertsDots();
+      startCertsAutoSlide();
 
       // Start Countdown Timer / Conversion boosters
       startVisitorCounter();
-      startOrderPopupRotator();
+      // startOrderPopupRotator();
 
       // Scroll Event for Sticky effects
       window.addEventListener('scroll', handleWindowScroll);
@@ -4036,9 +4428,16 @@
        ========================================== */
     const gallerySlider = document.getElementById('gallery-slider');
     const totalSlides = document.querySelectorAll('.gallery-slide').length;
+    let galleryAutoSlideTimer = null;
     
-    document.getElementById('gallery-prev').addEventListener('click', () => slideGallery(-1));
-    document.getElementById('gallery-next').addEventListener('click', () => slideGallery(1));
+    document.getElementById('gallery-prev').addEventListener('click', () => {
+      slideGallery(-1);
+      resetGalleryAutoSlide();
+    });
+    document.getElementById('gallery-next').addEventListener('click', () => {
+      slideGallery(1);
+      resetGalleryAutoSlide();
+    });
 
     function slideGallery(direction) {
       activeGalleryIndex += direction;
@@ -4062,6 +4461,7 @@
     function jumpToSlide(index) {
       activeGalleryIndex = index;
       updateGalleryUI();
+      resetGalleryAutoSlide();
     }
 
     function updateGalleryUI() {
@@ -4094,25 +4494,56 @@
       const threshold = 50; // swipe offset limit
       if (touchStartX - touchEndX > threshold) {
         slideGallery(1); // swipe left -> next
+        resetGalleryAutoSlide();
       } else if (touchEndX - touchStartX > threshold) {
         slideGallery(-1); // swipe right -> prev
+        resetGalleryAutoSlide();
       }
+    }
+
+    function startGalleryAutoSlide() {
+      if (galleryAutoSlideTimer) clearInterval(galleryAutoSlideTimer);
+      galleryAutoSlideTimer = setInterval(() => {
+        slideGallery(1);
+      }, 4000);
+    }
+
+    function resetGalleryAutoSlide() {
+      startGalleryAutoSlide();
     }
 
     // LIGHTBOX FUNCS
     const lightboxModal = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightbox-img');
     const slideImages = [
+      "assets/biskut-pelanta-main.jpg",
       "assets/hero-closeup.jpg",
       "assets/coffee-dip-lifestyle.jpg",
       "assets/packaging-stacks.jpg",
       "assets/factory-production.jpg",
-      "assets/promo-goodies.jpg"
+      "assets/promo-goodies.jpg",
+      "assets/bakery-trays.jpg",
+      "assets/event-booth.jpg",
+      "assets/event-sales.jpg",
+      "assets/audit-session.jpg"
     ];
 
     function openLightbox(slideIndex) {
       activeGalleryIndex = slideIndex;
       lightboxImg.src = slideImages[activeGalleryIndex];
+      const prevBtn = lightboxModal.querySelector('.lightbox-prev');
+      const nextBtn = lightboxModal.querySelector('.lightbox-next');
+      if (prevBtn) prevBtn.style.display = 'flex';
+      if (nextBtn) nextBtn.style.display = 'flex';
+      lightboxModal.classList.add('show');
+    }
+
+    function openSingleLightbox(src) {
+      lightboxImg.src = src;
+      const prevBtn = lightboxModal.querySelector('.lightbox-prev');
+      const nextBtn = lightboxModal.querySelector('.lightbox-next');
+      if (prevBtn) prevBtn.style.display = 'none';
+      if (nextBtn) nextBtn.style.display = 'none';
       lightboxModal.classList.add('show');
     }
 
@@ -4135,6 +4566,108 @@
     });
 
     /* ==========================================
+       CERTIFICATES SLIDER CODE (MOBILE ONLY)
+       ========================================== */
+    const certsSlider = document.querySelector('.certs-grid');
+    const certCards = document.querySelectorAll('.cert-card');
+    const totalCerts = certCards.length;
+    let activeCertIndex = 0;
+    let certsAutoSlideTimer = null;
+
+    function initCertsDots() {
+      const dotsContainer = document.getElementById('certs-dots');
+      if (!dotsContainer) return;
+      dotsContainer.innerHTML = '';
+      for (let i = 0; i < totalCerts; i++) {
+        const dot = document.createElement('div');
+        dot.className = `certs-dot ${i === 0 ? 'active' : ''}`;
+        dot.setAttribute('onclick', `jumpToCertSlide(${i})`);
+        dotsContainer.appendChild(dot);
+      }
+    }
+
+    function jumpToCertSlide(index) {
+      if (window.innerWidth >= 768) return;
+      activeCertIndex = index;
+      updateCertsUI();
+      resetCertsAutoSlide();
+    }
+
+    function slideCerts(direction) {
+      if (window.innerWidth >= 768) return;
+      activeCertIndex += direction;
+      if (activeCertIndex < 0) activeCertIndex = totalCerts - 1;
+      if (activeCertIndex >= totalCerts) activeCertIndex = 0;
+
+      updateCertsUI();
+    }
+
+    function updateCertsUI() {
+      if (certsSlider) {
+        certsSlider.style.transform = `translateX(-${activeCertIndex * 100}%)`;
+      }
+      const dots = document.querySelectorAll('.certs-dot');
+      dots.forEach((dot, idx) => {
+        if (idx === activeCertIndex) {
+          dot.classList.add('active');
+        } else {
+          dot.classList.remove('active');
+        }
+      });
+    }
+
+    let certsTouchStartX = 0;
+    let certsTouchEndX = 0;
+
+    if (certsSlider) {
+      certsSlider.addEventListener('touchstart', e => {
+        certsTouchStartX = e.changedTouches[0].screenX;
+      }, {passive: true});
+
+      certsSlider.addEventListener('touchend', e => {
+        certsTouchEndX = e.changedTouches[0].screenX;
+        handleCertsSwipe();
+      }, {passive: true});
+    }
+
+    function handleCertsSwipe() {
+      if (window.innerWidth >= 768) return;
+      const threshold = 50;
+      if (certsTouchStartX - certsTouchEndX > threshold) {
+        slideCerts(1);
+        resetCertsAutoSlide();
+      } else if (certsTouchEndX - certsTouchStartX > threshold) {
+        slideCerts(-1);
+        resetCertsAutoSlide();
+      }
+    }
+
+    function startCertsAutoSlide() {
+      if (window.innerWidth >= 768) {
+        if (certsAutoSlideTimer) clearInterval(certsAutoSlideTimer);
+        return;
+      }
+      if (certsAutoSlideTimer) clearInterval(certsAutoSlideTimer);
+      certsAutoSlideTimer = setInterval(() => {
+        slideCerts(1);
+      }, 4000);
+    }
+
+    function resetCertsAutoSlide() {
+      startCertsAutoSlide();
+    }
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth >= 768) {
+        if (certsSlider) certsSlider.style.transform = 'none';
+        if (certsAutoSlideTimer) clearInterval(certsAutoSlideTimer);
+      } else {
+        updateCertsUI();
+        startCertsAutoSlide();
+      }
+    });
+
+    /* ==========================================
        CONVERSION BOOSTERS RUNNERS
        ========================================== */
     function startVisitorCounter() {
@@ -4145,34 +4678,7 @@
       }, 5000);
     }
 
-    function startOrderPopupRotator() {
-      const popup = document.getElementById('order-popup');
-      const textEl = document.getElementById('order-popup-text');
-      const avatarEl = document.getElementById('order-popup-avatar');
-
-      const names = ["Ahmad", "Nurul", "Farid", "Siti", "Hafiz", "Zila", "Khairul", "Norazlina", "Ridzuan", "Amira"];
-      const locations = ["Johor Bahru", "Shah Alam", "Ipoh", "Kuala Kangsar", "Klang", "Melaka", "Kuantan", "Alor Setar", "Kuala Lumpur", "Taiping"];
-      const purchasePackages = ["Starter Pack (1 Pek)", "Family Pack (3 Pek)", "Value Pack (10 Pek)"];
-
-      setInterval(() => {
-        // Randomise name & package details
-        const name = names[Math.floor(Math.random() * names.length)];
-        const loc = locations[Math.floor(Math.random() * locations.length)];
-        const pkg = purchasePackages[Math.floor(Math.random() * purchasePackages.length)];
-
-        avatarEl.innerText = name.charAt(0);
-        textEl.innerHTML = `<strong>${name}</strong> dari <strong>${loc}</strong> baru membeli <strong>${pkg}</strong>.`;
-
-        // Show popup
-        popup.classList.add('show');
-
-        // Hide after 6 seconds
-        setTimeout(() => {
-          popup.classList.remove('show');
-        }, 6000);
-
-      }, 25000); // Trigger every 25 seconds
-    }
+    // startOrderPopupRotator function removed
 
     /* ==========================================
        CHECKOUT & FORM HANDLING (SIMULATION)
