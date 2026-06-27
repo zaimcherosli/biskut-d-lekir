@@ -1,0 +1,67 @@
+{
+  "courier": "J&T Express",
+  "packages": {
+    "1": {
+      "name": "1 Pek",
+      "shippingWeight": 340
+    },
+    "3": {
+      "name": "3 Pek",
+      "shippingWeight": 980
+    },
+    "5": {
+      "name": "5 Pek",
+      "shippingWeight": 1580
+    },
+    "10": {
+      "name": "10 Pek",
+      "shippingWeight": 2980
+    }
+  },
+  "shipping": {
+    "semenanjung": [
+      {
+        "maxWeight": 500,
+        "price": 6.50
+      },
+      {
+        "maxWeight": 1000,
+        "price": 8.00
+      },
+      {
+        "maxWeight": 2000,
+        "price": 12.00
+      },
+      {
+        "maxWeight": 3000,
+        "price": 16.00
+      },
+      {
+        "maxWeight": 99999,
+        "price": 25.00
+      }
+    ],
+    "sabahsarawak": [
+      {
+        "maxWeight": 500,
+        "price": 12.00
+      },
+      {
+        "maxWeight": 1000,
+        "price": 15.00
+      },
+      {
+        "maxWeight": 2000,
+        "price": 22.00
+      },
+      {
+        "maxWeight": 3000,
+        "price": 32.00
+      },
+      {
+        "maxWeight": 99999,
+        "price": 50.00
+      }
+    ]
+  }
+}

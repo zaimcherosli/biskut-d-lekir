@@ -15,13 +15,13 @@
   <meta property="og:url" content="https://biskutpelanta.dlekir.com.my/">
   <meta property="og:title" content="Biskut Pelanta Asli Lekir, Perak - Rangup & Sedap">
   <meta property="og:description" content="Nikmati kelazatan Biskut Pelanta premium buatan tempatan yang dibakar sempurna. Rangup luar biasa, sesuai cicah kopi O panas!">
-  <meta property="og:image" content="assets/hero-closeup.jpg">
+  <meta property="og:image" content="assets/biskut-dlekir-flowers.jpg">
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
   <meta property="twitter:title" content="Biskut Pelanta Asli Lekir, Perak">
   <meta property="twitter:description" content="Biskut Pelanta premium rangup dari Lekir, Perak. Sesuai untuk goodies majlis dan kudapan seisi keluarga.">
-  <meta property="twitter:image" content="assets/hero-closeup.jpg">
+  <meta property="twitter:image" content="assets/biskut-dlekir-flowers.jpg">
 
   <!-- Favicon -->
   <link rel="icon" type="image/jpeg" href="assets/brand-logo.jpg">
@@ -113,18 +113,18 @@
 
     /* 1. Hero Section - Left & Right Wheat Bouquets */
     .bg-wheat-hero-left {
-      top: 5%;
+      top: -10%;
       left: 0;
-      height: 600px;
+      height: 120%;
       width: auto;
-      opacity: 0.28; /* Increased opacity to 28% for better visibility */
+      opacity: 0.28;
     }
     .bg-wheat-hero-right {
-      top: 5%;
+      top: -10%;
       right: 0;
-      height: 600px;
+      height: 120%;
       width: auto;
-      opacity: 0.28; /* Increased opacity to 28% for better visibility */
+      opacity: 0.28;
     }
 
     /* 2. Pricing Section - Left & Right Wheat Bouquets */
@@ -208,7 +208,8 @@
     @media (max-width: 768px) {
       .bg-wheat-hero-left,
       .bg-wheat-hero-right {
-        height: 380px;
+        height: 110%;
+        top: -5%;
         opacity: 0.20;
       }
       .bg-wheat-hero-left {
@@ -267,7 +268,8 @@
     @media (max-width: 480px) {
       .bg-wheat-hero-left,
       .bg-wheat-hero-right {
-        height: 280px;
+        height: 110%;
+        top: -5%;
         opacity: 0.16;
       }
       .bg-wheat-hero-left {
@@ -494,8 +496,7 @@
     .logo-img {
       width: 45px;
       height: 45px;
-      border-radius: 50%;
-      border: 2px solid var(--primary);
+      object-fit: contain;
     }
 
     .logo-text h2 {
@@ -2425,6 +2426,12 @@
       footer {
         padding-bottom: calc(105px + env(safe-area-inset-bottom)) !important;
       }
+      .footer-bottom {
+        flex-direction: column !important;
+        text-align: center !important;
+        gap: 0.75rem !important;
+        padding-top: 1.5rem !important;
+      }
     }
 
     /* Recent Order Notification Popup */
@@ -2993,7 +3000,7 @@
     <img class="bg-wheat-section bg-wheat-hero-right" src="assets/wheat-new-right.png" alt="" aria-hidden="true">
     <div class="container hero-grid">
       <div class="hero-content">
-        <span class="badge-primary">✓ Produk Tradisional Tempatan</span>
+        <span class="badge-primary">🔥 Repeat Order Sampai 10 Pek — Paling Laris Di Lekir!</span>
         <h1>Biskut Pelanta Legend Lekir: Ramai Repeat Order Sampai Borong <span class="highlight">10 Pek Sekali!</span></h1>
         <p class="lead">Nikmati kerangupan luar biasa dengan aroma wangi mentega Pelanta asli yang tidak cepat muak. Sesuai untuk minum petang seisi keluarga mahupun sebagai pilihan goodies majlis yang premium.</p>
         
@@ -3028,7 +3035,7 @@
       <div class="hero-image-container">
         <div class="hero-img-wrapper">
           <img src="assets/biskut-pelanta-main.jpg" alt="Roti Biskut Dlekir Biskut Pelanta" width="600" height="480">
-          <div class="hero-badge-floating">Kualiti Premium ⭐</div>
+          <div class="hero-badge-floating">Terhad Stok Minggu Ini ⭐</div>
         </div>
       </div>
     </div>
@@ -3042,7 +3049,7 @@
         <span id="js-live-visitors">🔥 23 orang sedang melihat produk ini sekarang</span>
       </div>
       <div>
-        <span>⏳ Batch jualan segar minggu ini diproses terhad!</span>
+        <span>⏳ Stok terhad — dibakar segar & habis setiap minggu!</span>
       </div>
     </div>
   </div>
@@ -3055,7 +3062,7 @@
     <div class="container">
       <div class="section-title text-center">
         <h2>Kenapa Ramai Pilih Biskut Pelanta?</h2>
-        <p>Biskut Pelanta kami disediakan mengikut resipi turun-temurun dengan standard kebersihan tertinggi.</p>
+        <p>Ini bukan biskut biasa. Resipi turun-temurun Lekir yang tak pernah berubah sejak dulu — sebab tu pelanggan tak pernah berhenti repeat order.</p>
       </div>
 
       <div class="benefits-grid">
@@ -3165,8 +3172,8 @@
                 </div>
               </div>
               <div class="cert-info">
-                <h3>Bimbingan Pertanian</h3>
-                <p>Usahawan Bimbingan Jabatan Pertanian</p>
+                <h3>Usahawan Berdaftar</h3>
+                <p>Dibimbing Rasmi Jabatan Pertanian Malaysia</p>
               </div>
             </div>
           </div>
@@ -3182,8 +3189,8 @@
                 </div>
               </div>
               <div class="cert-info">
-                <h3>Penerima Anugerah</h3>
-                <p>Hari Keselamatan Makanan PKD Manjung</p>
+                <h3>Pemenang Anugerah Kualiti</h3>
+                <p>Hari Keselamatan Makanan Daerah Manjung</p>
               </div>
             </div>
           </div>
@@ -3216,8 +3223,8 @@
     <img class="bg-wheat-section bg-flour-gallery-left" src="assets/flour-bowl.png" alt="" aria-hidden="true">
     <div class="container">
       <div class="section-title text-center">
-        <h2>Galeri Produk Kami</h2>
-        <p>Lihat kualiti penghasilan Biskut Pelanta asli kami. Klik pada gambar untuk melihat lebih dekat.</p>
+        <h2>Tengok Sendiri — Kenapa Ramai Yang Jatuh Hati</h2>
+        <p>Dari warna karamel yang menggoda hingga pembungkusan yang kemas — bukti gambar lebih jujur dari mana-mana iklan.</p>
       </div>
 
       <div class="gallery-container">
@@ -3227,38 +3234,42 @@
             <div class="gallery-caption">Biskut Pelanta Premium - Dihasilkan Segar &amp; Sedia Untuk Dihantar Terus Ke Pintu Rumah Anda!</div>
           </div>
           <div class="gallery-slide" onclick="openLightbox(1)">
-            <img src="assets/hero-closeup.jpg" alt="Biskut Pelanta Close-up" loading="lazy">
-            <div class="gallery-caption">Warna Karamel Keemasan Menggoda - Rangup, Wangi Mentega &amp; Cukup Ranggup Di Setiap Gigitan!</div>
+            <img src="assets/biskut-dlekir-flowers.jpg" alt="Pek Premium Biskut Pelanta" loading="lazy">
+            <div class="gallery-caption">Roti Biskut DLekir yang Kemas &amp; Cantik - Sesuai dijadikan hadiah, hamper, mahupun buah tangan buat yang tersayang!</div>
           </div>
           <div class="gallery-slide" onclick="openLightbox(2)">
+            <img src="assets/biskut-loaves-bakery.jpg" alt="Proses Pembakaran Biskut" loading="lazy">
+            <div class="gallery-caption">Proses Pembakaran Sempurna - Dibakar segar setiap hari di kilang kami di Lekir untuk menjamin keharuman mentega asli!</div>
+          </div>
+          <div class="gallery-slide" onclick="openLightbox(3)">
             <img src="assets/coffee-dip-lifestyle.jpg" alt="Cicah Kopi O Panas" loading="lazy">
             <div class="gallery-caption">Gandingan Sempurna Minum Petang - Sangat Lazat Apabila Dicicah Kopi O Atau Teh Panas!</div>
           </div>
-          <div class="gallery-slide" onclick="openLightbox(3)">
+          <div class="gallery-slide" onclick="openLightbox(4)">
             <img src="assets/packaging-stacks.jpg" alt="Packaging Pek Biskut Pelanta" loading="lazy">
             <div class="gallery-caption">Pembungkusan Selamat &amp; Kemas - Dijamin Sampai Dalam Keadaan Baik &amp; Kekal Segar!</div>
           </div>
-          <div class="gallery-slide" onclick="openLightbox(4)">
+          <div class="gallery-slide" onclick="openLightbox(5)">
             <img src="assets/factory-production.jpg" alt="Proses Pembuatan di Kilang" loading="lazy">
             <div class="gallery-caption">Kebersihan Diutamakan - Dihasilkan Setiap Hari Terus Dari Dulang Oven Kilang Kami</div>
           </div>
-          <div class="gallery-slide" onclick="openLightbox(5)">
+          <div class="gallery-slide" onclick="openLightbox(6)">
             <img src="assets/promo-goodies.jpg" alt="Promosi Goodies Majlis" loading="lazy">
             <div class="gallery-caption">Pakej Goodies Mesra Bajet - Naikkan Seri Majlis Anda Dengan Buah Tangan Yang Disukai Ramai</div>
           </div>
-          <div class="gallery-slide" onclick="openLightbox(6)">
+          <div class="gallery-slide" onclick="openLightbox(7)">
             <img src="assets/bakery-trays.jpg" alt="Penyediaan Segar Setiap Hari" loading="lazy">
             <div class="gallery-caption">Stok Segar Setiap Hari - Dibakar Sempurna Tanpa Bahan Pengawet Untuk Mutu Terbaik</div>
           </div>
-          <div class="gallery-slide" onclick="openLightbox(7)">
+          <div class="gallery-slide" onclick="openLightbox(8)">
             <img src="assets/event-booth.jpg" alt="Booth Roti Biskut DLekir" loading="lazy">
             <div class="gallery-caption">Sambutan Luar Biasa Di Karnival Usahawan - Diiktiraf &amp; Dibimbing Oleh Jabatan Pertanian</div>
           </div>
-          <div class="gallery-slide" onclick="openLightbox(8)">
+          <div class="gallery-slide" onclick="openLightbox(9)">
             <img src="assets/event-sales.jpg" alt="Sambutan Hangat Pengunjung" loading="lazy">
             <div class="gallery-caption">Sentiasa Menjadi Rebutan Pengunjung - Bukti Keenakan Rasa Tradisional Lekir Yang Digemari</div>
           </div>
-          <div class="gallery-slide" onclick="openLightbox(9)">
+          <div class="gallery-slide" onclick="openLightbox(10)">
             <img src="assets/audit-session.jpg" alt="Sesi Audit & Bimbingan" loading="lazy">
             <div class="gallery-caption">Pemeriksaan Kualiti Berkala - Memastikan Setiap Langkah Penyediaan Mematuhi Standard Kebersihan</div>
           </div>
@@ -3304,7 +3315,7 @@
           <span>— Kak Ros, Batu Gajah Perak</span>
         </div>
 
-        <button onclick="openCheckoutModal()" class="btn btn-outline">Mula Menempah Sekarang</button>
+        <button onclick="openCheckoutModal()" class="btn btn-outline">Saya Nak Cuba Sekarang →</button>
       </div>
     </div>
   </section>
@@ -3315,8 +3326,8 @@
     <img class="bg-wheat-section bg-wheat-detail-left" src="assets/wheat-grains-left.png" alt="" aria-hidden="true" style="position: absolute; left: 0; bottom: -50px; height: 300px; opacity: 0.15; z-index: 1;">
     <div class="container" style="position: relative; z-index: 2;">
       <div class="section-title text-center">
-        <h2 style="color: var(--secondary-dark);">Detail &amp; Spesifikasi Produk</h2>
-        <p style="color: var(--secondary); max-width: 600px; margin: 0.5rem auto 0 auto;">Kenali Biskut Pelanta asli kami dengan lebih dekat.</p>
+        <h2 style="color: var(--secondary-dark);">Apa Yang Anda Dapat Dalam Setiap Pek?</h2>
+        <p style="color: var(--secondary); max-width: 600px; margin: 0.5rem auto 0 auto;">Tiada bahan pengawet. Tiada penipuan. 220g biskut rangup asli yang dibakar hari itu juga sebelum dipos ke pintu anda.</p>
       </div>
 
       <div class="spec-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 3rem;">
@@ -3341,11 +3352,11 @@
             </li>
             <li style="display: flex; align-items: center; gap: 0.5rem; border-bottom: 1px dashed var(--border-color); padding-bottom: 0.5rem;">
               <span style="color: var(--primary-dark); font-weight: bold;">✅</span>
-              <span style="color: var(--secondary-dark); font-weight: 600;">Pek Zip-Lock Kedap Udara (Kekal Rangup)</span>
+              <span style="color: var(--secondary-dark); font-weight: 600;">Pembungkusan Berseal Kedap Udara (Kekal Rangup)</span>
             </li>
             <li style="display: flex; align-items: center; gap: 0.5rem; border-bottom: 1px dashed var(--border-color); padding-bottom: 0.5rem;">
               <span style="color: var(--primary-dark); font-weight: bold;">✅</span>
-              <span style="color: var(--secondary-dark); font-weight: 600;">Ketahanan Segar Selama 3-5 Bulan</span>
+              <span style="color: var(--secondary-dark); font-weight: 600;">Ketahanan Segar Selama 4-5 Bulan</span>
             </li>
             <li style="display: flex; align-items: center; gap: 0.5rem; padding-bottom: 0.5rem;">
               <span style="color: var(--primary-dark); font-weight: bold;">✅</span>
@@ -3364,14 +3375,14 @@
     <img class="bg-wheat-section bg-grains-audience-right" src="assets/wheat-grains-right.png" alt="" aria-hidden="true">
     <div class="container">
       <div class="section-title text-center">
-        <h2>Sesuai Untuk Siapa?</h2>
-        <p>Biskut Pelanta Lekir direka untuk memenuhi pelbagai keperluan kudapan dan sambutan anda.</p>
+        <h2>Siapa Paling Seronok Bila Dapat Biskut Ni?</h2>
+        <p>Dari meja makan keluarga hingga dulang buah tangan majlis — Biskut Pelanta Lekir memang direka untuk momen yang paling bermakna.</p>
       </div>
 
       <div class="audience-grid">
         <div class="audience-card">
           <div class="audience-img-wrapper">
-            <img src="assets/hero-closeup.jpg" alt="Untuk Keluarga" loading="lazy">
+            <img src="assets/biskut-slices-basket.jpg" alt="Untuk Keluarga" loading="lazy">
           </div>
           <div class="audience-info">
             <h3>Untuk Keluarga</h3>
@@ -3385,7 +3396,7 @@
           </div>
           <div class="audience-info">
             <h3>Untuk Majlis</h3>
-            <p>Mahu tetamu majlis anda bawa pulang buah tangan yang confirm dimakan? Pek zip-lock premium yang cantik ini menjimatkan masa anda dan dijamin buat tetamu tersenyum puas.</p>
+            <p>Mahu tetamu majlis anda bawa pulang buah tangan yang confirm dimakan? Pembungkusan kemas dan premium ini menjimatkan masa anda dan dijamin buat tetamu tersenyum puas.</p>
           </div>
         </div>
 
@@ -3410,7 +3421,7 @@
     <div class="container">
       <div class="section-title text-center">
         <h2>Pakej Istimewa Biskut Pelanta</h2>
-        <p>Pilih pakej yang sesuai mengikut keperluan anda. Dapatkan diskaun menarik untuk pembelian lebih banyak!</p>
+        <p>Ramai pelanggan yang mula beli 1 pek je untuk rasa — tapi terus upgrade ke 10 Pek lepas sekali gigit. Pakej mana pun, anda jimat berbanding beli berasingan.</p>
       </div>
 
       <div class="pricing-grid" id="js-pricing-cards-container">
@@ -3428,7 +3439,7 @@
         </div>
         <div class="trust-text">
           <h4>100% Produk Muslim Bumiputera</h4>
-          <p>Dihasilkan secara suci dan bersih oleh usahawan bimbingan Jabatan Pertanian di Lekir, Perak.</p>
+          <p>Disahkan Halal & MeSTI. Kilang di Lekir, Perak — dibimbing terus oleh Jabatan Pertanian. Boleh makan dengan penuh keyakinan.</p>
         </div>
       </div>
 
@@ -3438,7 +3449,7 @@
         </div>
         <div class="trust-text">
           <h4>Penghantaran Selamat Seluruh Malaysia</h4>
-          <p>Kami pos terus ke pintu anda dengan balutan bubble wrap tebal tanpa sebarang caj tambahan.</p>
+          <p>Dibalut bubble wrap tebal secara percuma. Sampai hancur? Kami bertanggungjawab — hubungi kami dan kami selesaikan.</p>
         </div>
       </div>
 
@@ -3599,6 +3610,12 @@
                     <span id="summary-qty">1 set</span>
                   </div>
 
+                  <div class="summary-row" id="shipping-row-courier" style="display: none;">
+                    <span>Kurier</span>
+                    <span id="shipping-val-courier">-</span>
+                  </div>
+
+
                   <div class="summary-row">
                     <span>Caj Penghantaran</span>
                     <span id="summary-shipping">Sila pilih negeri</span>
@@ -3643,6 +3660,10 @@
                 <div class="success-summary-row" style="display: flex; justify-content: space-between; margin-bottom: 0.5rem; font-size: 0.9rem;">
                   <span style="color: var(--text-muted);">Kuantiti:</span>
                   <span id="summary-display-qty" style="font-weight: 700; color: var(--secondary-dark);">-</span>
+                </div>
+                <div class="success-summary-row" id="shipping-display-row-courier" style="display: none; justify-content: space-between; margin-bottom: 0.5rem; font-size: 0.9rem;">
+                  <span style="color: var(--text-muted);">Kurier:</span>
+                  <span id="shipping-display-val-courier" style="font-weight: 700; color: var(--secondary-dark);">-</span>
                 </div>
                 <div class="success-summary-row" style="display: flex; justify-content: space-between; margin-bottom: 0.5rem; font-size: 0.9rem;">
                   <span style="color: var(--text-muted);">Kos Pos:</span>
@@ -3691,8 +3712,8 @@
     <img class="bg-wheat-section bg-wheat-faq-right" src="assets/wheat-new-right.png" alt="" aria-hidden="true">
     <div class="container">
       <div class="section-title text-center">
-        <h2>Soalan Lazim (FAQ)</h2>
-        <p>Kami telah menghimpunkan jawapan bagi soalan-soalan yang kerap ditanyakan oleh para pelanggan kami.</p>
+        <h2>Soalan Yang Selalu Ditanya</h2>
+        <p>Ada keraguan? Wajar. Baca jawapan jujur kami di sini — kalau masih ada soalan, WhatsApp kami terus.</p>
       </div>
 
       <div class="faq-container">
@@ -3753,7 +3774,7 @@
             <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path></svg>
           </div>
           <div class="faq-answer">
-            <p>Biskut Pelanta kami dibungkus rapi dalam paket zip-lock kedap udara dan boleh bertahan selama 3 hingga 5 bulan tanpa menjejaskan kerangupan dan aromanya, asalkan pek ditutup rapat semula selepas dibuka.</p>
+            <p>Biskut Pelanta kami dibungkus rapi dalam pembungkusan berseal kedap udara dan boleh bertahan selama 4 hingga 5 bulan tanpa menjejaskan kerangupan dan aromanya, asalkan pek ditutup rapat semula selepas dibuka.</p>
           </div>
         </div>
 
@@ -3812,7 +3833,7 @@
 
     <div class="container footer-bottom">
       <p>&copy; 2026 Roti Biskut DLekir Sdn. Bhd. Hak Cipta Terpelihara.</p>
-      <p>Dibina dengan penuh dedikasi untuk Peminat Biskut Pelanta Sejati. | Developed by <a href="https://binawebsitemurah-by.zaimrosli.my/" target="_blank" style="color: inherit; text-decoration: underline; font-weight: bold;">kwikezee design</a></p>
+      <p>Dibina dengan penuh dedikasi untuk Peminat Biskut Pelanta Sejati. | Designer by <a href="https://binawebsitemurah-by.zaimrosli.my/" target="_blank" style="color: inherit; text-decoration: underline; font-weight: bold;">kwikezee design</a></p>
     </div>
   </footer>
 
@@ -3830,13 +3851,20 @@
   <!-- Sticky Mobile Bottom CTA (Opens modal directly in v2) -->
   <div class="sticky-mobile-cta">
     <div class="mobile-cta-info">
-      <span class="mobile-cta-price" id="js-mobile-cta-price">RM 27.90</span>
-      <span class="mobile-cta-label" id="js-mobile-cta-label">Pilihan Popular (3 Pek)</span>
+      <span class="mobile-cta-price" id="js-mobile-cta-price">RM 49.00</span>
+      <span class="mobile-cta-label" id="js-mobile-cta-label">Value Pack (10 Pek)</span>
     </div>
     <button onclick="openCheckoutModal()" class="btn btn-primary mobile-cta-btn">Order Sekarang</button>
   </div>
 
-  
+  <!-- REAL ORDER NOTIFICATION POPUP -->
+  <div class="order-popup" id="order-popup">
+    <div class="order-popup-avatar" id="order-popup-avatar">?</div>
+    <div class="order-popup-details">
+      <div class="order-popup-title" id="order-popup-text">Seseorang baru membeli</div>
+      <div class="order-popup-time" id="order-popup-time">Baru sahaja</div>
+    </div>
+  </div>
 
   <!-- -------------------------------------------------------------
        JAVASCRIPT LOGIC & CONVERSION FUNCTIONALITY
@@ -3868,7 +3896,7 @@
           quantityDisplay: "1 Pek",
           price: 7.90,
           quantity: 1,
-          features: ["✓ 1 Paket Biskut Pelanta", "✓ Berat: 220g (11-12 keping)", "✓ Pek zip-lock tahan segar", "✓ Dibungkus kemas & selamat"],
+          features: ["✓ 1 Paket Biskut Pelanta", "✓ Berat: 220g (11-12 keping)", "✓ Pembungkusan berseal tahan segar", "✓ Dibungkus kemas & selamat"],
           badge: ""
         },
         {
@@ -3904,7 +3932,7 @@
     };
 
     // State Variables
-    let selectedPackageId = "pkg_2"; // Default selected is Family Pack
+    let selectedPackageId = "pkg_3"; // Default selected is Value Pack (10 Pek)
     let currentQuantity = 1;
     let activeGalleryIndex = 0;
     let currentStock = SETTINGS.stockQuantity;
@@ -3937,6 +3965,7 @@
 
       // Start Countdown Timer / Conversion boosters
       startVisitorCounter();
+      startRealOrderPopup(); // Show real buyer notifications from API
       // startOrderPopupRotator();
 
       // Scroll Event for Sticky effects
@@ -4520,7 +4549,8 @@
     const lightboxImg = document.getElementById('lightbox-img');
     const slideImages = [
       "assets/biskut-pelanta-main.jpg",
-      "assets/hero-closeup.jpg",
+      "assets/biskut-dlekir-flowers.jpg",
+      "assets/biskut-loaves-bakery.jpg",
       "assets/coffee-dip-lifestyle.jpg",
       "assets/packaging-stacks.jpg",
       "assets/factory-production.jpg",
@@ -4684,6 +4714,87 @@
     // startOrderPopupRotator function removed
 
     /* ==========================================
+       REAL ORDER POPUP (API-DRIVEN)
+       Fetches real completed orders from Billplz via backend
+       ========================================== */
+    function timeAgoMs(ms) {
+      const seconds = Math.floor(ms / 1000);
+      const minutes = Math.floor(seconds / 60);
+      const hours   = Math.floor(minutes / 60);
+      const days    = Math.floor(hours / 24);
+      if (days > 0)    return `${days} hari lepas`;
+      if (hours > 0)   return `${hours} jam lepas`;
+      if (minutes > 0) return `${minutes} minit lepas`;
+      return `Baru sahaja`;
+    }
+
+    async function startRealOrderPopup() {
+      const popup     = document.getElementById('order-popup');
+      const avatarEl  = document.getElementById('order-popup-avatar');
+      const textEl    = document.getElementById('order-popup-text');
+      const timeEl    = document.getElementById('order-popup-time');
+
+      if (!popup) return;
+
+      let orders = [];
+
+      try {
+        const controller = new AbortController();
+        const timeout = setTimeout(() => controller.abort(), 8000);
+        const res = await fetch(`${API_ENDPOINT}/recent-orders`, {
+          signal: controller.signal,
+          headers: { 'Content-Type': 'application/json' }
+        });
+        clearTimeout(timeout);
+        if (res.ok) {
+          const data = await res.json();
+          // Expected: [{ name: "Ahmad", package: "Value Pack (10 Pek)", created_at: "2026-06-27T..." }, ...]
+          if (Array.isArray(data) && data.length > 0) {
+            orders = data;
+          }
+        }
+      } catch (e) {
+        // API unavailable — fail silently, no popup shown
+        console.log('[OrderPopup] API unavailable, popup skipped.');
+        return;
+      }
+
+      if (orders.length === 0) return;
+
+      let idx = 0;
+
+      function showNextPopup() {
+        const order = orders[idx % orders.length];
+        idx++;
+
+        const firstName = (order.name || 'Pelanggan').split(' ')[0];
+        const initial   = firstName.charAt(0).toUpperCase();
+        const pkg       = order.package || 'Biskut Pelanta';
+        const createdAt = order.created_at ? new Date(order.created_at) : new Date();
+        const elapsed   = Date.now() - createdAt.getTime();
+        const timeStr   = timeAgoMs(elapsed);
+
+        avatarEl.textContent = initial;
+        textEl.textContent   = `${firstName} baru membeli ${pkg}`;
+        timeEl.textContent   = timeStr;
+
+        popup.classList.add('show');
+
+        setTimeout(() => {
+          popup.classList.remove('show');
+        }, 5000);
+      }
+
+      // Show first popup after 8 seconds, then every 30 seconds
+      setTimeout(() => {
+        showNextPopup();
+        setInterval(showNextPopup, 30000);
+      }, 8000);
+    }
+
+
+
+    /* ==========================================
        CHECKOUT & FORM HANDLING (SIMULATION)
        ========================================== */
     let lastOrderDetails = null;
@@ -4739,6 +4850,367 @@
         }
       });
     });
+
+    /* ==========================================
+       SHIPPING CALCULATOR MODULE
+    ========================================== */
+    let shippingData = null;
+    let shippingLoadError = false;
+
+    // List of Semenanjung states mapping
+    const shippingSemenanjungStates = [
+      "Johor", "Kedah", "Kelantan", "Melaka", "Negeri Sembilan",
+      "Pahang", "Perak", "Perlis", "Pulau Pinang", "Selangor",
+      "Terengganu", "Kuala Lumpur", "Putrajaya"
+    ];
+
+    // List of Sabah/Sarawak states mapping
+    const shippingSabahSarawakStates = [
+      "Sabah", "Sarawak", "Labuan"
+    ];
+
+    // Load shipping configuration from data/shipping.json once
+    async function shippingLoadConfig() {
+      try {
+        const response = await fetch('data/shipping.json');
+        if (!response.ok) {
+          throw new Error("HTTP error " + response.status);
+        }
+        shippingData = await response.json();
+        console.log("[ShippingCalculator] Config loaded successfully:", shippingData);
+        
+        // Trigger price calculation once loaded to reflect any changes
+        if (typeof calculatePrices === 'function') {
+          calculatePrices();
+        }
+      } catch (error) {
+        console.error("[ShippingCalculator] Error loading shipping config:", error);
+        shippingLoadError = true;
+        shippingHandleError();
+      }
+    }
+
+    // Handle error when config cannot be loaded
+    function shippingHandleError() {
+      const nextBtn = document.getElementById('js-next-step-btn');
+      if (nextBtn) {
+        nextBtn.disabled = true;
+        nextBtn.style.opacity = '0.5';
+        nextBtn.style.cursor = 'not-allowed';
+        nextBtn.innerText = "Penghantaran Tidak Tersedia";
+      }
+      
+      const elShipping = document.getElementById('summary-shipping');
+      if (elShipping) {
+        elShipping.innerText = "Shipping unavailable";
+      }
+      const elDisplayShipping = document.getElementById('summary-display-shipping');
+      if (elDisplayShipping) {
+        elDisplayShipping.innerText = "Shipping unavailable";
+      }
+    }
+
+    // Calculate shipping fee only and return it
+    function shippingCalculateFeeOnly() {
+      if (shippingLoadError || !shippingData) {
+        return 0;
+      }
+      
+      const stateSelect = document.getElementById('state');
+      if (!stateSelect) return 0;
+      const selectedState = stateSelect.value;
+      if (!selectedState) return 0;
+      
+      const pkg = SETTINGS.packages.find(p => p.id === selectedPackageId);
+      if (!pkg) return 0;
+      
+      // Reseller action: whatsapp package doesn't have shipping calculation
+      if (pkg.price === 0) return 0;
+      
+      // Find shipping weight
+      const pkgQtyKey = pkg.quantity.toString();
+      const pkgConfig = shippingData.packages[pkgQtyKey];
+      let packageWeight = 0;
+      if (pkgConfig) {
+        packageWeight = pkgConfig.shippingWeight;
+      } else {
+        // fallback if package key not mapped
+        packageWeight = 340; // default to 1 Pek
+      }
+      
+      const totalWeight = packageWeight * currentQuantity;
+      
+      // Map state to region
+      let shippingRegion = "";
+      if (shippingSemenanjungStates.includes(selectedState)) {
+        shippingRegion = "semenanjung";
+      } else if (shippingSabahSarawakStates.includes(selectedState)) {
+        shippingRegion = "sabahsarawak";
+      } else {
+        return 0; // Unknown region
+      }
+      
+      const regionRates = shippingData.shipping[shippingRegion];
+      if (!regionRates || !Array.isArray(regionRates)) return 0;
+      
+      // Find shipping rate bracket
+      // maxWeight >= totalWeight
+      const bracket = regionRates.find(r => r.maxWeight >= totalWeight);
+      if (bracket) {
+        return bracket.price;
+      }
+      
+      // Fallback to highest bracket if exceeds
+      if (regionRates.length > 0) {
+        return regionRates[regionRates.length - 1].price;
+      }
+      
+      return 0;
+    }
+
+    // Update Courier and Weight details in the UI
+    function shippingUpdateUI(stepNum) {
+      if (shippingLoadError) {
+        shippingHandleError();
+        return;
+      }
+      
+      const stateSelect = document.getElementById('state');
+      if (!stateSelect) return;
+      const selectedState = stateSelect.value;
+      
+      const pkg = SETTINGS.packages.find(p => p.id === selectedPackageId);
+      if (!pkg || !shippingData || pkg.price === 0) {
+        // Hide shipping details for Reseller package
+        document.getElementById('shipping-row-courier').style.display = 'none';
+        document.getElementById('shipping-row-weight').style.display = 'none';
+        document.getElementById('shipping-display-row-courier').style.display = 'none';
+        document.getElementById('shipping-display-row-weight').style.display = 'none';
+        return;
+      }
+      
+      const pkgQtyKey = pkg.quantity.toString();
+      const pkgConfig = shippingData.packages[pkgQtyKey];
+      const packageWeight = pkgConfig ? pkgConfig.shippingWeight : 0;
+      const totalWeight = packageWeight * currentQuantity;
+      
+      const rowCourier = document.getElementById('shipping-row-courier');
+      const rowWeight = document.getElementById('shipping-row-weight');
+      const valCourier = document.getElementById('shipping-val-courier');
+      const valWeight = document.getElementById('shipping-val-weight');
+      
+      const displayRowCourier = document.getElementById('shipping-display-row-courier');
+      const displayRowWeight = document.getElementById('shipping-display-row-weight');
+      const displayValCourier = document.getElementById('shipping-display-val-courier');
+      const displayValWeight = document.getElementById('shipping-display-val-weight');
+      
+      if (!selectedState) {
+        // State not chosen yet, hide rows or show placeholders
+        if (rowCourier) rowCourier.style.display = 'none';
+        if (rowWeight) rowWeight.style.display = 'none';
+        if (displayRowCourier) displayRowCourier.style.display = 'none';
+        if (displayRowWeight) displayRowWeight.style.display = 'none';
+      } else {
+        // State chosen, update values and show rows
+        if (valCourier) valCourier.innerText = shippingData.courier;
+        if (valWeight) valWeight.innerText = totalWeight + " g";
+        if (rowCourier) rowCourier.style.display = 'flex';
+        if (rowWeight) rowWeight.style.display = 'flex';
+        
+        if (displayValCourier) displayValCourier.innerText = shippingData.courier;
+        if (displayValWeight) displayValWeight.innerText = totalWeight + " g";
+        if (displayRowCourier) displayRowCourier.style.display = 'flex';
+        if (displayRowWeight) displayRowWeight.style.display = 'flex';
+      }
+    }
+
+    // Override global functions to inject shipping calculations
+    const shippingOriginalCalculatePrices = window.calculatePrices;
+    window.calculatePrices = function() {
+      if (typeof shippingOriginalCalculatePrices === 'function') {
+        shippingOriginalCalculatePrices();
+      }
+      
+      if (shippingLoadError) {
+        shippingHandleError();
+        return;
+      }
+      
+      if (!shippingData) return; // Wait for config load
+      
+      const stateSelect = document.getElementById('state');
+      if (!stateSelect) return;
+      const selectedState = stateSelect.value;
+      
+      const pkg = SETTINGS.packages.find(p => p.id === selectedPackageId);
+      if (!pkg) return;
+      
+      const subtotal = pkg.price * currentQuantity;
+      const shippingPrice = shippingCalculateFeeOnly();
+      const grandTotal = subtotal + shippingPrice;
+      
+      if (!selectedState) {
+        document.getElementById('summary-shipping').innerText = "Sila pilih negeri";
+        document.getElementById('summary-total-price').innerText = "RM " + subtotal.toFixed(2);
+      } else {
+        document.getElementById('summary-shipping').innerText = "RM " + shippingPrice.toFixed(2);
+        document.getElementById('summary-total-price').innerText = "RM " + grandTotal.toFixed(2);
+        
+        // Update Mobile CTA bar prices
+        const mobileCtaPrice = document.getElementById('js-mobile-cta-price');
+        const mobileCtaLabel = document.getElementById('js-mobile-cta-label');
+        if (mobileCtaPrice) mobileCtaPrice.innerText = "RM " + grandTotal.toFixed(2);
+        if (mobileCtaLabel) mobileCtaLabel.innerText = pkg.name + " × " + currentQuantity;
+      }
+      
+      shippingUpdateUI(2);
+    };
+
+    // Override setCheckoutStep
+    const shippingOriginalSetCheckoutStep = window.setCheckoutStep;
+    window.setCheckoutStep = function(stepNum) {
+      const stateSelect = document.getElementById('state');
+      const selectedState = stateSelect ? stateSelect.value : "";
+      const originalFeeEast = SETTINGS.shippingFeeEast;
+      const originalFeePeninsular = SETTINGS.shippingFeePeninsular;
+      
+      const calculatedFee = shippingCalculateFeeOnly();
+      
+      if (shippingSemenanjungStates.includes(selectedState)) {
+        SETTINGS.shippingFeePeninsular = calculatedFee;
+      } else if (shippingSabahSarawakStates.includes(selectedState)) {
+        SETTINGS.shippingFeeEast = calculatedFee;
+      }
+      
+      try {
+        if (typeof shippingOriginalSetCheckoutStep === 'function') {
+          shippingOriginalSetCheckoutStep(stepNum);
+        }
+      } finally {
+        SETTINGS.shippingFeeEast = originalFeeEast;
+        SETTINGS.shippingFeePeninsular = originalFeePeninsular;
+      }
+      
+      // Disable next step button in steps 2 or 3 if config error
+      if (shippingLoadError) {
+        shippingHandleError();
+      } else {
+        // Restore button state
+        const nextBtn = document.getElementById('js-next-step-btn');
+        if (nextBtn && nextBtn.disabled) {
+          nextBtn.disabled = false;
+          nextBtn.style.opacity = '';
+          nextBtn.style.cursor = '';
+          if (stepNum === 1) nextBtn.innerText = "Pilih Pakej & Kuantiti";
+          else if (stepNum === 2) nextBtn.innerText = "Seterusnya (Pembayaran)";
+          else if (stepNum === 3) nextBtn.innerText = "Sahkan & Bayar";
+        }
+      }
+      
+      shippingUpdateUI(stepNum);
+    };
+
+    // Override submitCheckoutForm
+    const shippingOriginalSubmitCheckoutForm = window.submitCheckoutForm;
+    window.submitCheckoutForm = async function() {
+      if (shippingLoadError) {
+        alert("Tempahan tidak boleh dihantar kerana maklumat penghantaran tidak tersedia.");
+        return;
+      }
+      
+      const stateSelect = document.getElementById('state');
+      const selectedState = stateSelect ? stateSelect.value : "";
+      const originalFeeEast = SETTINGS.shippingFeeEast;
+      const originalFeePeninsular = SETTINGS.shippingFeePeninsular;
+      
+      const calculatedFee = shippingCalculateFeeOnly();
+      
+      if (shippingSemenanjungStates.includes(selectedState)) {
+        SETTINGS.shippingFeePeninsular = calculatedFee;
+      } else if (shippingSabahSarawakStates.includes(selectedState)) {
+        SETTINGS.shippingFeeEast = calculatedFee;
+      }
+      
+      try {
+        if (typeof shippingOriginalSubmitCheckoutForm === 'function') {
+          await shippingOriginalSubmitCheckoutForm();
+        }
+      } finally {
+        SETTINGS.shippingFeeEast = originalFeeEast;
+        SETTINGS.shippingFeePeninsular = originalFeePeninsular;
+      }
+    };
+
+    // Override handleFormSubmit if it exists (for V1 direct checkout template)
+    const shippingOriginalHandleFormSubmit = window.handleFormSubmit;
+    if (typeof shippingOriginalHandleFormSubmit === 'function') {
+      window.handleFormSubmit = async function(event) {
+        if (shippingLoadError) {
+          event.preventDefault();
+          alert("Tempahan tidak boleh dihantar kerana maklumat penghantaran tidak tersedia.");
+          return;
+        }
+        
+        const stateSelect = document.getElementById('state');
+        const selectedState = stateSelect ? stateSelect.value : "";
+        const originalFeeEast = SETTINGS.shippingFeeEast;
+        const originalFeePeninsular = SETTINGS.shippingFeePeninsular;
+        
+        const calculatedFee = shippingCalculateFeeOnly();
+        
+        if (shippingSemenanjungStates.includes(selectedState)) {
+          SETTINGS.shippingFeePeninsular = calculatedFee;
+        } else if (shippingSabahSarawakStates.includes(selectedState)) {
+          SETTINGS.shippingFeeEast = calculatedFee;
+        }
+        
+        try {
+          await shippingOriginalHandleFormSubmit(event);
+        } finally {
+          SETTINGS.shippingFeeEast = originalFeeEast;
+          SETTINGS.shippingFeePeninsular = originalFeePeninsular;
+        }
+      };
+    }
+
+    // Add V1 button handling inside shippingHandleError
+    const shippingOriginalHandleError = shippingHandleError;
+    shippingHandleError = function() {
+      if (typeof shippingOriginalHandleError === 'function') {
+        shippingOriginalHandleError();
+      }
+      const checkoutBtn = document.getElementById('js-checkout-btn');
+      if (checkoutBtn) {
+        checkoutBtn.disabled = true;
+        checkoutBtn.style.opacity = '0.5';
+        checkoutBtn.style.cursor = 'not-allowed';
+        checkoutBtn.innerText = "Penghantaran Tidak Tersedia";
+      }
+    };
+
+    // Add V1 button restoration inside setCheckoutStep override
+    const shippingOriginalSetCheckoutStepOverride = window.setCheckoutStep;
+    window.setCheckoutStep = function(stepNum) {
+      if (typeof shippingOriginalSetCheckoutStepOverride === 'function') {
+        shippingOriginalSetCheckoutStepOverride(stepNum);
+      }
+      if (!shippingLoadError) {
+        const checkoutBtn = document.getElementById('js-checkout-btn');
+        if (checkoutBtn && checkoutBtn.disabled) {
+          checkoutBtn.disabled = false;
+          checkoutBtn.style.opacity = '';
+          checkoutBtn.style.cursor = '';
+          checkoutBtn.innerText = "Sahkan & Bayar Sekarang";
+        }
+      }
+    };
+
+    // Start loading configuration as soon as document starts loading
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', shippingLoadConfig);
+    } else {
+      shippingLoadConfig();
+    }
   </script>
 </body>
 </html>
